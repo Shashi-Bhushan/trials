@@ -22,7 +22,7 @@ public class SerializationUtilTest {
     // Provide Abstraction for Constants used
     interface Constants {
         String EMP_NAME = "Shashi";
-        String FILE_NAME = "Emp-File";
+        String FILE_NAME = "Emp-File.serialize";
     }
 
     @Before

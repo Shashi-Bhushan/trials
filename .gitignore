@@ -25,3 +25,4 @@ generated/
 .vagrant/
 puppet/r10k
 target/
+*.serialize
