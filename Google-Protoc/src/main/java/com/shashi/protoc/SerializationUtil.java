@@ -4,13 +4,15 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by shashi on 21/12/15.
  *
  * @param <T> Type of class to Serialize and Deserialize from
  */
-public class SerializationUtil<T> {
+public class SerializationUtil<T extends Serializable> {
 
     /**
      * Logger for the class
@@ -19,16 +21,23 @@ public class SerializationUtil<T> {
 
     /**
      * Serializes the given {@link T} object and save it into a file
-     * @param type {@link T} object to be Serialized
-     * @param fileName File in which {@link T} object is to be saved
+     * @param filePath File in which {@link T} object is to be saved
+     * @param types {@link T} List to be Serialized
      *
      * @return boolean specifying if {@link T} object has been serialized
      */
-    public boolean serialize(T type, String fileName) {
+    public boolean serialize(String filePath, T... types) {
 
-        try(FileOutputStream fileStream = new FileOutputStream(fileName);
+        List<T> typeList = new ArrayList<>();
+
+        for(T type: types)
+        {
+            typeList.add(type);
+        }
+
+        try(FileOutputStream fileStream = new FileOutputStream(filePath);
                 ObjectOutputStream objectStream = new ObjectOutputStream(fileStream)) {
-            objectStream.writeObject(type);
+            objectStream.writeObject(typeList);
         }catch(IOException inputOutputException){
             LOG.error("Exception Occurred while Serializing {}. Message is ", "WHAT to Write here instead of T.class", inputOutputException.getMessage());
 
@@ -44,12 +53,12 @@ public class SerializationUtil<T> {
      *
      * @return deserialized {@link T} object from the file
      */
-    public T deSerialize(String fileName) {
+    public List<T> deSerialize(String fileName) {
 
-        T employee = null;
+        List<T> employee = null;
         try(FileInputStream fileStream = new FileInputStream(fileName);
             ObjectInputStream objectStream = new ObjectInputStream(fileStream)) {
-            employee = (T)objectStream.readObject();
+            employee = (List<T>)objectStream.readObject();
         }catch(IOException | ClassNotFoundException inputOutputException){
             LOG.error("Exception Occurred while Serializing {}. Message is ", "WHAT to Write here instead of T.class", inputOutputException.getMessage());
         }

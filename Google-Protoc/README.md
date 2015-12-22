@@ -8,3 +8,5 @@ process of persisting the state of an object in file system.
 
 also can not be used if data is to be shared between different applications written in C/C++ or Python etc.
 Also, for persisting larger number of objects use an ORM.
+
+# When making a generic class, always make sure to provide type bounds in order to make it's misuse harder.

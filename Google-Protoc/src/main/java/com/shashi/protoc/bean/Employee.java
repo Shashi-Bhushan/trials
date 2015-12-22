@@ -2,7 +2,7 @@ package com.shashi.protoc.bean;
 
 import java.io.Serializable;
 
-public class SerializableEmployee implements Serializable{
+public class Employee implements Serializable{
 
 	/**
 	 * This Serial version UID will change once any new version of class has been created
@@ -11,7 +11,7 @@ public class SerializableEmployee implements Serializable{
 	
 	private String name;
 
-    public SerializableEmployee(String name) {
+    public Employee(String name) {
         this.name = name;
     }
 
@@ -21,7 +21,7 @@ public class SerializableEmployee implements Serializable{
 
     @Override
     public String toString() {
-        return "SerializableEmployee{" +
+        return "Employee{" +
                 "name='" + name + '\'' +
                 '}';
     }

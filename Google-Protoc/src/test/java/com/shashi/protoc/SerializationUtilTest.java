@@ -1,8 +1,10 @@
 package com.shashi.protoc;
 
-import com.shashi.protoc.bean.SerializableEmployee;
+import com.shashi.protoc.bean.Employee;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.util.List;
 
 import static org.junit.Assert.assertTrue;
 
@@ -12,36 +14,42 @@ import static org.junit.Assert.assertTrue;
 public class SerializationUtilTest {
 
     // Employee to Deserialize
-    private static SerializableEmployee employee;
+    private static Employee employee;
     // De-Serialized Employee
-    private static SerializableEmployee deSerializedEmployee;
+    private static List<Employee> deSerializedEmployee;
 
     // Utility class for Serialization
-    private static SerializationUtil<SerializableEmployee> serializationUtil;
+    private static SerializationUtil<Employee> serializationUtil;
 
     // Provide Abstraction for Constants used
     interface Constants {
         String EMP_NAME = "Shashi";
-        String FILE_NAME = "Emp-File.serialize";
+        String FILE_PATH = "/home/shashi/Emp-File.serialize";
     }
 
     @Before
     public void setUp(){
-        employee = new SerializableEmployee(Constants.EMP_NAME);
+        employee = new Employee(Constants.EMP_NAME);
 
-        serializationUtil = new SerializationUtil<SerializableEmployee>();
+        serializationUtil = new SerializationUtil<Employee>();
 
-        serializationUtil.serialize(employee, Constants.FILE_NAME);
-        deSerializedEmployee = serializationUtil.deSerialize(Constants.FILE_NAME);
+        serializationUtil.serialize(Constants.FILE_PATH, employee);
+        deSerializedEmployee = serializationUtil.deSerialize(Constants.FILE_PATH);
     }
 
+    /**
+     * Test Case checks that atleast one employee object is there in List of {@link Employee}
+     */
     @Test
     public void employeeNotNullTest(){
-        assertTrue(deSerializedEmployee != null);
+        assertTrue(deSerializedEmployee.size() != 0);
     }
 
+    /**
+     * Test Case checks if the name of the first {@link Employee} is equal to the name that is serialized
+     */
     @Test
     public void employeeNameEqualTest(){
-        assertTrue(Constants.EMP_NAME.equals(deSerializedEmployee.getName()));
+        assertTrue(Constants.EMP_NAME.equals(deSerializedEmployee.get(0).getName()));
     }
 }
