@@ -1,28 +1,118 @@
 package com.shashi.protoc.bean;
 
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
+import javax.xml.bind.annotation.XmlType;
 import java.io.Serializable;
+import java.time.LocalDate;
+import java.time.Period;
 
+/**
+ * Converting the same to XML using JAX-B
+ * Annotations are for JAX-B
+ */
+
+@XmlRootElement(name = "Employee")
+@XmlType(propOrder = {"name", "birthday","role","gender"})
 public class Employee implements Serializable{
 
 	/**
 	 * This Serial version UID will change once any new version of class has been created
 	 */
 	private static final long serialVersionUID = 1L;
-	
-	private String name;
 
-    public Employee(String name) {
+    private int id;
+	private String name;
+    private LocalDate birthday;
+    /**
+     * Transient Variable not supposed to be Serialized
+     * cannot add Transient modifier due to JAXB constraint
+     */
+    @XmlTransient
+    private int age;
+    private String role;
+    private Gender gender;
+
+    public Employee(){
+        /**
+         * Empty Convenience Constructor and Setter for name
+         * For JAX-B Requirements
+         **/
+    }
+
+    @XmlAttribute
+    public int getId() {
+        return id;
+    }
+
+    public Employee setId(int id) {
+        this.id = id;
+        return this;
+    }
+
+    public Employee setName(String name){
         this.name = name;
+        return this;
     }
 
     public String getName(){
 		return name;
 	}
 
+    public LocalDate getBirthday() {
+        return birthday;
+    }
+
+    public Employee setBirthday(LocalDate birthday) {
+        this.birthday = birthday;
+
+        /**
+         * Set {@code age}
+         */
+        LocalDate today = LocalDate.now();
+        Period period = Period.between(birthday, today);
+        this.age = period.getYears();
+
+        return this;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public Employee setRole(String role) {
+        this.role = role;
+        return this;
+    }
+
+    public Gender getGender() {
+        return gender;
+    }
+
+    public Employee setGender(Gender gender) {
+        this.gender = gender;
+        return this;
+    }
+
+    enum Gender{
+        MALE,
+        FEMALE
+    }
+
     @Override
     public String toString() {
         return "Employee{" +
-                "name='" + name + '\'' +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", birthday=" + birthday +
+                ", age=" + age +
+                ", role='" + role + '\'' +
+                ", gender=" + gender +
                 '}';
     }
 }

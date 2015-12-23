@@ -3,30 +3,72 @@ package com.shashi.protoc;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
+import javax.xml.bind.Unmarshaller;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by shashi on 21/12/15.
+ * {@link SerializationUtil} contains utils for {@link #serialize(String, Serializable[]) Serializing}, {@link #deSerialize(String) De-Serializing},
+ * {@link #marshallJAXBObjectToXML(String, Serializable[]) Marshalling} and {@link #unmarshallXMLToJAXBObject(String) Unmarshalling}
  *
- * @param <T> Type of class to Serialize and Deserialize from
+ * @param <T> @extends {@link Serializable}  Type of class to Serialize and Deserialize from
  */
 public class SerializationUtil<T extends Serializable> {
 
     /**
-     * Logger for the class
+     * Get Type {@link T} of class
+     * due to Type-Erasure in Java
+     * @see <a href="https://docs.oracle.com/javase/tutorial/java/generics/erasure.html">Type Erasure</a>
      */
-    public Logger LOG = LoggerFactory.getLogger("WHAT to Write here instead of T.class");
+    private final Class<T> clazz;
+    private final Logger LOG ;
+    /**
+     * {@link JAXBContext} object for marshalling and unmarshalling of List of {@link T}
+     */
+    private JAXBContext jaxbContext;
+
+    /**
+     * Convenience Constructor saves the Type of class into an instance variable for reference
+     * @param clazz class of Generic type <T>
+     *
+     * @throws {@link JAXBException}
+     *          when could not create a new {@link JAXBContext} object for {@link T} class
+     */
+    protected SerializationUtil(Class<T> clazz){
+        this.clazz = clazz;
+
+        LOG = LoggerFactory.getLogger(this.returnedClass());
+
+        try {
+            jaxbContext = JAXBContext.newInstance(this.returnedClass());
+        } catch (JAXBException e) {
+            LOG.error("Exception Occurred while Creating JAXB Intance of {}. Message is ", this.returnedClass(), e);
+        }
+    }
+
+    /**
+     * Returns the Generic Type <T> of class, for which {@link SerializationUtil} is called
+     * @return Generic Type of class
+     */
+    private Class returnedClass(){
+        return this.clazz;
+    }
 
     /**
      * Serializes the given {@link T} object and save it into a file
+     * at {@code filePath}
      * @param filePath File in which {@link T} object is to be saved
      * @param types {@link T} List to be Serialized
      *
-     * @return boolean specifying if {@link T} object has been serialized
+     * @throws {@link IOException}
+     *          if the Stream could not be opened or if could not complete writing to {@code filePath}
      */
-    public boolean serialize(String filePath, T... types) {
+    public void serialize(String filePath, T... types) throws IOException {
 
         List<T> typeList = new ArrayList<>();
 
@@ -35,34 +77,101 @@ public class SerializationUtil<T extends Serializable> {
             typeList.add(type);
         }
 
-        try(FileOutputStream fileStream = new FileOutputStream(filePath);
-                ObjectOutputStream objectStream = new ObjectOutputStream(fileStream)) {
-            objectStream.writeObject(typeList);
-        }catch(IOException inputOutputException){
-            LOG.error("Exception Occurred while Serializing {}. Message is ", "WHAT to Write here instead of T.class", inputOutputException.getMessage());
+        // cleans up before putting data
+        deleteIfFileExists(filePath);
+        FileOutputStream fileStream = new FileOutputStream(filePath);
+        ObjectOutputStream objectStream = new ObjectOutputStream(fileStream);
 
-            return false;
-        }
+        objectStream.writeObject(typeList);
 
-        return true;
+        /**
+         * CleanUp after using {@link FileOutputStream} and {@link ObjectOutputStream} Streams
+         */
+        fileStream.close();
+        objectStream.close();
     }
 
     /**
-     * De-Serializes the given {@link T} object from the given file
-     * @param fileName File from which {@link T} object has to be retrieved
+     * De-Serializes the given {@link T} object from {@code filePath}
+     * @param filePath File from which {@link T} object has to be retrieved
      *
-     * @return deserialized {@link T} object from the file
+     * @return deserialized {@link T} object from {@code filePath}
+     *
+     * @throws  {@link IOException}
+     *          when {@link FileInputStream} and {@link ObjectInputStream}
+     *          could not be opened
+     * @throws {@link IOException} and {@link ClassNotFoundException}
+     *          when List of {@link T} could not be read from {@code filePath}
      */
-    public List<T> deSerialize(String fileName) {
+    public List<T> deSerialize(String filePath) throws IOException, ClassNotFoundException {
 
         List<T> employee = null;
-        try(FileInputStream fileStream = new FileInputStream(fileName);
-            ObjectInputStream objectStream = new ObjectInputStream(fileStream)) {
-            employee = (List<T>)objectStream.readObject();
-        }catch(IOException | ClassNotFoundException inputOutputException){
-            LOG.error("Exception Occurred while Serializing {}. Message is ", "WHAT to Write here instead of T.class", inputOutputException.getMessage());
-        }
+
+        FileInputStream fileStream = new FileInputStream(filePath);
+        ObjectInputStream objectStream = new ObjectInputStream(fileStream);
+
+        employee = (List<T>)objectStream.readObject();
+
+        fileStream.close();
+        objectStream.close();
 
         return employee;
+    }
+
+    /**
+     * Marshall the Given List of {@link T} and saves into File at {@code filePath}
+     * @param filePath full or relative path where List of {@link T}
+     *                 objects will be saved
+     * @param types at least one {@link T} object to save
+     *
+     * @throws {@link JAXBException}
+     *          when creating {@code marshaller} for List of {@link T} or
+     *          when marshalling List of {@link T}
+     * @throws {@link javax.xml.bind.PropertyException}
+     *          if could not set property to {@code marshaller}
+     */
+    public void marshallJAXBObjectToXML(String filePath, T... types) throws JAXBException {
+        Marshaller marshaller = jaxbContext.createMarshaller();
+
+        /**
+         * For Pretty Print of XML
+         */
+        marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+
+        List<T> typeList = new ArrayList<>();
+
+        for(T type: types){
+            typeList.add(type);
+        }
+        deleteIfFileExists(filePath);
+        marshaller.marshal(typeList, new File(filePath));
+    }
+
+    /**
+     * Unmarshells the given file at {@code filePath} into List of {@link T}
+     * @param filePath Path where the file is located
+     *
+     * @return List of {@link T}
+     *
+     * @throws {@link JAXBException}
+     *          while creating {@code unmarshaller} for List of {@link T} or
+     *          when unmarshalling from {@code filePath}
+     */
+    public List<T> unmarshallXMLToJAXBObject(String filePath) throws JAXBException {
+        Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
+
+        return (List<T>)unmarshaller.unmarshal(new File(filePath));
+    }
+
+    /**
+     * deletes the file at {@code filePath} if it exists
+     * @param filePath the path of the file to check
+     */
+    private void deleteIfFileExists(String filePath){
+        File file = new File(filePath);
+
+        if(file.exists()){
+            file.delete();
+        }
     }
 }
