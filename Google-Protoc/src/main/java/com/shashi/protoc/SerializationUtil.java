@@ -1,5 +1,7 @@
 package com.shashi.protoc;
 
+import com.shashi.protoc.bean.Employee;
+import com.shashi.protoc.bean.EmployeeList;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -138,7 +140,7 @@ public class SerializationUtil<T extends Serializable> {
          */
         marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
 
-        List<T> typeList = new ArrayList<>();
+        List<T> typeList = new EmployeeList<T>();
 
         for(T type: types){
             typeList.add(type);

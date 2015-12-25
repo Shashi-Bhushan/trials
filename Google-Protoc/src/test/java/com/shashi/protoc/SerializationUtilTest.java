@@ -46,10 +46,10 @@ public class SerializationUtilTest {
         serializationUtil = new SerializationUtil<Employee>(Employee.class);
 
         try {
-            serializationUtil.serialize(Constants.SERIALIZE_FILE_PATH_MAC, employee);
+            serializationUtil.serialize(Constants.SERIALIZE_FILE_PATH_MAC, employee, employee);
             deSerializedEmployee = serializationUtil.deSerialize(Constants.SERIALIZE_FILE_PATH_MAC);
 
-            serializationUtil.marshallJAXBObjectToXML(Constants.MARSHALL_FILE_PATH_MAC, employee);
+            serializationUtil.marshallJAXBObjectToXML(Constants.MARSHALL_FILE_PATH_MAC, employee, employee);
             unMarshalledEmployee = serializationUtil.unmarshallXMLToJAXBObject(Constants.MARSHALL_FILE_PATH_MAC);
         } catch (IOException e) {
             LOG.error("IOException Occurred while Serializing Testing {}. Message is ", this.getClass(), e);
