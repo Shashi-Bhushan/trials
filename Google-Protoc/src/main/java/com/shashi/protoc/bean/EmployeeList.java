@@ -1,8 +1,6 @@
 package com.shashi.protoc.bean;
 
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlSeeAlso;
+import javax.xml.bind.annotation.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,17 +8,18 @@ import java.util.List;
 /**
  * Created by SBhushan on 12/25/15.
  */
-@XmlRootElement(name="empList")
-@XmlSeeAlso({Employee.class})
-public class EmployeeList<T extends Serializable> extends ArrayList<T> {
-
-    @Override
-    public boolean add(T employee) {
-        return super.add(employee);
-    }
+@XmlRootElement(name="employeesList")
+@XmlAccessorType(XmlAccessType.FIELD)
+public class EmployeeList<T extends Serializable> {
 
     @XmlElement(name="employee")
+    private List<T> employeeList = null;
+
     public List<T> getEmployeeList(){
-        return this;
+        return employeeList;
+    }
+
+    public void setEmployeeList(List<T> employeeList){
+        this.employeeList = employeeList;
     }
 }

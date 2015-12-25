@@ -140,13 +140,16 @@ public class SerializationUtil<T extends Serializable> {
          */
         marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
 
-        List<T> typeList = new EmployeeList<T>();
+        List<T> typeList = new ArrayList<T>();
 
         for(T type: types){
             typeList.add(type);
         }
+        EmployeeList employeeList = new EmployeeList();
+        employeeList.setEmployeeList(typeList);
+
         deleteIfFileExists(filePath);
-        marshaller.marshal(typeList, new File(filePath));
+        marshaller.marshal(employeeList, new File(filePath));
     }
 
     /**
