@@ -11,7 +11,6 @@ import javax.xml.bind.JAXBException;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.Month;
-import java.util.Date;
 import java.util.List;
 
 import static org.junit.Assert.assertTrue;
@@ -32,7 +31,10 @@ public class SerializationUtilTest {
     interface Constants {
         String EMP_NAME = "Shashi";
         String SERIALIZE_FILE_PATH = "/home/shashi/Emp-File.serialize";
+        String SERIALIZE_FILE_PATH_MAC = "/Users/SBhushan/IdeaProjects/Emp-File.serialize";
         String MARSHALL_FILE_PATH="/home/shashi/Emp-File.xml";
+        String MARSHALL_FILE_PATH_MAC ="/Users/SBhushan/IdeaProjects/Emp-File.xml";
+
     }
 
     @Before
@@ -44,13 +46,13 @@ public class SerializationUtilTest {
         serializationUtil = new SerializationUtil<Employee>(Employee.class);
 
         try {
-            serializationUtil.serialize(Constants.SERIALIZE_FILE_PATH, employee);
-            deSerializedEmployee = serializationUtil.deSerialize(Constants.SERIALIZE_FILE_PATH);
+            serializationUtil.serialize(Constants.SERIALIZE_FILE_PATH_MAC, employee);
+            deSerializedEmployee = serializationUtil.deSerialize(Constants.SERIALIZE_FILE_PATH_MAC);
 
-            serializationUtil.marshallJAXBObjectToXML(Constants.MARSHALL_FILE_PATH, employee);
-            unMarshalledEmployee = serializationUtil.unmarshallXMLToJAXBObject(Constants.MARSHALL_FILE_PATH);
+            serializationUtil.marshallJAXBObjectToXML(Constants.MARSHALL_FILE_PATH_MAC, employee);
+            unMarshalledEmployee = serializationUtil.unmarshallXMLToJAXBObject(Constants.MARSHALL_FILE_PATH_MAC);
         } catch (IOException e) {
-            LOG.error("IOException Occurred while Serializing Testing {}. Message is ", this.getClass(), e.getMessage());
+            LOG.error("IOException Occurred while Serializing Testing {}. Message is ", this.getClass(), e);
         } catch (ClassNotFoundException e) {
             LOG.error("ClassNotFoundException Occurred while Serializing Testing {}. Message is ", this.getClass(), e.getMessage());
         } catch (JAXBException e) {
