@@ -9,16 +9,24 @@ import java.util.List;
  */
 @XmlRootElement(name="employees")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class Employees<T extends Serializable> {
+public class Employees {
 
     @XmlElement(name="employee")
-    private List<T> employees = null;
+    private List<Employee> employees = null;
 
-    public List<T> getEmployees(){
+    public List<Employee> getEmployees(){
         return employees;
     }
 
-    public void setEmployees(List<T> employees){
+    public void setEmployees(List<Employee> employees){
         this.employees = employees;
+    }
+
+    public Employee get(int index){
+        return employees.get(index);
+    }
+
+    public int size(){
+        return employees.size();
     }
 }

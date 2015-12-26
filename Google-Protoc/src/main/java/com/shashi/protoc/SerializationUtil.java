@@ -1,5 +1,7 @@
 package com.shashi.protoc;
 
+import com.shashi.protoc.Constants.EmployeeConstants;
+import com.shashi.protoc.bean.Employee;
 import com.shashi.protoc.bean.Employees;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -56,7 +58,7 @@ public class SerializationUtil<T extends Serializable> {
         LOG = LoggerFactory.getLogger(this.returnedClass());
 
         try {
-            jaxbContext = JAXBContext.newInstance(this.returnedClass());
+            jaxbContext = JAXBContext.newInstance(Employees.class);
         } catch (JAXBException cause) {
             LOG.error("Exception Occurred while Creating JAXB Intance of {}. Message is ", this.returnedClass(), cause);
         }
@@ -138,7 +140,7 @@ public class SerializationUtil<T extends Serializable> {
      * @throws {@link javax.xml.bind.PropertyException}
      *          if could not set property to {@code marshaller}
      */
-    public void marshallJAXBObjectToXML(Path filePath, T... types) throws JAXBException, IOException {
+    public void marshallJAXBObjectToXML(Path filePath, Employee... types) throws JAXBException, IOException {
         Marshaller marshaller = jaxbContext.createMarshaller();
 
         /**
@@ -146,9 +148,9 @@ public class SerializationUtil<T extends Serializable> {
          */
         marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
 
-        List<T> typeList = Arrays.asList(types);
+        List<Employee> typeList = Arrays.asList(types);
 
-        Employees<T> employeeList = new Employees<T>();
+        Employees employeeList = new Employees();
         employeeList.setEmployees(typeList);
 
         Files.deleteIfExists(filePath);
@@ -165,10 +167,10 @@ public class SerializationUtil<T extends Serializable> {
      *          while creating {@code unmarshaller} for List of {@link T} or
      *          when unmarshalling from {@code filePath}
      */
-    public List<T> unmarshallXMLToJAXBObject(String filePath) throws JAXBException {
+    public Employees unmarshallXMLToJAXBObject(Path filePath) throws JAXBException {
         Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
 
-        return (List<T>)unmarshaller.unmarshal(new File(filePath));
+        return (Employees)unmarshaller.unmarshal(filePath.toFile());
     }
 
     /**

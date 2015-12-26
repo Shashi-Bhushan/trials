@@ -3,16 +3,13 @@ package com.shashi.protoc;
 import com.shashi.protoc.Constants.EmployeeConstants;
 import com.shashi.protoc.Constants.EmployeeFile;
 import com.shashi.protoc.bean.Employee;
+import com.shashi.protoc.bean.Employees;
 import org.apache.log4j.BasicConfigurator;
 import org.junit.Before;
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import javax.xml.bind.JAXBException;
 import java.io.IOException;
-import java.time.LocalDate;
-import java.time.Month;
 import java.util.List;
 
 import static org.junit.Assert.assertTrue;
@@ -49,12 +46,21 @@ public class SerializationUtilTest {
         assertTrue(deSerializedEmployee.get(0).getRole().equals(EmployeeConstants.employee1.getRole()));
     }
 
-    /**
-     * Test Case checks if the name of the first {@link Employee} is equal to the name that is serialized
-     */
     @Test
-    public void employeeNameEqualTest(){
-//        assertTrue(EmployeeConstants.NAME.equals(deSerializedEmployee.get(0).getName()));
-//        assertTrue(EmployeeConstants.NAME.equals(unMarshalledEmployee.get(0).getName()));
+    public void marshallSingleEmployee() throws IOException, JAXBException {
+        serializationUtil.marshallJAXBObjectToXML(EmployeeFile.MARSHALL_FILE.getPath(), EmployeeConstants.employee1);
+    }
+
+    @Test
+    public void umMarshallSingleEmployee() throws IOException, ClassNotFoundException, JAXBException {
+        serializationUtil.marshallJAXBObjectToXML(EmployeeFile.MARSHALL_FILE.getPath(), EmployeeConstants.employee1);
+        Employees deSerializedEmployee = serializationUtil.unmarshallXMLToJAXBObject(EmployeeFile.MARSHALL_FILE.getPath());
+
+        assertTrue(deSerializedEmployee.size() == 1);
+        assertTrue(deSerializedEmployee.get(0).getId() == EmployeeConstants.employee1.getId());
+        assertTrue(deSerializedEmployee.get(0).getName().equals(EmployeeConstants.employee1.getName()));
+//        assertTrue(deSerializedEmployee.get(0).getAge() == EmployeeConstants.employee1.getAge());
+        assertTrue(deSerializedEmployee.get(0).getGender().equals(EmployeeConstants.employee1.getGender()));
+        assertTrue(deSerializedEmployee.get(0).getRole().equals(EmployeeConstants.employee1.getRole()));
     }
 }

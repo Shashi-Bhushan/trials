@@ -1,9 +1,7 @@
 package com.shashi.protoc.bean;
 
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.Period;
@@ -13,8 +11,8 @@ import java.time.Period;
  * Annotations are for JAX-B
  */
 
-@XmlRootElement(name = "Employee")
-@XmlType(propOrder = {"name", "birthday","role","gender"})
+@XmlRootElement(name = "employee")
+@XmlAccessorType (XmlAccessType.FIELD)
 public class Employee implements Serializable{
 
 	/**
@@ -24,7 +22,7 @@ public class Employee implements Serializable{
 
     private int id;
 	private String name;
-    private LocalDate birthday;
+//    private LocalDate birthday;
     /**
      * Transient Variable not supposed to be Serialized
      * cannot add Transient modifier due to JAXB constraint
@@ -41,7 +39,6 @@ public class Employee implements Serializable{
          **/
     }
 
-    @XmlAttribute
     public int getId() {
         return id;
     }
@@ -60,12 +57,12 @@ public class Employee implements Serializable{
 		return name;
 	}
 
-    public LocalDate getBirthday() {
-        return birthday;
-    }
+//    public LocalDate getBirthday() {
+//        return birthday;
+//    }
 
     public Employee setBirthday(LocalDate birthday) {
-        this.birthday = birthday;
+//        this.birthday = birthday;
 
         /**
          * Set {@code age}
@@ -118,7 +115,7 @@ public class Employee implements Serializable{
         return "Employee{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", birthday=" + birthday +
+//                ", birthday=" + birthday +
                 ", age=" + age +
                 ", role='" + role + '\'' +
                 ", gender=" + gender +
