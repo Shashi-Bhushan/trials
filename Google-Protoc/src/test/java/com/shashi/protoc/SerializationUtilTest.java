@@ -63,4 +63,17 @@ public class SerializationUtilTest {
         assertTrue(deSerializedEmployee.get(0).getGender().equals(EmployeeConstants.employee1.getGender()));
         assertTrue(deSerializedEmployee.get(0).getRole().equals(EmployeeConstants.employee1.getRole()));
     }
+
+    @Test
+    public void marshallMultipleEmployee() throws IOException, JAXBException {
+        serializationUtil.marshallJAXBObjectToXML(EmployeeFile.MARSHALL_FILE.getPath(), EmployeeConstants.employee1, EmployeeConstants.employee2);
+    }
+
+    @Test
+    public void umMarshallMultipleEmployee() throws IOException, ClassNotFoundException, JAXBException {
+        serializationUtil.marshallJAXBObjectToXML(EmployeeFile.MARSHALL_FILE.getPath(), EmployeeConstants.employee1, EmployeeConstants.employee2);
+        Employees deSerializedEmployee = serializationUtil.unmarshallXMLToJAXBObject(EmployeeFile.MARSHALL_FILE.getPath());
+
+        assertTrue(deSerializedEmployee.size() == 2);
+    }
 }
