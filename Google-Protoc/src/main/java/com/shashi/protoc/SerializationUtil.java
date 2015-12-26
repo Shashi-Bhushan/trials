@@ -1,7 +1,6 @@
 package com.shashi.protoc;
 
-import com.shashi.protoc.bean.Employee;
-import com.shashi.protoc.bean.EmployeeList;
+import com.shashi.protoc.bean.Employees;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -10,33 +9,43 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import java.io.*;
-import java.util.ArrayList;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.Arrays;
 import java.util.List;
 
 /**
- * Created by shashi on 21/12/15.
- * {@link SerializationUtil} contains utils for {@link #serialize(String, Serializable[]) Serializing}, {@link #deSerialize(String) De-Serializing},
- * {@link #marshallJAXBObjectToXML(String, Serializable[]) Marshalling} and {@link #unmarshallXMLToJAXBObject(String) Unmarshalling}
+ * {@link SerializationUtil}
+ *          contains utils for {@link #serialize(Path, Serializable[]) Serializing},
+ *          {@link #deSerialize(Path) De-Serializing},
+ *          {@link #marshallJAXBObjectToXML(String, Serializable[]) Marshalling} and
+ *          {@link #unmarshallXMLToJAXBObject(String) Unmarshalling}
  *
- * @param <T> @extends {@link Serializable}  Type of class to Serialize and Deserialize from
+ * @author  Shashi Bhushan
+ *          created on 21/12/15.
+ * @param <T> @extends {@link Serializable}
+ *          Type of class to Serialize and Deserialize from
  */
 public class SerializationUtil<T extends Serializable> {
 
     /**
      * Get Type {@link T} of class
      * due to Type-Erasure in Java
-     * @see <a href="https://docs.oracle.com/javase/tutorial/java/generics/erasure.html">Type Erasure</a>
+     * @see
+     *          <a href="https://docs.oracle.com/javase/tutorial/java/generics/erasure.html">Type Erasure</a>
      */
     private final Class<T> clazz;
     private final Logger LOG ;
     /**
-     * {@link JAXBContext} object for marshalling and unmarshalling of List of {@link T}
+     * {@link JAXBContext}
+     *          object for marshalling and unmarshalling of List of {@link T}
      */
     private JAXBContext jaxbContext;
 
     /**
      * Convenience Constructor saves the Type of class into an instance variable for reference
-     * @param clazz class of Generic type <T>
+     * @param clazz
+     *          class of Generic type <T>
      *
      * @throws {@link JAXBException}
      *          when could not create a new {@link JAXBContext} object for {@link T} class
@@ -48,8 +57,8 @@ public class SerializationUtil<T extends Serializable> {
 
         try {
             jaxbContext = JAXBContext.newInstance(this.returnedClass());
-        } catch (JAXBException e) {
-            LOG.error("Exception Occurred while Creating JAXB Intance of {}. Message is ", this.returnedClass(), e);
+        } catch (JAXBException cause) {
+            LOG.error("Exception Occurred while Creating JAXB Intance of {}. Message is ", this.returnedClass(), cause);
         }
     }
 
@@ -65,23 +74,19 @@ public class SerializationUtil<T extends Serializable> {
      * Serializes the given {@link T} object and save it into a file
      * at {@code filePath}
      * @param filePath File in which {@link T} object is to be saved
+     *        @see {@link Path}
      * @param types {@link T} List to be Serialized
      *
      * @throws {@link IOException}
      *          if the Stream could not be opened or if could not complete writing to {@code filePath}
      */
-    public void serialize(String filePath, T... types) throws IOException {
+    public void serialize(Path filePath, T... types) throws IOException {
 
-        List<T> typeList = new ArrayList<>();
+        List<T> typeList = Arrays.asList(types);
 
-        for(T type: types)
-        {
-            typeList.add(type);
-        }
+        Files.deleteIfExists(filePath);
 
-        // cleans up before putting data
-        deleteIfFileExists(filePath);
-        FileOutputStream fileStream = new FileOutputStream(filePath);
+        FileOutputStream fileStream = new FileOutputStream(filePath.toFile());
         ObjectOutputStream objectStream = new ObjectOutputStream(fileStream);
 
         objectStream.writeObject(typeList);
@@ -95,7 +100,8 @@ public class SerializationUtil<T extends Serializable> {
 
     /**
      * De-Serializes the given {@link T} object from {@code filePath}
-     * @param filePath File from which {@link T} object has to be retrieved
+     * @param filePath
+     *          File from which {@link T} object has to be retrieved
      *
      * @return deserialized {@link T} object from {@code filePath}
      *
@@ -105,11 +111,11 @@ public class SerializationUtil<T extends Serializable> {
      * @throws {@link IOException} and {@link ClassNotFoundException}
      *          when List of {@link T} could not be read from {@code filePath}
      */
-    public List<T> deSerialize(String filePath) throws IOException, ClassNotFoundException {
+    public List<T> deSerialize(Path filePath) throws IOException, ClassNotFoundException {
 
         List<T> employee = null;
 
-        FileInputStream fileStream = new FileInputStream(filePath);
+        FileInputStream fileStream = new FileInputStream(filePath.toFile());
         ObjectInputStream objectStream = new ObjectInputStream(fileStream);
 
         employee = (List<T>)objectStream.readObject();
@@ -132,7 +138,7 @@ public class SerializationUtil<T extends Serializable> {
      * @throws {@link javax.xml.bind.PropertyException}
      *          if could not set property to {@code marshaller}
      */
-    public void marshallJAXBObjectToXML(String filePath, T... types) throws JAXBException {
+    public void marshallJAXBObjectToXML(Path filePath, T... types) throws JAXBException, IOException {
         Marshaller marshaller = jaxbContext.createMarshaller();
 
         /**
@@ -140,16 +146,13 @@ public class SerializationUtil<T extends Serializable> {
          */
         marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
 
-        List<T> typeList = new ArrayList<T>();
+        List<T> typeList = Arrays.asList(types);
 
-        for(T type: types){
-            typeList.add(type);
-        }
-        EmployeeList employeeList = new EmployeeList();
-        employeeList.setEmployeeList(typeList);
+        Employees<T> employeeList = new Employees<T>();
+        employeeList.setEmployees(typeList);
 
-        deleteIfFileExists(filePath);
-        marshaller.marshal(employeeList, new File(filePath));
+        Files.deleteIfExists(filePath);
+        marshaller.marshal(employeeList, filePath.toFile());
     }
 
     /**

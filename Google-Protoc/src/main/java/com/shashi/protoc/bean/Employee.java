@@ -31,7 +31,7 @@ public class Employee implements Serializable{
      */
     @XmlTransient
     private int age;
-    private String role;
+    private Role role;
     private Gender gender;
 
     public Employee(){
@@ -81,11 +81,11 @@ public class Employee implements Serializable{
         return age;
     }
 
-    public String getRole() {
+    public Role getRole() {
         return role;
     }
 
-    public Employee setRole(String role) {
+    public Employee setRole(Role role) {
         this.role = role;
         return this;
     }
@@ -99,9 +99,18 @@ public class Employee implements Serializable{
         return this;
     }
 
-    enum Gender{
+    public enum Gender{
         MALE,
         FEMALE
+    }
+
+    public enum Role{
+        JUNIOR_SOFTWARE_ENGINEER,
+        SOFTWARE_ENGINEER,
+        SENIOR_SOFTWARE_ENGINEER,
+        CONSULTANT,
+        SENIOR_CONSULTANT,
+        ARCHITECT
     }
 
     @Override

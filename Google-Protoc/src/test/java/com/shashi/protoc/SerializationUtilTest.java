@@ -1,5 +1,7 @@
 package com.shashi.protoc;
 
+import com.shashi.protoc.Constants.EmployeeConstants;
+import com.shashi.protoc.Constants.EmployeeFile;
 import com.shashi.protoc.bean.Employee;
 import org.apache.log4j.BasicConfigurator;
 import org.junit.Before;
@@ -20,53 +22,31 @@ import static org.junit.Assert.assertTrue;
  */
 public class SerializationUtilTest {
 
-    private static Employee employee;
-    private static List<Employee> deSerializedEmployee;
-    private static List<Employee> unMarshalledEmployee;
     private static SerializationUtil<Employee> serializationUtil;
 
-    private static final Logger LOG = LoggerFactory.getLogger(SerializationUtilTest.class);
-
-    // Provide Abstraction for Constants used
-    interface Constants {
-        String EMP_NAME = "Shashi";
-        String SERIALIZE_FILE_PATH = "/home/shashi/Emp-File.serialize";
-        String SERIALIZE_FILE_PATH_MAC = "/Users/SBhushan/IdeaProjects/Emp-File.serialize";
-        String MARSHALL_FILE_PATH="/home/shashi/Emp-File.xml";
-        String MARSHALL_FILE_PATH_MAC ="/Users/SBhushan/IdeaProjects/Emp-File.xml";
-
-    }
-
     @Before
-    public void setUp(){
+    public void setUp() {
         BasicConfigurator.configure();
-        LocalDate birthday = LocalDate.of(1988, Month.DECEMBER , 4);
-        employee = new Employee().setId(1).setName(Constants.EMP_NAME).setBirthday(birthday);
 
-        serializationUtil = new SerializationUtil<Employee>(Employee.class);
-
-        try {
-            serializationUtil.serialize(Constants.SERIALIZE_FILE_PATH_MAC, employee, employee);
-            deSerializedEmployee = serializationUtil.deSerialize(Constants.SERIALIZE_FILE_PATH_MAC);
-
-            serializationUtil.marshallJAXBObjectToXML(Constants.MARSHALL_FILE_PATH_MAC, employee, employee);
-            unMarshalledEmployee = serializationUtil.unmarshallXMLToJAXBObject(Constants.MARSHALL_FILE_PATH_MAC);
-        } catch (IOException e) {
-            LOG.error("IOException Occurred while Serializing Testing {}. Message is ", this.getClass(), e);
-        } catch (ClassNotFoundException e) {
-            LOG.error("ClassNotFoundException Occurred while Serializing Testing {}. Message is ", this.getClass(), e.getMessage());
-        } catch (JAXBException e) {
-            LOG.error("Exception Occurred while Marshelling Testing {}. Message is ", this.getClass(), e);
-        }
+        serializationUtil = new SerializationUtil<>(Employee.class);
     }
 
-    /**
-     * Test Case checks that atleast one employee object is there in List of {@link Employee}
-     */
     @Test
-    public void employeeNotNullTest(){
-//        assertTrue(deSerializedEmployee.size() != 0);
-//        assertTrue(unMarshalledEmployee.size() != 0);
+    public void serializeSingleEmployee() throws IOException {
+        serializationUtil.serialize(EmployeeFile.SERIALIZE_FILE.getPath(), EmployeeConstants.employee1);
+    }
+
+    @Test
+    public void deSerializesSingleEmployee() throws IOException, ClassNotFoundException {
+        serializationUtil.serialize(EmployeeFile.SERIALIZE_FILE.getPath(), EmployeeConstants.employee1);
+        List<Employee> deSerializedEmployee = serializationUtil.deSerialize(EmployeeFile.SERIALIZE_FILE.getPath());
+
+        assertTrue(deSerializedEmployee.size() == 1);
+        assertTrue(deSerializedEmployee.get(0).getId() == EmployeeConstants.employee1.getId());
+        assertTrue(deSerializedEmployee.get(0).getName().equals(EmployeeConstants.employee1.getName()));
+        assertTrue(deSerializedEmployee.get(0).getAge() == EmployeeConstants.employee1.getAge());
+        assertTrue(deSerializedEmployee.get(0).getGender().equals(EmployeeConstants.employee1.getGender()));
+        assertTrue(deSerializedEmployee.get(0).getRole().equals(EmployeeConstants.employee1.getRole()));
     }
 
     /**
@@ -74,7 +54,7 @@ public class SerializationUtilTest {
      */
     @Test
     public void employeeNameEqualTest(){
-//        assertTrue(Constants.EMP_NAME.equals(deSerializedEmployee.get(0).getName()));
-//        assertTrue(Constants.EMP_NAME.equals(unMarshalledEmployee.get(0).getName()));
+//        assertTrue(EmployeeConstants.NAME.equals(deSerializedEmployee.get(0).getName()));
+//        assertTrue(EmployeeConstants.NAME.equals(unMarshalledEmployee.get(0).getName()));
     }
 }
