@@ -20,8 +20,8 @@ import java.util.List;
  * {@link SerializationUtil}
  *          contains utils for {@link #serialize(Path, Serializable[]) Serializing},
  *          {@link #deSerialize(Path) De-Serializing},
- *          {@link #marshallJAXBObjectToXML(String, Serializable[]) Marshalling} and
- *          {@link #unmarshallXMLToJAXBObject(String) Unmarshalling}
+ *          {@link #marshallJAXBObjectToXML(Path, Employee[]) Marshalling} and
+ *          {@link #unmarshallXMLToJAXBObject(Path) Unmarshalling}
  *
  * @author  Shashi Bhushan
  *          created on 21/12/15.

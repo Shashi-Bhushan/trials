@@ -21,6 +21,7 @@ public interface EmployeeConstants {
             .setBirthday(LocalDate.of(1980, Month.JANUARY,2))
             .setGender(Employee.Gender.FEMALE)
             .setRole(Employee.Role.CONSULTANT);
+
     String[] SERIALIZE_FILE_PATHS = {
             "/home/shashi/Emp-File.serialize",
             "/Users/SBhushan/IdeaProjects/Emp-File.serialize"

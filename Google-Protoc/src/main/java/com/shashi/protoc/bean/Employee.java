@@ -1,7 +1,6 @@
 package com.shashi.protoc.bean;
 
 import javax.xml.bind.annotation.*;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.Period;
@@ -22,7 +21,7 @@ public class Employee implements Serializable,Comparable<Employee>{
 
     private int id;
 	private String name;
-//    private LocalDate birthday;
+    private LocalDate birthday;
     /**
      * Transient Variable not supposed to be Serialized
      * cannot add Transient modifier due to JAXB constraint
@@ -57,12 +56,12 @@ public class Employee implements Serializable,Comparable<Employee>{
 		return name;
 	}
 
-//    public LocalDate getBirthday() {
-//        return birthday;
-//    }
+    public LocalDate getBirthday() {
+        return birthday;
+    }
 
     public Employee setBirthday(LocalDate birthday) {
-//        this.birthday = birthday;
+        this.birthday = birthday;
 
         /**
          * Set {@code age}
@@ -115,7 +114,7 @@ public class Employee implements Serializable,Comparable<Employee>{
         return "Employee{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-//                ", birthday=" + birthday +
+                ", birthday=" + birthday +
                 ", age=" + age +
                 ", role='" + role + '\'' +
                 ", gender=" + gender +
@@ -124,6 +123,9 @@ public class Employee implements Serializable,Comparable<Employee>{
 
     @Override
     public int compareTo(Employee compareWith) {
+        /**
+         * Not using Birthday as of now to compare
+         */
         if(this.id == compareWith.getId()
                 && this.name.equals(compareWith.getName())
                 && this.role.equals(compareWith.getRole())

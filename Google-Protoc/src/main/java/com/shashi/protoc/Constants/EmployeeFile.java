@@ -6,13 +6,33 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 /**
- * Created by shashi on 26/12/15.
+ * Enumeration for valid Serialized and Marshalled File Paths
+ * Respectively. Finds which file path is valid for the current
+ * OS and assings it to {@code path}
+ *
+ * @author  Shashi Bhushan
+ *          created on 12/25/15.
  */
 public enum EmployeeFile {
-    SERIALIZE_FILE(EmployeeConstants.SERIALIZE_FILE_PATHS),MARSHALL_FILE(EmployeeConstants.MARSHALL_FILE_PATHS);
+    /**
+     * Serialized File Path Enumeration
+     */
+    SERIALIZE_FILE(EmployeeConstants.SERIALIZE_FILE_PATHS),
+    /**
+     * Marshelled File Path Enumeration
+     */
+    MARSHALL_FILE(EmployeeConstants.MARSHALL_FILE_PATHS);
 
     Path path;
 
+    /**
+     * Constructor which takes an array of {@code paths} and
+     * iterate over it to find which one of them is the valid
+     * file path for the current OS.
+     * @param paths
+     *          Array of paths from which one should be valid
+     *          for Current OS
+     */
     EmployeeFile(String[] paths){
         for(String path: paths){
             Path filePath = Paths.get(path);
@@ -23,6 +43,11 @@ public enum EmployeeFile {
         }
     }
 
+    /**
+     * Getter for {@code path} i.e. valid path for the Current
+     * Enumeration
+     * @return
+     */
     public Path getPath(){
         return this.path;
     }
