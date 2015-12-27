@@ -13,7 +13,7 @@ import java.time.Period;
 
 @XmlRootElement(name = "employee")
 @XmlAccessorType (XmlAccessType.FIELD)
-public class Employee implements Serializable{
+public class Employee implements Serializable,Comparable<Employee>{
 
 	/**
 	 * This Serial version UID will change once any new version of class has been created
@@ -27,7 +27,7 @@ public class Employee implements Serializable{
      * Transient Variable not supposed to be Serialized
      * cannot add Transient modifier due to JAXB constraint
      */
-    @XmlTransient
+//    @XmlTransient
     private int age;
     private Role role;
     private Gender gender;
@@ -120,5 +120,18 @@ public class Employee implements Serializable{
                 ", role='" + role + '\'' +
                 ", gender=" + gender +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Employee compareWith) {
+        if(this.id == compareWith.getId()
+                && this.name.equals(compareWith.getName())
+                && this.role.equals(compareWith.getRole())
+                && this.gender.equals(compareWith.getGender())
+                && this.age == compareWith.getAge()
+                ){
+            return 0;
+        }
+        return 1;
     }
 }
