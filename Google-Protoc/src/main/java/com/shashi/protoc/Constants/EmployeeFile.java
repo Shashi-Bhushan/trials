@@ -19,7 +19,7 @@ public enum EmployeeFile {
      */
     SERIALIZE_FILE(EmployeeConstants.SERIALIZE_FILE_PATHS),
     /**
-     * Marshelled File Path Enumeration
+     * Marshalled File Path Enumeration
      */
     MARSHALL_FILE(EmployeeConstants.MARSHALL_FILE_PATHS);
 

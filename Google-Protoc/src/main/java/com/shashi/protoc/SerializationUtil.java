@@ -1,6 +1,5 @@
 package com.shashi.protoc;
 
-import com.shashi.protoc.Constants.EmployeeConstants;
 import com.shashi.protoc.bean.Employee;
 import com.shashi.protoc.bean.Employees;
 import org.slf4j.Logger;
