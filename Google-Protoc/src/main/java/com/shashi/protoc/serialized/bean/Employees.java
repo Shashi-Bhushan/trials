@@ -1,4 +1,4 @@
-package com.shashi.protoc.bean;
+package com.shashi.protoc.serialized.bean;
 
 import javax.xml.bind.annotation.*;
 import java.util.List;

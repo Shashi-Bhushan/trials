@@ -1,6 +1,6 @@
-package com.shashi.protoc.Constants;
+package com.shashi.protoc.serialized.Constants;
 
-import com.shashi.protoc.bean.Employee;
+import com.shashi.protoc.serialized.bean.Employee;
 
 import java.time.LocalDate;
 import java.time.Month;

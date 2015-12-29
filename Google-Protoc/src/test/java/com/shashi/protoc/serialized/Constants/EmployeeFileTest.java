@@ -1,4 +1,4 @@
-package com.shashi.protoc.Constants;
+package com.shashi.protoc.serialized.Constants;
 
 import org.junit.Test;
 

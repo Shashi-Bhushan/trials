@@ -1,7 +1,7 @@
-package com.shashi.protoc;
+package com.shashi.protoc.serialized;
 
-import com.shashi.protoc.bean.Employee;
-import com.shashi.protoc.bean.Employees;
+import com.shashi.protoc.serialized.bean.Employee;
+import com.shashi.protoc.serialized.bean.Employees;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
