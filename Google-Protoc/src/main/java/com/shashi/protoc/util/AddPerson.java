@@ -1,10 +1,11 @@
 package com.shashi.protoc.util;
 
 import com.shashi.protoc.generated.AddressBookProtos;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.PrintStream;
+import java.io.*;
+import java.nio.file.Path;
 
 /**
  * @author Shashi Bhushan
@@ -12,6 +13,9 @@ import java.io.PrintStream;
  *         For Google-Protoc
  */
 public class AddPerson {
+
+    private static final Logger LOG =
+            LoggerFactory.getLogger(AddPerson.class);
 
     /**
      * Fills in a Person Message based on User Input
@@ -55,13 +59,16 @@ public class AddPerson {
 
             switch(type){
                 case "mobile":
-                    phoneNumberBuilder.setType(AddressBookProtos.Person.PhoneType.MOBILE);
+                    phoneNumberBuilder.setType(
+                            AddressBookProtos.Person.PhoneType.MOBILE);
                     break;
                 case "home":
-                    phoneNumberBuilder.setType(AddressBookProtos.Person.PhoneType.HOME);
+                    phoneNumberBuilder.setType(
+                            AddressBookProtos.Person.PhoneType.HOME);
                     break;
                 case "work":
-                    phoneNumberBuilder.setType(AddressBookProtos.Person.PhoneType.WORK);
+                    phoneNumberBuilder.setType(
+                            AddressBookProtos.Person.PhoneType.WORK);
                     break;
                 default:
                     stdout.print("Unknown Phone Type. Using Default.");
@@ -71,5 +78,27 @@ public class AddPerson {
         }
 
         return personBuilder.build();
+    }
+
+    public void addPersonToFile(Path protoFile, BufferedReader stdin,
+                                PrintStream stdout) throws IOException {
+        AddressBookProtos.AddressBook.Builder addressBookBuilder =
+                AddressBookProtos.AddressBook.newBuilder();
+
+        // Read an Existing Address Book if it exists
+        try {
+            addressBookBuilder.mergeFrom(new FileInputStream(protoFile.toFile()));
+        } catch (IOException cause) {
+            // create one if Doesn't exists
+            LOG.error("{} : path does not exists. Creating File.", protoFile.toString());
+        }
+
+        // Write to File now
+        addressBookBuilder.addPerson(promptForAddress(stdin, stdout));
+
+        FileOutputStream outputStream = new FileOutputStream(protoFile.toFile());
+        addressBookBuilder.build().writeTo(outputStream);
+
+        outputStream.close();
     }
 }
