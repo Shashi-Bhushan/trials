@@ -25,7 +25,14 @@ public class FilesTest {
         Path path = Files.JAXB_FILE.getPath();
 
         assertTrue(java.nio.file.Files.exists(path, LinkOption.NOFOLLOW_LINKS));
+//        System.out.println("path : " + path.getFileName());
     }
 
+    @Test
+    public void protocFilePathExists(){
+        Path path = Files.PROTOC_FILE.getPath();
+
+        assertTrue(java.nio.file.Files.exists(path, LinkOption.NOFOLLOW_LINKS));
+    }
 
 }

@@ -20,9 +20,16 @@ public class FileUtility {
     /**
      * Valid Marshalled File paths Array
      */
-    private static final String[] MARSHALL_FILE_PATHS = {
+    private static final String[] XML_FILE_PATHS = {
             "/home/shashi/Emp-File.xml",
             "/Users/SBhushan/IdeaProjects/Emp-File.xml"
+    };
+    /**
+     * Valid Marshalled File paths Array
+     */
+    private static final String[] PROTOC_FILE_PATHS = {
+            "/home/shashi/Emp-File.protoc",
+            "/Users/SBhushan/IdeaProjects/Emp-File.protoc"
     };
 
     /**
@@ -41,7 +48,11 @@ public class FileUtility {
         /**
          * Marshalled File Path Enumeration
          */
-        JAXB_FILE(MARSHALL_FILE_PATHS);
+        JAXB_FILE(XML_FILE_PATHS),
+        /**
+         * Protoc File Path Enumeration
+         */
+        PROTOC_FILE(PROTOC_FILE_PATHS);
 
         Path path;
 
@@ -59,6 +70,13 @@ public class FileUtility {
 
                 if(java.nio.file.Files.exists(filePath, LinkOption.NOFOLLOW_LINKS)){
                     this.path = filePath;
+                    break;
+                }
+                else{
+                    String file = filePath.toString();
+                    Path directoryPath = Paths.get(file.substring(0, file.lastIndexOf('/')));
+
+                    java.nio.file.Files.exists(directoryPath, LinkOption.NOFOLLOW_LINKS);
                     break;
                 }
             }
