@@ -5,7 +5,7 @@ import com.shashi.files.FileUtility.Files;
 import com.shashi.jaxb.bean.Employee;
 import com.shashi.jaxb.bean.Employees;
 import org.apache.log4j.BasicConfigurator;
-import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import javax.xml.bind.JAXBException;
@@ -21,8 +21,8 @@ public class JAXBUtilTest {
 
     private static JAXBUtil<Employee> jaxbUtil;
 
-    @Before
-    public void setUp() {
+    @BeforeClass
+    public static void setUp() {
         BasicConfigurator.configure();
 
         jaxbUtil = new JAXBUtil<>(Employee.class);
@@ -56,7 +56,8 @@ public class JAXBUtilTest {
 
         assertTrue(employees.size() == 2);
         assertTrue(employees.get(0).compareTo(EmployeeConstants.employee1) == 0);
-        assertFalse(employees.get(0).compareTo(EmployeeConstants.employee2) == 0);
         assertTrue(employees.get(1).compareTo(EmployeeConstants.employee2) == 0);
+
+        assertFalse(employees.get(0).compareTo(EmployeeConstants.employee2) == 0);
     }
 }
