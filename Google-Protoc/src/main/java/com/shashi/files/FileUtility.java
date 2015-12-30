@@ -68,15 +68,12 @@ public class FileUtility {
             for(String path: paths){
                 Path filePath = Paths.get(path);
 
-                if(java.nio.file.Files.exists(filePath, LinkOption.NOFOLLOW_LINKS)){
-                    this.path = filePath;
-                    break;
-                }
-                else{
-                    String file = filePath.toString();
-                    Path directoryPath = Paths.get(file.substring(0, file.lastIndexOf('/')));
+                String file = filePath.toString();
+                Path directoryPath = Paths.get(file.substring(0, file.lastIndexOf('/')));
 
-                    java.nio.file.Files.exists(directoryPath, LinkOption.NOFOLLOW_LINKS);
+                if(java.nio.file.Files.exists(filePath, LinkOption.NOFOLLOW_LINKS)
+                        || java.nio.file.Files.exists(directoryPath, LinkOption.NOFOLLOW_LINKS)){
+                    this.path = filePath;
                     break;
                 }
             }
