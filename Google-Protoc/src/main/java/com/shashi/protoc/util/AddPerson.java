@@ -18,75 +18,6 @@ public class AddPerson {
             LoggerFactory.getLogger(AddPerson.class);
 
     /**
-     * Fills in a Person Message based on User Input
-     * @return
-     *          {@link com.shashi.protoc.generated.AddressBookProtos.Person}
-     *          object with the User entered properties
-     */
-    private static AddressBookProtos.Person promptForAddress(BufferedReader stdin,
-                                                            PrintStream stdout) throws IOException{
-
-        AddressBookProtos.Person.Builder personBuilder = AddressBookProtos.Person.newBuilder();
-
-        stdout.print("Enter Person ID:"
-                + System.getProperty("line.separator"));
-        personBuilder.setId(Integer.valueOf(stdin.readLine()));
-
-        stdout.print("Enter Name:"
-                + System.getProperty("line.separator"));
-        personBuilder.setName(stdin.readLine());
-
-        stdout.print("Enter Email Address (blank for none):"
-                + System.getProperty("line.separator"));
-        String email = stdin.readLine();
-
-        if(email.length() > 0){
-            personBuilder.setEmail(email);
-        }
-
-        while(true){
-            stdout.print("Enter a Phone Number (or leave blank to finish):"
-                    + System.getProperty("line.separator"));
-
-            String number = stdin.readLine();
-
-            if(number == null || number.length() == 0){
-                break;
-            }
-
-            AddressBookProtos.Person.PhoneNumber.Builder phoneNumberBuilder =
-                    AddressBookProtos.Person.PhoneNumber.newBuilder().setNumber(number);
-
-            stdout.print("is this a mobile, home or work phone?"
-                    + System.getProperty("line.separator"));
-
-            String type = stdin.readLine();
-
-            switch(type){
-                case "mobile":
-                    phoneNumberBuilder.setType(
-                            AddressBookProtos.Person.PhoneType.MOBILE);
-                    break;
-                case "home":
-                    phoneNumberBuilder.setType(
-                            AddressBookProtos.Person.PhoneType.HOME);
-                    break;
-                case "work":
-                    phoneNumberBuilder.setType(
-                            AddressBookProtos.Person.PhoneType.WORK);
-                    break;
-                default:
-                    stdout.print("Unknown Phone Type. Using Default."
-                            + System.getProperty("line.separator"));
-            }
-
-            personBuilder.addNumber(phoneNumberBuilder);
-        }
-
-        return personBuilder.build();
-    }
-
-    /**
      * Adds the {@link com.shashi.protoc.generated.AddressBookProtos.Person}
      * object to {@code protoFile}, taking input from {@code input} and
      * sending output to {@code output}
@@ -110,18 +41,110 @@ public class AddPerson {
         try {
             addressBookBuilder.mergeFrom(new FileInputStream(protoFile.toFile()));
         } catch (IOException cause) {
-            // create one if Doesn't exists
             LOG.error("{} : path does not exists. Creating File.",
                     protoFile.toString());
         }
 
         // Write to File now
-        addressBookBuilder.addPerson(promptForAddress(input, output));
+        addressBookBuilder.addPerson(promptForPersonDetails(input, output));
 
         FileOutputStream outputStream = new FileOutputStream(protoFile.toFile());
         addressBookBuilder.build().writeTo(outputStream);
 
         LOG.info("Printed to File" + System.getProperty("line.separator"));
         outputStream.close();
+    }
+
+    /**
+     * Fills in a Person Message based on User Input
+     *
+     * @param input
+     *          Take Input from this object
+     * @param output
+     *          Prints output to this object
+     * @return
+     *          {@link com.shashi.protoc.generated.AddressBookProtos.Person}
+     *          object with the User entered properties
+     * @throws IOException
+     *          When reading From {@code input}
+     */
+    private static AddressBookProtos.Person promptForPersonDetails(BufferedReader input,
+                                                     PrintStream output) throws IOException{
+
+        AddressBookProtos.Person.Builder personBuilder = AddressBookProtos.Person.newBuilder();
+
+        output.print("Enter Person ID:"
+                + System.getProperty("line.separator"));
+        personBuilder.setId(Integer.valueOf(input.readLine()));
+
+        output.print("Enter Name:"
+                + System.getProperty("line.separator"));
+        personBuilder.setName(input.readLine());
+
+        output.print("Enter Email Address (blank for none):"
+                + System.getProperty("line.separator"));
+        String email = input.readLine();
+
+        if(email.length() > 0){
+            personBuilder.setEmail(email);
+        }
+
+        addNumberToBuilder(personBuilder, input, output);
+
+        return personBuilder.build();
+    }
+
+    /**
+     * Adds Numbers To {@link com.shashi.protoc.generated.AddressBookProtos.Person}
+     * object's Builder
+     * @param personBuilder
+     *          Builder to which numbers to add
+     * @param input
+     * \        Input from which to read numbers and their type
+     * @param output
+     *          Prints output to
+     * @throws IOException
+     *          While reading from input
+     */
+    private static void addNumberToBuilder(AddressBookProtos.Person.Builder personBuilder,
+                                           BufferedReader input, PrintStream output) throws IOException {
+        while(true){
+            output.print("Enter a Phone Number (or leave blank to finish):"
+                    + System.getProperty("line.separator"));
+
+            String number = input.readLine();
+
+            if(number == null || number.length() == 0){
+                break;
+            }
+
+            AddressBookProtos.Person.PhoneNumber.Builder phoneNumberBuilder =
+                    AddressBookProtos.Person.PhoneNumber.newBuilder().setNumber(number);
+
+            output.print("is this a mobile, home or work phone?"
+                    + System.getProperty("line.separator"));
+
+            String type = input.readLine();
+
+            switch(type){
+                case "mobile":
+                    phoneNumberBuilder.setType(
+                            AddressBookProtos.Person.PhoneType.MOBILE);
+                    break;
+                case "home":
+                    phoneNumberBuilder.setType(
+                            AddressBookProtos.Person.PhoneType.HOME);
+                    break;
+                case "work":
+                    phoneNumberBuilder.setType(
+                            AddressBookProtos.Person.PhoneType.WORK);
+                    break;
+                default:
+                    output.print("Unknown Phone Type. Using Default."
+                            + System.getProperty("line.separator"));
+            }
+
+            personBuilder.addNumber(phoneNumberBuilder);
+        }
     }
 }

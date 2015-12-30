@@ -8,6 +8,8 @@ import org.junit.Test;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.PrintStream;
+import java.nio.file.Path;
 
 /**
  * @author Shashi Bhushan
@@ -16,11 +18,22 @@ import java.io.IOException;
  */
 public class AddPersonTest {
 
+    /**
+     * Setting up Log4j Framework properly
+     */
     @BeforeClass
     public static void setUp() {
         BasicConfigurator.configure();
     }
 
+    /**
+     * Reads user inputs from CommandLineInput.txt file
+     * and passes to {@link AddPerson#addPersonToFile(Path, BufferedReader, PrintStream)}
+     *
+     * @throws IOException
+     *          if CommandLineInput.txt is not found in specified path or
+     *          if could not add Person to Proto File
+     */
     @Test
     public void addPersonFromFile() throws IOException {
         BufferedReader reader = new BufferedReader(
