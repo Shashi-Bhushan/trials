@@ -1,6 +1,5 @@
 package com.shashi.files;
 
-import java.nio.file.Files;
 import java.nio.file.LinkOption;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -10,18 +9,18 @@ import java.nio.file.Paths;
  *         Created on 30/12/15.
  *         For Google-Protoc
  */
-public interface FileUtility {
+public class FileUtility {
     /**
      * Valid Serialized File paths Array
      */
-    String[] SERIALIZE_FILE_PATHS = {
+    private static final String[] SERIALIZE_FILE_PATHS = {
             "/home/shashi/Emp-File.serialize",
             "/Users/SBhushan/IdeaProjects/Emp-File.serialize"
     };
     /**
      * Valid Marshalled File paths Array
      */
-    String[] MARSHALL_FILE_PATHS = {
+    private static final String[] MARSHALL_FILE_PATHS = {
             "/home/shashi/Emp-File.xml",
             "/Users/SBhushan/IdeaProjects/Emp-File.xml"
     };
@@ -34,16 +33,15 @@ public interface FileUtility {
      * @author  Shashi Bhushan
      *          created on 12/25/15.
      */
-    public enum EmployeeFile {
+    public enum Files {
         /**
          * Serialized File Path Enumeration
          */
         SERIALIZE_FILE(SERIALIZE_FILE_PATHS),
         /**
          * Marshalled File Path Enumeration
-         * TODO: Rename it to JAXB FIle
          */
-        MARSHALL_FILE(MARSHALL_FILE_PATHS);
+        JAXB_FILE(MARSHALL_FILE_PATHS);
 
         Path path;
 
@@ -55,11 +53,11 @@ public interface FileUtility {
          *          Array of paths from which one should be valid
          *          for Current OS
          */
-        EmployeeFile(String[] paths){
+        Files(String[] paths){
             for(String path: paths){
                 Path filePath = Paths.get(path);
 
-                if(Files.exists(filePath, LinkOption.NOFOLLOW_LINKS)){
+                if(java.nio.file.Files.exists(filePath, LinkOption.NOFOLLOW_LINKS)){
                     this.path = filePath;
                     break;
                 }

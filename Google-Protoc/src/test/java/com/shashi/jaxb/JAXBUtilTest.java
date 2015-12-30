@@ -1,7 +1,7 @@
 package com.shashi.jaxb;
 
 import com.shashi.jaxb.Constants.EmployeeConstants;
-import com.shashi.files.FileUtility.EmployeeFile;
+import com.shashi.files.FileUtility.Files;
 import com.shashi.jaxb.bean.Employee;
 import com.shashi.jaxb.bean.Employees;
 import org.apache.log4j.BasicConfigurator;
@@ -30,14 +30,14 @@ public class JAXBUtilTest {
 
     @Test
     public void marshallSingleEmployee() throws IOException, JAXBException {
-        jaxbUtil.marshallJAXBObjectToXML(EmployeeFile.MARSHALL_FILE.getPath(), EmployeeConstants.employee1);
+        jaxbUtil.marshallJAXBObjectToXML(Files.JAXB_FILE.getPath(), EmployeeConstants.employee1);
     }
 
     @Test
     public void umMarshallSingleEmployee() throws IOException, ClassNotFoundException, JAXBException {
-        jaxbUtil.marshallJAXBObjectToXML(EmployeeFile.MARSHALL_FILE.getPath(), EmployeeConstants.employee1);
+        jaxbUtil.marshallJAXBObjectToXML(Files.JAXB_FILE.getPath(), EmployeeConstants.employee1);
 
-        Employees employees = jaxbUtil.unmarshallXMLToJAXBObject(EmployeeFile.MARSHALL_FILE.getPath());
+        Employees employees = jaxbUtil.unmarshallXMLToJAXBObject(Files.JAXB_FILE.getPath());
 
         assertTrue(employees.size() == 1);
         assertTrue(employees.get(0).compareTo(EmployeeConstants.employee1) == 0);
@@ -45,14 +45,14 @@ public class JAXBUtilTest {
 
     @Test
     public void marshallMultipleEmployee() throws IOException, JAXBException {
-        jaxbUtil.marshallJAXBObjectToXML(EmployeeFile.MARSHALL_FILE.getPath(), EmployeeConstants.employee1, EmployeeConstants.employee2);
+        jaxbUtil.marshallJAXBObjectToXML(Files.JAXB_FILE.getPath(), EmployeeConstants.employee1, EmployeeConstants.employee2);
     }
 
     @Test
     public void umMarshallMultipleEmployee() throws IOException, ClassNotFoundException, JAXBException {
-        jaxbUtil.marshallJAXBObjectToXML(EmployeeFile.MARSHALL_FILE.getPath(), EmployeeConstants.employee1, EmployeeConstants.employee2);
+        jaxbUtil.marshallJAXBObjectToXML(Files.JAXB_FILE.getPath(), EmployeeConstants.employee1, EmployeeConstants.employee2);
 
-        Employees employees = jaxbUtil.unmarshallXMLToJAXBObject(EmployeeFile.MARSHALL_FILE.getPath());
+        Employees employees = jaxbUtil.unmarshallXMLToJAXBObject(Files.JAXB_FILE.getPath());
 
         assertTrue(employees.size() == 2);
         assertTrue(employees.get(0).compareTo(EmployeeConstants.employee1) == 0);

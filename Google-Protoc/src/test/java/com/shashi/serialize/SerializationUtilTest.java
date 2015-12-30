@@ -9,7 +9,7 @@ import org.junit.Test;
 import java.io.IOException;
 import java.util.List;
 
-import com.shashi.files.FileUtility.EmployeeFile;
+import com.shashi.files.FileUtility.Files;
 
 import static org.junit.Assert.assertTrue;
 
@@ -29,13 +29,13 @@ public class SerializationUtilTest {
 
     @Test
     public void serializeSingleEmployee() throws IOException {
-        serializationUtil.serialize(EmployeeFile.SERIALIZE_FILE.getPath(), EmployeeConstants.employee1);
+        serializationUtil.serialize(Files.SERIALIZE_FILE.getPath(), EmployeeConstants.employee1);
     }
 
     @Test
     public void deSerializesSingleEmployee() throws IOException, ClassNotFoundException {
-        serializationUtil.serialize(EmployeeFile.SERIALIZE_FILE.getPath(), EmployeeConstants.employee1);
-        List<Employee> employees = serializationUtil.deSerialize(EmployeeFile.SERIALIZE_FILE.getPath());
+        serializationUtil.serialize(Files.SERIALIZE_FILE.getPath(), EmployeeConstants.employee1);
+        List<Employee> employees = serializationUtil.deSerialize(Files.SERIALIZE_FILE.getPath());
 
         assertTrue(employees.size() == 1);
         assertTrue(employees.get(0).compareTo(EmployeeConstants.employee1) == 0);
