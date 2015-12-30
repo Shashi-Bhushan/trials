@@ -1,32 +1,26 @@
-package com.shashi.serialized.bean;
+package com.shashi.jaxb.bean;
 
 import javax.xml.bind.annotation.*;
-import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.Period;
 
 /**
- * Converting the same to XML using JAX-B
- * Annotations are for JAX-B
+ * {@link Employee}
+ *          Convert the Employee Object to XML using JAX-B
+ *          Annotations are JAX-B Annotations
  */
 
 @XmlRootElement(name = "employee")
 @XmlAccessorType (XmlAccessType.FIELD)
-public class Employee implements Serializable,Comparable<Employee>{
-
-	/**
-	 * This Serial version UID will change once any new version of class has been created
-	 */
-	private static final long serialVersionUID = 1L;
+public class Employee implements Comparable<Employee>{
 
     private int id;
 	private String name;
-//    private LocalDate birthday;
     /**
      * Transient Variable not supposed to be Serialized
      * cannot add Transient modifier due to JAXB constraint
      */
-//    @XmlTransient
+    @XmlTransient
     private int age;
     private Role role;
     private Gender gender;
@@ -56,13 +50,7 @@ public class Employee implements Serializable,Comparable<Employee>{
 		return name;
 	}
 
-//    public LocalDate getBirthday() {
-//        return birthday;
-//    }
-
     public Employee setBirthday(LocalDate birthday) {
-//        this.birthday = birthday;
-
         /**
          * Set {@code age}
          */
@@ -114,23 +102,29 @@ public class Employee implements Serializable,Comparable<Employee>{
         return "Employee{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-//                ", birthday=" + birthday +
                 ", age=" + age +
                 ", role='" + role + '\'' +
                 ", gender=" + gender +
                 '}';
     }
 
+    /**
+     * compares the {@link Employee} object to the given object
+     * on the basis of {@code id}, {@code name}, {@code Role} &
+     * {@code Gender}
+     *
+     * @param compareWith
+     *          {@link Employee} object to compare with
+     * @return
+     *          {@code int} value specifying if objects are equal
+     *          return zero if both are equal otherwise one
+     */
     @Override
     public int compareTo(Employee compareWith) {
-        /**
-         * Not using Birthday as of now to compare
-         */
         if(this.id == compareWith.getId()
                 && this.name.equals(compareWith.getName())
                 && this.role.equals(compareWith.getRole())
                 && this.gender.equals(compareWith.getGender())
-                && this.age == compareWith.getAge()
                 ){
             return 0;
         }

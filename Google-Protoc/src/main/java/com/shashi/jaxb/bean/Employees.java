@@ -1,4 +1,4 @@
-package com.shashi.serialized.bean;
+package com.shashi.jaxb.bean;
 
 import javax.xml.bind.annotation.*;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Class provides a wrapper for List of {@link Employee} via
  * composition. Also, provides access to some handy methods
- * of accessijng List of {@link Employee} viz {@link #size()}
+ * of accessing List of {@link Employee} viz {@link #size()}
  * and {@link #get(int)}
  *
  * @author  Shashi Bhushan

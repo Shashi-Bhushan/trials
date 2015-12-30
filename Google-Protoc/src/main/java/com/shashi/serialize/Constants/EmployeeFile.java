@@ -1,4 +1,4 @@
-package com.shashi.serialized.Constants;
+package com.shashi.serialize.Constants;
 
 import java.nio.file.Files;
 import java.nio.file.LinkOption;

@@ -1,14 +1,8 @@
-package com.shashi.serialized;
+package com.shashi.serialize;
 
-import com.shashi.serialized.bean.Employee;
-import com.shashi.serialized.bean.Employees;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Marshaller;
-import javax.xml.bind.Unmarshaller;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -19,8 +13,6 @@ import java.util.List;
  * {@link SerializationUtil}
  *          contains utils for {@link #serialize(Path, Serializable[]) Serializing},
  *          {@link #deSerialize(Path) De-Serializing},
- *          {@link #marshallJAXBObjectToXML(Path, Employee[]) Marshalling} and
- *          {@link #unmarshallXMLToJAXBObject(Path) Unmarshalling}
  *
  * @author  Shashi Bhushan
  *          created on 21/12/15.
@@ -37,30 +29,16 @@ public class SerializationUtil<T extends Serializable> {
      */
     private final Class<T> clazz;
     private final Logger LOG ;
-    /**
-     * {@link JAXBContext}
-     *          object for marshalling and unmarshalling of List of {@link T}
-     */
-    private JAXBContext jaxbContext;
 
     /**
      * Convenience Constructor saves the Type of class into an instance variable for reference
      * @param clazz
      *          class of Generic type <T>
-     *
-     * @throws {@link JAXBException}
-     *          when could not create a new {@link JAXBContext} object for {@link T} class
      */
     protected SerializationUtil(Class<T> clazz){
         this.clazz = clazz;
 
         LOG = LoggerFactory.getLogger(this.returnedClass());
-
-        try {
-            jaxbContext = JAXBContext.newInstance(Employees.class);
-        } catch (JAXBException cause) {
-            LOG.error("Exception Occurred while Creating JAXB Intance of {}. Message is ", this.returnedClass(), cause);
-        }
     }
 
     /**
@@ -121,66 +99,12 @@ public class SerializationUtil<T extends Serializable> {
 
         employee = (List<T>)objectStream.readObject();
 
+        /**
+         * CleanUp after using {@link FileInputStream} and {@link ObjectInputStream} Streams
+         */
         fileStream.close();
         objectStream.close();
 
         return employee;
-    }
-
-    /**
-     * Marshall the Given List of {@link T} and saves into File at {@code filePath}
-     * @param filePath full or relative path where List of {@link T}
-     *                 objects will be saved
-     * @param types at least one {@link T} object to save
-     *
-     * @throws {@link JAXBException}
-     *          when creating {@code marshaller} for List of {@link T} or
-     *          when marshalling List of {@link T}
-     * @throws {@link javax.xml.bind.PropertyException}
-     *          if could not set property to {@code marshaller}
-     */
-    public void marshallJAXBObjectToXML(Path filePath, Employee... types) throws JAXBException, IOException {
-        Marshaller marshaller = jaxbContext.createMarshaller();
-
-        /**
-         * For Pretty Print of XML
-         */
-        marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
-
-        List<Employee> typeList = Arrays.asList(types);
-
-        Employees employeeList = new Employees();
-        employeeList.setEmployees(typeList);
-
-        Files.deleteIfExists(filePath);
-        marshaller.marshal(employeeList, filePath.toFile());
-    }
-
-    /**
-     * Unmarshells the given file at {@code filePath} into List of {@link T}
-     * @param filePath Path where the file is located
-     *
-     * @return List of {@link T}
-     *
-     * @throws {@link JAXBException}
-     *          while creating {@code unmarshaller} for List of {@link T} or
-     *          when unmarshalling from {@code filePath}
-     */
-    public Employees unmarshallXMLToJAXBObject(Path filePath) throws JAXBException {
-        Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
-
-        return (Employees)unmarshaller.unmarshal(filePath.toFile());
-    }
-
-    /**
-     * deletes the file at {@code filePath} if it exists
-     * @param filePath the path of the file to check
-     */
-    private void deleteIfFileExists(String filePath){
-        File file = new File(filePath);
-
-        if(file.exists()){
-            file.delete();
-        }
     }
 }

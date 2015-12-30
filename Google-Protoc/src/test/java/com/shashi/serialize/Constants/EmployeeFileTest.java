@@ -1,6 +1,5 @@
-package com.shashi.serialized.Constants;
+package com.shashi.serialize.Constants;
 
-import com.shashi.serialized.Constants.EmployeeFile;
 import org.junit.Test;
 
 import java.nio.file.Files;
