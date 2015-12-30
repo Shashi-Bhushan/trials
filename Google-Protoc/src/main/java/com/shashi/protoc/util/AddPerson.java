@@ -1,4 +1,4 @@
-package com.shashi.protoc;
+package com.shashi.protoc.util;
 
 import com.shashi.protoc.generated.AddressBookProtos;
 

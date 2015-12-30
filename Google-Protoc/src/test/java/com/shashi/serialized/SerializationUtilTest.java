@@ -1,9 +1,10 @@
-package com.shashi.protoc.serialized;
+package com.shashi.serialized;
 
-import com.shashi.protoc.serialized.Constants.EmployeeConstants;
-import com.shashi.protoc.serialized.Constants.EmployeeFile;
-import com.shashi.protoc.serialized.bean.Employee;
-import com.shashi.protoc.serialized.bean.Employees;
+import com.shashi.serialized.Constants.EmployeeConstants;
+import com.shashi.serialized.Constants.EmployeeFile;
+import com.shashi.serialized.SerializationUtil;
+import com.shashi.serialized.bean.Employee;
+import com.shashi.serialized.bean.Employees;
 import org.apache.log4j.BasicConfigurator;
 import org.junit.Before;
 import org.junit.Test;

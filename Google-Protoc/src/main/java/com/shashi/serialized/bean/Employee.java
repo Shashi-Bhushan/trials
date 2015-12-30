@@ -1,4 +1,4 @@
-package com.shashi.protoc.serialized.bean;
+package com.shashi.serialized.bean;
 
 import javax.xml.bind.annotation.*;
 import java.io.Serializable;
