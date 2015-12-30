@@ -1,7 +1,7 @@
 package com.shashi.jaxb;
 
 import com.shashi.jaxb.Constants.EmployeeConstants;
-import com.shashi.jaxb.Constants.EmployeeFile;
+import com.shashi.files.FileUtility.EmployeeFile;
 import com.shashi.jaxb.bean.Employee;
 import com.shashi.jaxb.bean.Employees;
 import org.apache.log4j.BasicConfigurator;
@@ -10,7 +10,6 @@ import org.junit.Test;
 
 import javax.xml.bind.JAXBException;
 import java.io.IOException;
-import java.util.List;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;

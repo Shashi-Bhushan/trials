@@ -16,6 +16,8 @@ public class AddPerson {
     /**
      * Fills in a Person Message based on User Input
      * @return
+     *          {@link com.shashi.protoc.generated.AddressBookProtos.Person}
+     *          object with the User entered properties
      */
     public static AddressBookProtos.Person promptForAddress(BufferedReader stdin,
                                                             PrintStream stdout) throws IOException{

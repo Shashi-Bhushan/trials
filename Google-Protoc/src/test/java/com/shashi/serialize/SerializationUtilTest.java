@@ -1,7 +1,6 @@
 package com.shashi.serialize;
 
 import com.shashi.serialize.Constants.EmployeeConstants;
-import com.shashi.serialize.Constants.EmployeeFile;
 import com.shashi.serialize.bean.Employee;
 import org.apache.log4j.BasicConfigurator;
 import org.junit.Before;
@@ -9,6 +8,8 @@ import org.junit.Test;
 
 import java.io.IOException;
 import java.util.List;
+
+import com.shashi.files.FileUtility.EmployeeFile;
 
 import static org.junit.Assert.assertTrue;
 

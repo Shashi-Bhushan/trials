@@ -25,18 +25,4 @@ public interface EmployeeConstants {
             .setBirthday(LocalDate.of(1980, Month.JANUARY,2))
             .setGender(Employee.Gender.FEMALE)
             .setRole(Employee.Role.CONSULTANT);
-    /**
-     * Valid Serialized File paths Array
-     */
-    String[] SERIALIZE_FILE_PATHS = {
-            "/home/shashi/Emp-File.serialize",
-            "/Users/SBhushan/IdeaProjects/Emp-File.serialize"
-    };
-    /**
-     * Valid Marshalled File paths Array
-     */
-    String[] MARSHALL_FILE_PATHS = {
-            "/home/shashi/Emp-File.xml",
-            "/Users/SBhushan/IdeaProjects/Emp-File.xml"
-    };
 }
