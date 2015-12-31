@@ -147,15 +147,30 @@ public class ProtoUtil {
         }
     }
 
-    public static void printList(Path path, PrintStream output)
-            throws IOException {
-        AddressBookProtos.AddressBook addressBook =
-                AddressBookProtos.AddressBook.parseFrom(
-                        new FileInputStream(path.toFile()));
+    /**
+     * Reads {@link com.shashi.protoc.generated.AddressBookProtos.Person}
+     * from file at{@code path} and prints to the {@code output}
+     * exits when File at {@code path} is not found
+     * 
+     * @param path
+     *          {@link com.shashi.protoc.generated.AddressBookProtos.Person}
+     *          objects are persisted at this path
+     * @param output
+     *          Prints the output to this object
+     */
+    public static void printList(Path path, PrintStream output) {
+        AddressBookProtos.AddressBook addressBook;
+        try {
+            addressBook = AddressBookProtos.AddressBook.parseFrom(
+                    new FileInputStream(path.toFile()));
+        } catch (IOException cause) {
+            output.println(path.toString() + " : path does not exist. Exiting");
+            return;
+        }
 
         for(AddressBookProtos.Person person
                 : addressBook.getPersonList()){
-            output.printf("%-15s : %-5d%s" , "Person ID" , person.getId(),
+            output.printf("%-15s : %-15d%s" , "Person ID" , person.getId(),
                     System.getProperty("line.separator"));
             output.printf("%-15s : %-15s%s" , "Name" , person.getName(),
                     System.getProperty("line.separator"));

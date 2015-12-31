@@ -43,8 +43,14 @@ public class ProtoUtilTest {
                 reader, System.out);
     }
 
+    /**
+     * Reads from PROTOC_FILE and List the Persons
+     *
+     * @throws IOException
+     *          while printing the List to {@link System#out}
+     */
     @Test
-    public void ListPerson() throws IOException {
+    public void listPerson() {
         Path path = Paths.get(FileUtility.Files.PROTOC_FILE
                 .getPath().toString());
 
