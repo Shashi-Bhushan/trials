@@ -1,4 +1,4 @@
-package com.shashi.protoc.util;
+package com.shashi.protoc;
 
 import com.shashi.files.FileUtility;
 import org.apache.log4j.BasicConfigurator;
@@ -10,14 +10,14 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 
 /**
  * @author Shashi Bhushan
  *         Created on 30/12/15.
  *         For Google-Protoc
  */
-public class AddPersonTest {
-
+public class ProtoUtilTest {
     /**
      * Setting up Log4j Framework properly
      */
@@ -28,7 +28,7 @@ public class AddPersonTest {
 
     /**
      * Reads user inputs from CommandLineInput.txt file
-     * and passes to {@link AddPerson#addPersonToFile(Path, BufferedReader, PrintStream)}
+     * and passes to {@link ProtoUtil#addPersonToFile(Path, BufferedReader, PrintStream)}
      *
      * @throws IOException
      *          if CommandLineInput.txt is not found in specified path or
@@ -37,9 +37,17 @@ public class AddPersonTest {
     @Test
     public void addPersonFromFile() throws IOException {
         BufferedReader reader = new BufferedReader(
-                new FileReader("src/test/java/com/shashi/protoc/util/CommandLineInput.txt"));
+                new FileReader("src/test/java/com/shashi/protoc/file/CommandLineInput.txt"));
 
-        AddPerson.addPersonToFile(FileUtility.Files.PROTOC_FILE.getPath(),
+        ProtoUtil.addPersonToFile(FileUtility.Files.PROTOC_FILE.getPath(),
                 reader, System.out);
+    }
+
+    @Test
+    public void ListPerson() throws IOException {
+        Path path = Paths.get(FileUtility.Files.PROTOC_FILE
+                .getPath().toString());
+
+        ProtoUtil.printList(path, System.out);
     }
 }

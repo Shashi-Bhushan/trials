@@ -1,4 +1,4 @@
-package com.shashi.protoc.util;
+package com.shashi.protoc;
 
 import com.shashi.protoc.generated.AddressBookProtos;
 import org.slf4j.Logger;
@@ -11,13 +11,10 @@ import java.nio.file.Path;
  * @author Shashi Bhushan
  *         Created on 29/12/15.
  *         For Google-Protoc
- *
- *         TODo: Merge this with ListPerson
  */
-public class AddPerson {
-
+public class ProtoUtil {
     private static final Logger LOG =
-            LoggerFactory.getLogger(AddPerson.class);
+            LoggerFactory.getLogger(ProtoUtil.class);
 
     /**
      * Adds the {@link com.shashi.protoc.generated.AddressBookProtos.Person}
@@ -35,7 +32,7 @@ public class AddPerson {
      *          When prompting for user input
      */
     public static void addPersonToFile(Path protoFile, BufferedReader input,
-                                PrintStream output) throws IOException {
+                                       PrintStream output) throws IOException {
         AddressBookProtos.AddressBook.Builder addressBookBuilder =
                 AddressBookProtos.AddressBook.newBuilder();
 
@@ -71,7 +68,7 @@ public class AddPerson {
      *          When reading From {@code input}
      */
     private static AddressBookProtos.Person promptForPersonDetails(BufferedReader input,
-                                                     PrintStream output) throws IOException{
+                                                                   PrintStream output) throws IOException{
 
         AddressBookProtos.Person.Builder personBuilder = AddressBookProtos.Person.newBuilder();
 
@@ -149,4 +146,32 @@ public class AddPerson {
             personBuilder.addNumber(phoneNumberBuilder);
         }
     }
+
+    public static void printList(Path path, PrintStream output)
+            throws IOException {
+        AddressBookProtos.AddressBook addressBook =
+                AddressBookProtos.AddressBook.parseFrom(
+                        new FileInputStream(path.toFile()));
+
+        for(AddressBookProtos.Person person
+                : addressBook.getPersonList()){
+            output.printf("%-15s : %-5d%s" , "Person ID" , person.getId(),
+                    System.getProperty("line.separator"));
+            output.printf("%-15s : %-15s%s" , "Name" , person.getName(),
+                    System.getProperty("line.separator"));
+            if(person.hasEmail()){
+                output.printf("%-15s : %-15s%s" , "Email" , person.getEmail(),
+                        System.getProperty("line.separator"));
+            }
+
+            for(AddressBookProtos.Person.PhoneNumber phoneType:
+                    person.getNumberList()){
+                output.printf("#%-14s : %-15s%s", phoneType.getType(),
+                        phoneType.getNumber(), System.getProperty("line.separator"));
+            }
+
+            output.println();
+        }
+    }
+
 }
