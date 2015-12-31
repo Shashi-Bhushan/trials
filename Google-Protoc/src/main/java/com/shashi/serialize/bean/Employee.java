@@ -1,6 +1,5 @@
 package com.shashi.serialize.bean;
 
-import javax.xml.bind.annotation.*;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.Period;

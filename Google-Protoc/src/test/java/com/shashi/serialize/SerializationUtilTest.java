@@ -1,6 +1,6 @@
 package com.shashi.serialize;
 
-import com.shashi.serialize.Constants.EmployeeConstants;
+import com.shashi.serialize.list.EmployeesList;
 import com.shashi.serialize.bean.Employee;
 import org.apache.log4j.BasicConfigurator;
 import org.junit.Before;
@@ -29,15 +29,15 @@ public class SerializationUtilTest {
 
     @Test
     public void serializeSingleEmployee() throws IOException {
-        serializationUtil.serialize(Files.SERIALIZE_FILE.getPath(), EmployeeConstants.employee1);
+        serializationUtil.serialize(Files.SERIALIZE_FILE.getPath(), EmployeesList.employeeOne);
     }
 
     @Test
     public void deSerializesSingleEmployee() throws IOException, ClassNotFoundException {
-        serializationUtil.serialize(Files.SERIALIZE_FILE.getPath(), EmployeeConstants.employee1);
+        serializationUtil.serialize(Files.SERIALIZE_FILE.getPath(), EmployeesList.employeeOne);
         List<Employee> employees = serializationUtil.deSerialize(Files.SERIALIZE_FILE.getPath());
 
         assertTrue(employees.size() == 1);
-        assertTrue(employees.get(0).compareTo(EmployeeConstants.employee1) == 0);
+        assertTrue(employees.get(0).compareTo(EmployeesList.employeeOne) == 0);
     }
 }

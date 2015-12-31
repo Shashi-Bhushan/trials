@@ -35,7 +35,7 @@ public class SerializationUtil<T extends Serializable> {
      * @param clazz
      *          class of Generic type <T>
      */
-    protected SerializationUtil(Class<T> clazz){
+    public SerializationUtil(Class<T> clazz){
         this.clazz = clazz;
 
         LOG = LoggerFactory.getLogger(this.returnedClass());

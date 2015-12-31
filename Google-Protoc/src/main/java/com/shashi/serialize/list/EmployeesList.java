@@ -1,4 +1,4 @@
-package com.shashi.serialize.Constants;
+package com.shashi.serialize.list;
 
 import com.shashi.serialize.bean.Employee;
 
@@ -9,17 +9,17 @@ import java.time.Month;
  * @author  Shashi Bhushan
  *          created on 12/25/15.
  */
-public interface EmployeeConstants {
+public interface EmployeesList {
     /**
-     * Static {@link Employee} objects for reference.
+     * Static {@link Employee} objects
      */
-    Employee employee1 = new Employee()
+    Employee employeeOne = new Employee()
             .setId(1)
             .setName("Employee 1")
             .setBirthday(LocalDate.of(1980, Month.JANUARY,1))
             .setGender(Employee.Gender.MALE)
             .setRole(Employee.Role.ARCHITECT);
-    Employee employee2 = new Employee()
+    Employee employeeTwo = new Employee()
             .setId(2)
             .setName("Employee 2")
             .setBirthday(LocalDate.of(1980, Month.JANUARY,2))
