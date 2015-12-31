@@ -23,17 +23,22 @@ public class ListPerson {
 
         for(AddressBookProtos.Person person
                 : addressBook.getPersonList()){
-            output.printf("%-30s : %5d" , "Person ID" , person.getId());
-            output.printf("%-30s : %15s" , "Name" , person.getName());
+            output.printf("%-15s : %-5d%s" , "Person ID" , person.getId(),
+                    System.getProperty("line.separator"));
+            output.printf("%-15s : %-15s%s" , "Name" , person.getName(),
+                    System.getProperty("line.separator"));
             if(person.hasEmail()){
-                output.printf("%-30s : %15s" , "Email" , person.getEmail());
+                output.printf("%-15s : %-15s%s" , "Email" , person.getEmail(),
+                        System.getProperty("line.separator"));
             }
 
             for(AddressBookProtos.Person.PhoneNumber phoneType:
                     person.getNumberList()){
-                output.printf("%-30s : %15s" , phoneType.getType()
-                        + " Number #", phoneType.getNumber());
+                output.printf("#%-14s : %-15s%s", phoneType.getType(),
+                        phoneType.getNumber(), System.getProperty("line.separator"));
             }
+
+            output.println();
         }
     }
 }
