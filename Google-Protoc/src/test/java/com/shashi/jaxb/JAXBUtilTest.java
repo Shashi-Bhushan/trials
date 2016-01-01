@@ -4,7 +4,6 @@ import com.shashi.jaxb.Constants.EmployeeConstants;
 import com.shashi.files.FileUtility.Files;
 import com.shashi.jaxb.bean.Employee;
 import com.shashi.jaxb.bean.Employees;
-import org.apache.log4j.BasicConfigurator;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -22,9 +21,7 @@ public class JAXBUtilTest {
     private static JAXBUtil<Employee> jaxbUtil;
 
     @BeforeClass
-    public static void setUp() {
-        BasicConfigurator.configure();
-
+    public static void setUpForJAXB() {
         jaxbUtil = new JAXBUtil<>(Employee.class);
     }
 

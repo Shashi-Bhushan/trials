@@ -35,7 +35,7 @@ public class ProtoUtilTest {
      *          if could not add Person to Proto File
      */
     @Test
-    public void addPersonFromFile() throws IOException {
+    public void addPersonFromFile_ShouldNotThrowException() throws IOException {
         BufferedReader reader = new BufferedReader(
                 new FileReader("src/test/java/com/shashi/protoc/file/CommandLineInput.txt"));
 
@@ -45,15 +45,13 @@ public class ProtoUtilTest {
 
     /**
      * Reads from PROTOC_FILE and List the Persons
-     *
-     * @throws IOException
-     *          while printing the List to {@link System#out}
+     * Should print to System.out PrintStream
      */
     @Test
     public void listPerson() {
         Path path = Paths.get(FileUtility.Files.PROTOC_FILE
                 .getPath().toString());
 
-        ProtoUtil.printList(path, System.out);
+        ProtoUtil.listPersonsFromFile(path, System.out);
     }
 }

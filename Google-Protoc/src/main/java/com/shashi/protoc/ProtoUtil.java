@@ -88,7 +88,7 @@ public class ProtoUtil {
             personBuilder.setEmail(email);
         }
 
-        addNumberToBuilder(personBuilder, input, output);
+        addNumberToPersonBuilder(personBuilder, input, output);
 
         return personBuilder.build();
     }
@@ -105,8 +105,8 @@ public class ProtoUtil {
      * @throws IOException
      *          While reading from input
      */
-    private static void addNumberToBuilder(AddressBookProtos.Person.Builder personBuilder,
-                                           BufferedReader input, PrintStream output) throws IOException {
+    private static void addNumberToPersonBuilder(AddressBookProtos.Person.Builder personBuilder,
+                                                 BufferedReader input, PrintStream output) throws IOException {
         while(true){
             output.print("Enter a Phone Number (or leave blank to finish):"
                     + System.getProperty("line.separator"));
@@ -158,7 +158,7 @@ public class ProtoUtil {
      * @param output
      *          Prints the output to this object
      */
-    public static void printList(Path path, PrintStream output) {
+    public static void listPersonsFromFile(Path path, PrintStream output) {
         AddressBookProtos.AddressBook addressBook;
         try {
             addressBook = AddressBookProtos.AddressBook.parseFrom(
