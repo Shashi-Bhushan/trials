@@ -107,6 +107,9 @@ public class Employee implements Serializable,Comparable<Employee>{
 
     /**
      * Enumeration holding a version history of {@link Employee} class
+     * Basically, {@code serialVersionUID} does the same
+     * but with Deserialization process, it checks with the original
+     * Serialized versionUID
      */
     public enum Version{
         /**
