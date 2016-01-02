@@ -131,6 +131,7 @@ public class Employee implements Serializable,Comparable<Employee>{
                 ", age=" + age +
                 ", role='" + role + '\'' +
                 ", gender=" + gender +
+                ", Version=" + version +
                 '}';
     }
 
