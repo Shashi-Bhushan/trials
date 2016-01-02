@@ -17,6 +17,7 @@ public class Employee implements Serializable,Comparable<Employee>{
     private transient int age;
     private Role role;
     private Gender gender;
+    private Version version;
 
     public int getId() {
         return id;
@@ -75,6 +76,15 @@ public class Employee implements Serializable,Comparable<Employee>{
         return this;
     }
 
+    public Version getVersion() {
+        return version;
+    }
+
+    public Employee setVersion(Version version) {
+        this.version = version;
+        return this;
+    }
+
     /**
      * Gender of the {@link Employee}
      */
@@ -93,6 +103,20 @@ public class Employee implements Serializable,Comparable<Employee>{
         CONSULTANT,
         SENIOR_CONSULTANT,
         ARCHITECT
+    }
+
+    /**
+     * Enumeration holding a version history of {@link Employee} class
+     */
+    public enum Version{
+        /**
+         * Represents the initial version of {@link Employee}
+         * with instance fields as ID, Name, Birthday, Age(Transient),
+         * Role and Gender
+         */
+        ONE,
+        TWO,
+        THREE
     }
 
     @Override

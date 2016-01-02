@@ -29,7 +29,8 @@ public class EmployeeTest {
     }
 
     @Test @Ignore
-    public void setupForInitialSerialization() throws IOException {
+    public void setupForInitialSerialization_OnlyToSerializeVersionOne()
+            throws IOException {
         Path filePath = FileUtility.Files.SERIALIZE_FILE.getPath();
         Files.deleteIfExists(filePath);
 

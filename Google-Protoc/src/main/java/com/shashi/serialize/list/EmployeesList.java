@@ -18,11 +18,13 @@ public interface EmployeesList {
             .setName("Employee 1")
             .setBirthday(LocalDate.of(1980, Month.JANUARY,1))
             .setGender(Employee.Gender.MALE)
-            .setRole(Employee.Role.ARCHITECT);
+            .setRole(Employee.Role.ARCHITECT)
+            .setVersion(Employee.Version.ONE);
     Employee employeeTwo = new Employee()
             .setId(2)
             .setName("Employee 2")
-            .setBirthday(LocalDate.of(1980, Month.JANUARY,2))
+            .setBirthday(LocalDate.of(1980, Month.JANUARY, 2))
             .setGender(Employee.Gender.FEMALE)
-            .setRole(Employee.Role.CONSULTANT);
+            .setRole(Employee.Role.CONSULTANT)
+            .setVersion(Employee.Version.ONE);;
 }
