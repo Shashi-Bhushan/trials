@@ -17,14 +17,14 @@ public interface EmployeesList {
             .setId(1)
             .setName("Employee 1")
             .setBirthday(LocalDate.of(1980, Month.JANUARY,1))
-            .setGender(Employee.Gender.MALE)
-            .setRole(Employee.Role.ARCHITECT)
-            .setVersion(Employee.Version.ONE);
+            .setGender(Employee.Properties.Gender.MALE)
+            .setRole(Employee.Properties.Role.ARCHITECT)
+            .setVersion(Employee.Properties.Version.ONE);
     Employee employeeTwo = new Employee()
             .setId(2)
             .setName("Employee 2")
             .setBirthday(LocalDate.of(1980, Month.JANUARY, 2))
-            .setGender(Employee.Gender.FEMALE)
-            .setRole(Employee.Role.CONSULTANT)
-            .setVersion(Employee.Version.ONE);;
+            .setGender(Employee.Properties.Gender.FEMALE)
+            .setRole(Employee.Properties.Role.CONSULTANT)
+            .setVersion(Employee.Properties.Version.ONE);;
 }

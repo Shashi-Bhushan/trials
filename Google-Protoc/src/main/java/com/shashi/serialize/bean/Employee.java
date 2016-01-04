@@ -15,9 +15,9 @@ public class Employee implements Serializable,Comparable<Employee>{
 	private String name;
     private LocalDate birthday;
     private transient int age;
-    private Role role;
-    private Gender gender;
-    private Version version;
+    private Properties.Role role;
+    private Properties.Gender gender;
+    private Properties.Version version;
 
     public int getId() {
         return id;
@@ -58,68 +58,70 @@ public class Employee implements Serializable,Comparable<Employee>{
         return age;
     }
 
-    public Role getRole() {
+    public Properties.Role getRole() {
         return role;
     }
 
-    public Employee setRole(Role role) {
+    public Employee setRole(Properties.Role role) {
         this.role = role;
         return this;
     }
 
-    public Gender getGender() {
+    public Properties.Gender getGender() {
         return gender;
     }
 
-    public Employee setGender(Gender gender) {
+    public Employee setGender(Properties.Gender gender) {
         this.gender = gender;
         return this;
     }
 
-    public Version getVersion() {
+    public Properties.Version getVersion() {
         return version;
     }
 
-    public Employee setVersion(Version version) {
+    public Employee setVersion(Properties.Version version) {
         this.version = version;
         return this;
     }
 
-    /**
-     * Gender of the {@link Employee}
-     */
-    public enum Gender{
-        MALE,
-        FEMALE
-    }
-
-    /**
-     * Position of the {@link Employee}
-     */
-    public enum Role{
-        JUNIOR_SOFTWARE_ENGINEER,
-        SOFTWARE_ENGINEER,
-        SENIOR_SOFTWARE_ENGINEER,
-        CONSULTANT,
-        SENIOR_CONSULTANT,
-        ARCHITECT
-    }
-
-    /**
-     * Enumeration holding a version history of {@link Employee} class
-     * Basically, {@code serialVersionUID} does the same
-     * but with Deserialization process, it checks with the original
-     * Serialized versionUID
-     */
-    public enum Version{
+    public interface Properties{
         /**
-         * Represents the initial version of {@link Employee}
-         * with instance fields as ID, Name, Birthday, Age(Transient),
-         * Role and Gender
+         * Gender of the {@link Employee}
          */
-        ONE,
-        TWO,
-        THREE
+        enum Gender{
+            MALE,
+            FEMALE
+        }
+
+        /**
+         * Position of the {@link Employee}
+         */
+        enum Role{
+            JUNIOR_SOFTWARE_ENGINEER,
+            SOFTWARE_ENGINEER,
+            SENIOR_SOFTWARE_ENGINEER,
+            CONSULTANT,
+            SENIOR_CONSULTANT,
+            ARCHITECT
+        }
+
+        /**
+         * Enumeration holding a version history of {@link Employee} class
+         * Basically, {@code serialVersionUID} does the same
+         * but with Deserialization process, it checks with the original
+         * Serialized versionUID
+         */
+        enum Version{
+            /**
+             * Represents the initial version of {@link Employee}
+             * with instance fields as ID, Name, Birthday, Age(Transient),
+             * Role and Gender
+             */
+            ONE,
+            TWO,
+            THREE
+        }
     }
 
     @Override

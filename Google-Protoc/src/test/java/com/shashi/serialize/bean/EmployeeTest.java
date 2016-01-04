@@ -38,8 +38,10 @@ public class EmployeeTest {
     }
 
     @Test//(expected = ClassCastException.class)
-    public void deserialize_VersionOneObject_ToVersionTwo() throws IOException, ClassNotFoundException {
+    public void deserialize_VersionOneObject_ToAnotherVersion() throws IOException, ClassNotFoundException {
         List<Employee> employees = serializationUtil.deSerialize(FileUtility.Files.SERIALIZE_FILE.getPath());
-        assertTrue(employees.get(0) != null);
+
+        Employee employee = employees.get(0);
+        assertTrue(employee.getClass() != null);
     }
 }
