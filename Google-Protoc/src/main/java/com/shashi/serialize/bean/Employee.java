@@ -19,18 +19,97 @@ public class Employee implements Serializable,Comparable<Employee>{
     private Properties.Gender gender;
     private Properties.Version version;
 
+    /**
+     *
+     * @param id
+     * @param name
+     * @param birthday
+     * @param role
+     * @param gender
+     * @param version
+     */
+    private Employee(final int id, final String name,
+                     final LocalDate birthday,
+                     final Properties.Role role,
+                     final Properties.Gender gender,
+                     final Properties.Version version){
+        this.id = id;
+        this.name = name;
+        this.birthday = birthday;
+        this.role = role;
+        this.gender = gender;
+        this.version = version;
+    }
+
+    /**
+     *
+     */
+    public static final class Builder{
+        private int _id;
+        private String _name;
+        private LocalDate _birthday;
+        private transient  int _age;
+        private Properties.Role _role;
+        private Properties.Gender _gender;
+        private Properties.Version _version;
+
+        /**
+         * 
+         * @param _id
+         * @param _name
+         */
+        public Builder(int _id, String _name) {
+            this._id = _id;
+            this._name = _name;
+        }
+
+        public Builder setId(int _id) {
+            this._id = _id;
+            return this;
+        }
+
+        public Builder setName(String _name) {
+            this._name = _name;
+            return this;
+        }
+
+        public Builder setBirthday(LocalDate _birthday) {
+            this._birthday = _birthday;
+            /**
+             * Set {@code age} now
+             */
+            LocalDate today = LocalDate.now();
+            Period period = Period.between(this._birthday, today);
+            this._age = period.getYears();
+
+            return this;
+        }
+
+        public Builder setRole(Properties.Role _role) {
+            this._role = _role;
+            return this;
+        }
+
+        public Builder setGender(Properties.Gender _gender) {
+            this._gender = _gender;
+            return this;
+        }
+
+        public Builder setVersion(Properties.Version _version) {
+            this._version = _version;
+            return this;
+        }
+
+        /**
+         * @return
+         */
+        public final Employee createEmployee(){
+            return new Employee(_id, _name,_birthday, _role, _gender, _version);
+        }
+    }
+
     public int getId() {
         return id;
-    }
-
-    public Employee setId(int id) {
-        this.id = id;
-        return this;
-    }
-
-    public Employee setName(String name){
-        this.name = name;
-        return this;
     }
 
     public String getName(){
@@ -41,19 +120,6 @@ public class Employee implements Serializable,Comparable<Employee>{
         return birthday;
     }
 
-    public Employee setBirthday(LocalDate birthday) {
-        this.birthday = birthday;
-
-        /**
-         * Set {@code age} now
-         */
-        LocalDate today = LocalDate.now();
-        Period period = Period.between(birthday, today);
-        this.age = period.getYears();
-
-        return this;
-    }
-
     public int getAge() {
         return age;
     }
@@ -62,27 +128,12 @@ public class Employee implements Serializable,Comparable<Employee>{
         return role;
     }
 
-    public Employee setRole(Properties.Role role) {
-        this.role = role;
-        return this;
-    }
-
     public Properties.Gender getGender() {
         return gender;
     }
 
-    public Employee setGender(Properties.Gender gender) {
-        this.gender = gender;
-        return this;
-    }
-
     public Properties.Version getVersion() {
         return version;
-    }
-
-    public Employee setVersion(Properties.Version version) {
-        this.version = version;
-        return this;
     }
 
     public interface Properties{

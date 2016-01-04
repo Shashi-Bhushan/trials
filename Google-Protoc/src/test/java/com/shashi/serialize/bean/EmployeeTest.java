@@ -44,4 +44,44 @@ public class EmployeeTest {
         Employee employee = employees.get(0);
         assertTrue(employee.getClass() != null);
     }
+
+    @Test
+    public void testSet_id() throws Exception {
+
+    }
+
+    @Test
+    public void testSet_name() throws Exception {
+
+    }
+
+    @Test
+    public void testSet_birthday() throws Exception {
+
+    }
+
+    @Test
+    public void testSet_age() throws Exception {
+
+    }
+
+    @Test
+    public void testSet_role() throws Exception {
+
+    }
+
+    @Test
+    public void testSet_gender() throws Exception {
+
+    }
+
+    @Test
+    public void testSet_version() throws Exception {
+
+    }
+
+    @Test
+    public void testCreateEmployee() throws Exception {
+
+    }
 }
