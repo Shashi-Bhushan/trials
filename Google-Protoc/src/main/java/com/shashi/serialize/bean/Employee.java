@@ -20,13 +20,28 @@ public class Employee implements Serializable,Comparable<Employee>{
     private Properties.Version version;
 
     /**
-     *
+     * Private Constructor of {@link Employee}, shall be called only By
+     * {@link com.shashi.serialize.bean.Employee.Builder}
      * @param id
+     *          ID of the {@link Employee}. Required Field
      * @param name
+     *          Full Name of the {@link Employee}. Required Field
      * @param birthday
+     *          DOB of {@link Employee} as {@link LocalDate} object
      * @param role
+     *          Role of {@link Employee} in the organization
+     *          one of the values of {@link com.shashi.serialize.bean.Employee.Properties.Role}
      * @param gender
+     *          Gender of the {@link Employee}
+     *          one of the values of {@link com.shashi.serialize.bean.Employee.Properties.Gender}
      * @param version
+     *          Version of the {@link Employee} object
+     *          good for tracking while persisting State of the object and restoring object from that
+     *          saved state.
+     *          Basically, {@code serialVersionUID} does the same thing. but changing {@code serialVersionUID}
+     *          will make state persistence and state restoring between different version impossible.
+     *          Tracking state via {@code version} has an advantage that tracking of what changes break the
+     *          state persistence and then restoring process pretty clear.
      */
     private Employee(final int id, final String name,
                      final LocalDate birthday,
@@ -42,7 +57,11 @@ public class Employee implements Serializable,Comparable<Employee>{
     }
 
     /**
-     *
+     * {@link com.shashi.serialize.bean.Employee.Builder}
+     *          Builder of {@link Employee}. It takes all the required arguments in the constructor and provides
+     *          setters for optional fields. {@link #createEmployee()} creates the {@link Employee} object from
+     *          these properties.
+     *          Note: Builder does not have any Getter for fields
      */
     public static final class Builder{
         private int _id;
@@ -54,9 +73,12 @@ public class Employee implements Serializable,Comparable<Employee>{
         private Properties.Version _version;
 
         /**
-         * 
+         * Parameterized Constructor of {@link com.shashi.serialize.bean.Employee.Builder}
+         * takes up ID and Name of {@link Employee} as these are required fields
          * @param _id
+         *          ID of the {@link Employee}
          * @param _name
+         *          Full name of {@link Employee}
          */
         public Builder(int _id, String _name) {
             this._id = _id;
@@ -101,7 +123,9 @@ public class Employee implements Serializable,Comparable<Employee>{
         }
 
         /**
+         * creates {@link Employee} object based on the supplied field values
          * @return
+         *          {@link Employee} object
          */
         public final Employee createEmployee(){
             return new Employee(_id, _name,_birthday, _role, _gender, _version);
@@ -136,6 +160,9 @@ public class Employee implements Serializable,Comparable<Employee>{
         return version;
     }
 
+    /**
+     * Properties associated with {@link Employee}
+     */
     public interface Properties{
         /**
          * Gender of the {@link Employee}
@@ -146,7 +173,7 @@ public class Employee implements Serializable,Comparable<Employee>{
         }
 
         /**
-         * Position of the {@link Employee}
+         * Position of the {@link Employee} in the organisation
          */
         enum Role{
             JUNIOR_SOFTWARE_ENGINEER,
