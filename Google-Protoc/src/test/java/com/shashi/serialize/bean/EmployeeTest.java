@@ -40,10 +40,10 @@ public class EmployeeTest {
 
     @Test
     public void equateSameEmployeeObjects_ShouldReturnTrue(){
-        Employee employee = new Employee.Builder(1, "Shashi")
+        Employee employee = Employee.newBuilder(1, "Shashi")
                 .setGender(Employee.Properties.Gender.MALE).build();
 
-        Employee employee2 = new Employee.Builder(1, "Shashi")
+        Employee employee2 = Employee.newBuilder(1, "Shashi")
                 .build();
 
         assertFalse(employee.equals(employee2));

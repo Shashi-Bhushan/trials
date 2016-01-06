@@ -287,7 +287,17 @@ public class Employee implements Serializable,Comparable<Employee>{
         }
     }
 
-    public Builder newBuilder(int id, String name){
+    /**
+     * Creates new {@link com.shashi.serialize.bean.Employee.Builder} object
+     * delegates the id and name to Builder Constructor
+     * @param id
+     *          ID of the {@Link Employee}
+     * @param name
+     *          Full name of the {@link Employee}
+     * @return
+     *          {@link com.shashi.serialize.bean.Employee.Builder} object with given id and name
+     */
+    public static Builder newBuilder(int id, String name){
         return new Builder(id,name);
     }
 
