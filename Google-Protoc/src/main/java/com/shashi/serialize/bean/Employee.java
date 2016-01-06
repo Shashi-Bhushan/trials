@@ -59,7 +59,7 @@ public class Employee implements Serializable,Comparable<Employee>{
     /**
      * {@link com.shashi.serialize.bean.Employee.Builder}
      *          Builder of {@link Employee}. It takes all the required arguments in the constructor and provides
-     *          setters for optional fields. {@link #createEmployee()} creates the {@link Employee} object from
+     *          setters for optional fields. {@link #build()} creates the {@link Employee} object from
      *          these properties.
      *          Note: Builder does not have any Getter for fields
      */
@@ -127,7 +127,7 @@ public class Employee implements Serializable,Comparable<Employee>{
          * @return
          *          {@link Employee} object
          */
-        public final Employee createEmployee(){
+        public final Employee build(){
             return new Employee(_id, _name,_birthday, _role, _gender, _version);
         }
     }
@@ -237,5 +237,62 @@ public class Employee implements Serializable,Comparable<Employee>{
             return 0;
         }
         return 1;
+    }
+
+    /**
+     * @see
+     *          {@link Object#equals(Object)}
+     * @param obj
+     *          Instance of {@link Employee} to compare with
+     * @return
+     *          true if {@code id} and {@code name} of the {@link Employee} are equal
+     *          matches other properties as well if they are equal
+     */
+    @Override
+    public boolean equals(Object obj) {
+        if(!(obj instanceof  Employee)){
+            return false;
+        }else if(obj == this){
+            return true;
+        }else{
+            Employee compareWith = (Employee)obj;
+
+            if(this.id == compareWith.getId()
+                    && this.name.equals(compareWith.getName()) ) {
+                /**
+                 * Assume at this point that both objects {@code this} and {@code obj} are equal
+                 * because their Name and Id fields are equal
+                 *
+                 * if their are any other properties in {@code this}, match them with those of
+                 * {@code compareWith}
+                 */
+                boolean isEqual = true;
+
+                if(this.gender != null){
+                    isEqual = this.gender.equals(compareWith.getGender());
+                }
+                if(this.role != null){
+                    isEqual = this.role.equals(compareWith.getRole());
+                }
+                if(this.version != null){
+                    isEqual = this.version.equals(compareWith.getVersion());
+                }
+                if(this.birthday != null){
+                    isEqual = this.birthday.equals(compareWith.getBirthday());
+                }
+
+                return isEqual;
+            }
+            return false;
+        }
+    }
+
+    public Builder newBuilder(int id, String name){
+        return new Builder(id,name);
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
     }
 }

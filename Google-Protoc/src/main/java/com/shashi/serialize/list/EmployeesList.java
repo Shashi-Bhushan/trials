@@ -18,13 +18,11 @@ public interface EmployeesList {
             .setGender(Employee.Properties.Gender.MALE)
             .setRole(Employee.Properties.Role.ARCHITECT)
             .setVersion(Employee.Properties.Version.ONE)
-            .createEmployee();
+            .build();
     Employee employeeTwo = new Employee.Builder(2,"Employee 2")
-            .setId(2)
-            .setName("Employee 2")
             .setBirthday(LocalDate.of(1980, Month.JANUARY, 2))
             .setGender(Employee.Properties.Gender.FEMALE)
             .setRole(Employee.Properties.Role.CONSULTANT)
             .setVersion(Employee.Properties.Version.ONE)
-            .createEmployee();
+            .build();
 }

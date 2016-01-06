@@ -10,8 +10,9 @@ import org.junit.Test;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.List;
+import java.util.*;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 /**
@@ -35,6 +36,48 @@ public class EmployeeTest {
         Files.deleteIfExists(filePath);
 
         serializationUtil.serialize(filePath, EmployeesList.employeeOne);
+    }
+
+    @Test
+    public void equateSameEmployeeObjects_ShouldReturnTrue(){
+        Employee employee = new Employee.Builder(1, "Shashi")
+                .setGender(Employee.Properties.Gender.MALE).build();
+
+        Employee employee2 = new Employee.Builder(1, "Shashi")
+                .build();
+
+        assertFalse(employee.equals(employee2));
+        assertTrue(employee2.equals(employee));
+    }
+
+    @Test
+    public void setTest_addEmployeesInSet_ShouldRetrieveProperly(){
+        Employee employee = new Employee.Builder(1, "Shashi")
+                .setGender(Employee.Properties.Gender.MALE).build();
+
+        Employee employee2 = new Employee.Builder(1, "Shashi")
+                .setGender(Employee.Properties.Gender.MALE).build();
+
+        Set<Employee> employees = new HashSet<Employee>();
+        employees.add(employee);
+
+        assertFalse(employees.add(employee));
+        assertTrue(employees.add(employee2));
+    }
+
+    @Test
+    public void mapTest_addEmployeesInMap_ShouldRetrieveProperly(){
+        Employee employee = new Employee.Builder(1, "Shashi")
+                .setGender(Employee.Properties.Gender.MALE).build();
+
+        Employee employee2 = new Employee.Builder(1, "Bhushan")
+                .setGender(Employee.Properties.Gender.MALE).build();
+
+        Map<String,Employee> employees = new HashMap<>();
+        employees.put("emp1", employee);
+        employees.put("emp2",employee2);
+
+        assertTrue(employees.get("emp2") != null);
     }
 
     @Test//(expected = ClassCastException.class)
