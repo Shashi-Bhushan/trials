@@ -13,13 +13,13 @@ public interface EmployeesList {
     /**
      * Static {@link Employee} objects
      */
-    Employee employeeOne = new Employee.Builder(1,"Employee 1")
+    Employee employeeOne = Employee.newBuilder(1,"Employee 1")
             .setBirthday(LocalDate.of(1980, Month.JANUARY,1))
             .setGender(Employee.Properties.Gender.MALE)
             .setRole(Employee.Properties.Role.ARCHITECT)
             .setVersion(Employee.Properties.Version.ONE)
             .build();
-    Employee employeeTwo = new Employee.Builder(2,"Employee 2")
+    Employee employeeTwo = Employee.newBuilder(2,"Employee 2")
             .setBirthday(LocalDate.of(1980, Month.JANUARY, 2))
             .setGender(Employee.Properties.Gender.FEMALE)
             .setRole(Employee.Properties.Role.CONSULTANT)
