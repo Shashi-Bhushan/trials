@@ -41,6 +41,6 @@ public class SerializationUtilTest {
         List<Employee> employees = serializationUtil.deSerialize(Files.SERIALIZE_FILE.getPath());
 
         assertTrue(employees.size() == 1);
-        assertTrue(employees.get(0).compareTo(EmployeesList.employeeOne) == 0);
+        assertTrue(employees.get(0).equals(EmployeesList.employeeOne));
     }
 }

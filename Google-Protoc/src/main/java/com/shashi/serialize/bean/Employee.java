@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.Period;
 
-public class Employee implements Serializable,Comparable<Employee>{
+public class Employee implements Serializable{
 
 	/**
 	 * This Serial version UID will change once any new version of class has been created
@@ -219,28 +219,7 @@ public class Employee implements Serializable,Comparable<Employee>{
      * compares the {@link Employee} object to the given object
      * on the basis of {@code id}, {@code name}, {@code Role},
      * {@code Gender} and {@code birthday}
-     *
-     * @param compareWith
-     *          {@link Employee} object to compare with
-     * @return
-     *          {@code int} value specifying if objects are equal
-     *          return zero if both are equal otherwise one
-     */
-    @Override
-    public int compareTo(Employee compareWith) {
-        if(this.id == compareWith.getId()
-                && this.name.equals(compareWith.getName())
-                && this.role.equals(compareWith.getRole())
-                && this.gender.equals(compareWith.getGender())
-                && this.birthday.equals(compareWith.getBirthday())
-                ){
-            return 0;
-        }
-        return 1;
-    }
-
-    /**
-     * @see
+     * Also, {@see}
      *          {@link Object#equals(Object)}
      * @param obj
      *          Instance of {@link Employee} to compare with
