@@ -32,20 +32,18 @@ This Section contains Links to Books and Documentation recommended to me or i in
  
 <table>
 	<tr>
-		<td>
+		<td colspan="2">
 			<h1>Design Patterns - Elements of Reusable Object Oriented Software</h1>
 		</td>
 	</tr>
 	<tr>
-		<td>
+		<td width="40%">
 			<img src="http://img5a.flixcart.com/image/book/0/7/5/design-patterns-400x400-imadh2znggcvbzuf.jpeg" alt="Design Patterns - Elements of Reusable Object Oriented Software">
 		</td>
-	</tr>
-	<tr>
-		<td>
-			<img src="http://www.clipartbest.com/cliparts/yTo/gj4/yTogj4zEc.png" alt="Design Patterns - Elements of Reusable Object Oriented Software" style="height: 50px; width: 50px"> Have This Book
-			<img src="http://www.clipartbest.com/cliparts/ncX/jL6/ncXjL6rcB.png" alt="Design Patterns - Elements of Reusable Object Oriented Software" style="height: 50px; width: 50px"> Started Reading This Book
-			<img src="http://www.clipartbest.com/cliparts/ncX/jL6/ncXjL6rcB.png" alt="Design Patterns - Elements of Reusable Object Oriented Software" style="height: 50px; width: 50px"> Progress So Far
+		<td width="60%">
+			<img src="https://raw.githubusercontent.com/Shashi-Bhushan/General/master/References/check.png" alt="Design Patterns - Elements of Reusable Object Oriented Software"> Have This Book<br/>
+			<img src="https://raw.githubusercontent.com/Shashi-Bhushan/General/master/References/uncheck.png" alt="Design Patterns - Elements of Reusable Object Oriented Software"> Started Reading This Book<br/>
+			<img src="https://raw.githubusercontent.com/Shashi-Bhushan/General/master/References/uncheck.png" alt="Design Patterns - Elements of Reusable Object Oriented Software"> Progress So Far<br/>
 		</td>
 	</tr>
 </table>
