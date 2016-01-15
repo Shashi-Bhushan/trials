@@ -45,8 +45,8 @@ This Section contains Links to Books and Documentation recommended to me or i in
 				<img src="http://ecx.images-amazon.com/images/I/41%2BBmzWimHL._SX299_BO1,204,203,200_.jpg" alt="Thinking in Java - 4th Edition">
 			</td>
 			<td width="60%">
-				<img src="https://raw.githubusercontent.com/Shashi-Bhushan/General/master/References/check.png" alt="Design Patterns - Elements of Reusable Object Oriented Software"> Have This Book<br/>
-				<img src="https://raw.githubusercontent.com/Shashi-Bhushan/General/master/References/check.png" alt="Design Patterns - Elements of Reusable Object Oriented Software"> Started Reading This Book<br/>
+				<img src="https://raw.githubusercontent.com/Shashi-Bhushan/General/master/References/check.png" alt="Thinking in Java - 4th Edition"> Have This Book<br/>
+				<img src="https://raw.githubusercontent.com/Shashi-Bhushan/General/master/References/check.png" alt="Thinking in Java - 4th Edition"> Started Reading This Book<br/>
 
 				<hr/>
 				Progress So Far<br/>
@@ -61,7 +61,7 @@ This Section contains Links to Books and Documentation recommended to me or i in
 				<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Full.png">			<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Full.png">
 				<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Full.png">			<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Full.png">
 				<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Full.png">			<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Full.png">
-				<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Empty.png">	<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Empty.png">
+				<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Empty.png">		<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Empty.png">
 				<hr/>
 			</td>
 		</tr>
@@ -95,6 +95,72 @@ This Section contains Links to Books and Documentation recommended to me or i in
 				<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Full.png">			<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Full.png">
 				<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Full.png">			<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Full.png">
 				<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Half-Full.png">	<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Empty.png">
+				<hr/>
+			</td>
+		</tr>
+		<!--
+			IntroDuction to Algorithms
+		-->
+		<tr>
+			<td colspan="2">
+				<h3>IntroDuction to Algorithms - Third Edition</h3>
+			</td>
+		</tr>
+		<tr>
+			<td width="40%">
+				<img src="http://ecx.images-amazon.com/images/I/51eDwv7tCtL._SX442_BO1,204,203,200_.jpg" alt="IntroDuction to Algorithms - Third Edition">
+			</td>
+			<td width="60%">
+				<img src="https://raw.githubusercontent.com/Shashi-Bhushan/General/master/References/uncheck.png" alt="IntroDuction to Algorithms - Third Edition"> Have This Book[[amazonLink!](http://www.amazon.com/Introduction-Algorithms-Edition-Thomas-Cormen/dp/0262033844/ref=zg_bs_3870_2)]<br/>
+				<img src="https://raw.githubusercontent.com/Shashi-Bhushan/General/master/References/uncheck.png" alt="IntroDuction to Algorithms - Third Edition"> Started Reading This Book<br/>
+
+				<hr/>
+				Progress So Far<br/>
+				<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Empty.png">		<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Empty.png">
+				<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Empty.png">		<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Empty.png">
+				<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Empty.png">		<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Empty.png">
+				<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Empty.png">		<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Empty.png">
+				<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Empty.png">		<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Empty.png">
+				<hr/>
+				Rating<br/>
+				<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Full.png">			<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Full.png">
+				<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Full.png">			<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Full.png">
+				<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Full.png">			<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Full.png">
+				<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Full.png">			<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Full.png">
+				<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Full.png">			<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Empty.png">
+				<hr/>
+			</td>
+		</tr>
+		<!--
+			GOF
+		-->
+		<tr>
+			<td colspan="2">
+				<h3>Cracking the Coding Interview Questions</h3>
+			</td>
+		</tr>
+		<tr>
+			<td width="40%">
+				<img src="http://ecx.images-amazon.com/images/I/41wgksZup2L._SX331_BO1,204,203,200_.jpg" alt="Cracking the Coding Interview Questions">
+			</td>
+			<td width="60%">
+				<img src="https://raw.githubusercontent.com/Shashi-Bhushan/General/master/References/uncheck.png" alt="Cracking the Coding Interview Questions"> Have This Book[[amazonLink!](http://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/098478280X)]<br/>
+				<img src="https://raw.githubusercontent.com/Shashi-Bhushan/General/master/References/uncheck.png" alt="Cracking the Coding Interview Questions"> Started Reading This Book<br/>
+
+				<hr/>
+				Progress So Far<br/>
+				<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Empty.png">		<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Empty.png">
+				<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Empty.png">		<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Empty.png">
+				<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Empty.png">		<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Empty.png">
+				<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Empty.png">		<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Empty.png">
+				<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Empty.png">		<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Empty.png">
+				<hr/>
+				Rating<br/>
+				<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Full.png">			<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Full.png">
+				<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Full.png">			<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Full.png">
+				<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Full.png">			<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Full.png">
+				<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Full.png">			<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Full.png">
+				<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Full.png">			<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Empty.png">
 				<hr/>
 			</td>
 		</tr>
