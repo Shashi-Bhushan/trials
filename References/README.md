@@ -111,7 +111,7 @@ This Section contains Links to Books and Documentation recommended to me or i in
 				<img src="http://ecx.images-amazon.com/images/I/51eDwv7tCtL._SX442_BO1,204,203,200_.jpg" alt="IntroDuction to Algorithms - Third Edition">
 			</td>
 			<td width="60%">
-				<img src="https://raw.githubusercontent.com/Shashi-Bhushan/General/master/References/uncheck.png" alt="IntroDuction to Algorithms - Third Edition"> Have This Book[[amazonLink!](http://www.amazon.com/Introduction-Algorithms-Edition-Thomas-Cormen/dp/0262033844/ref=zg_bs_3870_2)]<br/>
+				<img src="https://raw.githubusercontent.com/Shashi-Bhushan/General/master/References/uncheck.png" alt="IntroDuction to Algorithms - Third Edition"> Have This Book - <a href="http://www.amazon.com/Introduction-Algorithms-Edition-Thomas-Cormen/dp/0262033844/ref=zg_bs_3870_2">amazonLink!</a><br/>
 				<img src="https://raw.githubusercontent.com/Shashi-Bhushan/General/master/References/uncheck.png" alt="IntroDuction to Algorithms - Third Edition"> Started Reading This Book<br/>
 
 				<hr/>
@@ -144,7 +144,7 @@ This Section contains Links to Books and Documentation recommended to me or i in
 				<img src="http://ecx.images-amazon.com/images/I/41wgksZup2L._SX331_BO1,204,203,200_.jpg" alt="Cracking the Coding Interview Questions">
 			</td>
 			<td width="60%">
-				<img src="https://raw.githubusercontent.com/Shashi-Bhushan/General/master/References/uncheck.png" alt="Cracking the Coding Interview Questions"> Have This Book[[amazonLink!](http://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/098478280X)]<br/>
+				<img src="https://raw.githubusercontent.com/Shashi-Bhushan/General/master/References/uncheck.png" alt="Cracking the Coding Interview Questions"> Have This Book - <a href="http://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/098478280X">amazonLink!</a><br/>
 				<img src="https://raw.githubusercontent.com/Shashi-Bhushan/General/master/References/uncheck.png" alt="Cracking the Coding Interview Questions"> Started Reading This Book<br/>
 
 				<hr/>
