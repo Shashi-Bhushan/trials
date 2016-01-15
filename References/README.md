@@ -164,6 +164,39 @@ This Section contains Links to Books and Documentation recommended to me or i in
 				<hr/>
 			</td>
 		</tr>
+		<!--
+			Head First - Java
+		-->
+		<tr>
+			<td colspan="2">
+				<h3>Head First Java</h3>
+			</td>
+		</tr>
+		<tr>
+			<td width="40%">
+				<img src="http://ecx.images-amazon.com/images/I/51F08bXsljL._SX431_BO1,204,203,200_.jpg" alt="Head First Java">
+			</td>
+			<td width="60%">
+				<img src="https://raw.githubusercontent.com/Shashi-Bhushan/General/master/References/uncheck.png" alt="Head First Java"> Have This Book - <a href="http://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/098478280X">amazonLink!</a><br/>
+				<img src="https://raw.githubusercontent.com/Shashi-Bhushan/General/master/References/uncheck.png" alt="Head First Java"> Started Reading This Book<br/>
+
+				<hr/>
+				Progress So Far<br/>
+				<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Empty.png">		<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Empty.png">
+				<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Empty.png">		<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Empty.png">
+				<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Empty.png">		<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Empty.png">
+				<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Empty.png">		<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Empty.png">
+				<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Empty.png">		<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Empty.png">
+				<hr/>
+				Rating<br/>
+				<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Full.png">			<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Full.png">
+				<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Full.png">			<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Full.png">
+				<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Full.png">			<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Full.png">
+				<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Full.png">			<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Full.png">
+				<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Full.png">			<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/32/Star-Empty.png">
+				<hr/>
+			</td>
+		</tr>
 	</tbody>
 </table>
 
