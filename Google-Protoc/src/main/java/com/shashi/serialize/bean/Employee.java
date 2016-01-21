@@ -280,8 +280,17 @@ public class Employee implements Serializable{
         return new Builder(id,name);
     }
 
+    /**
+     * Provided override for hashcode as a contract with equals method
+     * @return
+     *          hashcode associated with this {@link Employee} object
+     */
     @Override
     public int hashCode() {
-        return super.hashCode();
+        int var = 0;
+        if(this.birthday != null)
+            var = this.birthday.getYear();
+
+        return this.name.length() * 32 + var;
     }
 }

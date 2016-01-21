@@ -75,7 +75,7 @@ public class EmployeeTest {
 
         Map<String,Employee> employees = new HashMap<>();
         employees.put("emp1", employee);
-        employees.put("emp2",employee2);
+        employees.put("emp2", employee2);
 
         assertTrue(employees.get("emp2") != null);
     }
@@ -89,42 +89,17 @@ public class EmployeeTest {
     }
 
     @Test
-    public void testSet_id() throws Exception {
+    public void test(){
+        Map<com.shashi.serialize.bean.Employee, String> map = new HashMap<>();
 
-    }
+        com.shashi.serialize.bean.Employee employee = com.shashi.serialize.bean.Employee.newBuilder(1, "Shashi")
+                .setGender(com.shashi.serialize.bean.Employee.Properties.Gender.MALE).build();
 
-    @Test
-    public void testSet_name() throws Exception {
+        com.shashi.serialize.bean.Employee secondEmployee = com.shashi.serialize.bean.Employee.newBuilder(1, "Shashi")
+                .setGender(com.shashi.serialize.bean.Employee.Properties.Gender.MALE).build();
 
-    }
+        map.put(employee, "shashi");
 
-    @Test
-    public void testSet_birthday() throws Exception {
-
-    }
-
-    @Test
-    public void testSet_age() throws Exception {
-
-    }
-
-    @Test
-    public void testSet_role() throws Exception {
-
-    }
-
-    @Test
-    public void testSet_gender() throws Exception {
-
-    }
-
-    @Test
-    public void testSet_version() throws Exception {
-
-    }
-
-    @Test
-    public void testCreateEmployee() throws Exception {
-
+        System.out.println("map.get(employee) = " + map.get(secondEmployee));
     }
 }
