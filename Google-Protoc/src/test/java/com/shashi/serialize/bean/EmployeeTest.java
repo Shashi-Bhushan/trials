@@ -38,6 +38,10 @@ public class EmployeeTest {
         serializationUtil.serialize(filePath, EmployeesList.employeeOne);
     }
 
+    /**
+     * Have to build equals in a way that it should return false for the first test
+     * but return true in second case
+     */
     @Test
     public void equateSameEmployeeObjects_ShouldReturnTrue(){
         Employee employee = Employee.newBuilder(1, "Shashi")
@@ -62,7 +66,7 @@ public class EmployeeTest {
         employees.add(employee);
 
         assertFalse(employees.add(employee));
-        assertTrue(employees.add(employee2));
+        assertFalse(employees.add(employee2));
     }
 
     @Test
@@ -89,7 +93,7 @@ public class EmployeeTest {
     }
 
     @Test
-    public void test(){
+    public void addToMap_ShouldBeAbleToRetrieveProperly(){
         Map<com.shashi.serialize.bean.Employee, String> map = new HashMap<>();
 
         com.shashi.serialize.bean.Employee employee = com.shashi.serialize.bean.Employee.newBuilder(1, "Shashi")
@@ -100,6 +104,6 @@ public class EmployeeTest {
 
         map.put(employee, "shashi");
 
-        System.out.println("map.get(employee) = " + map.get(secondEmployee));
+        assertTrue(map.get(secondEmployee) != null);
     }
 }
