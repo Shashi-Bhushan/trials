@@ -5,7 +5,7 @@
     <!-- P A R E N T P R O J E C T D E S C R I P T I O N -->
     <!-- ====================================================================== -->
 
-    <groupId>com.shashi</groupId>
+    <groupId>com-shashi</groupId>
     <artifactId>WorkFlow</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
@@ -66,6 +66,12 @@
                 <scope>provided</scope>
             </dependency>
             <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-simple</artifactId>
+                <version>1.5.11</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
                 <groupId>javax.servlet</groupId>
                 <artifactId>servlet-api</artifactId>
                 <version>2.5</version>
@@ -75,12 +81,6 @@
                 <groupId>javax.jcr</groupId>
                 <artifactId>jcr</artifactId>
                 <version>2.0</version>
-                <scope>provided</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.sling</groupId>
-                <artifactId>org.apache.sling.api</artifactId>
-                <version>2.2.0</version>
                 <scope>provided</scope>
             </dependency>
             <dependency>
@@ -97,10 +97,9 @@
             </dependency>
             <dependency>
                 <groupId>com.adobe.aem</groupId>
-                <artifactId>uber-jar</artifactId>
-                <version>6.1.0</version>
+                <artifactId>aem-api</artifactId>
+                <version>6.0.0.1</version>
                 <scope>provided</scope>
-                <classifier>obfuscated-apis</classifier>
             </dependency>
             <dependency>
                 <groupId>org.apache.commons</groupId>

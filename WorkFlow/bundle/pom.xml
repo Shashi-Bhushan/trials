@@ -6,7 +6,7 @@
     <!-- P A R E N T P R O J E C T D E S C R I P T I O N -->
     <!-- ====================================================================== -->
     <parent>
-        <groupId>com.shashi</groupId>
+        <groupId>com-shashi</groupId>
         <artifactId>WorkFlow</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
@@ -41,6 +41,10 @@
             <artifactId>slf4j-api</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+        </dependency>
+        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
         </dependency>
@@ -54,18 +58,11 @@
         </dependency>
         <dependency>
             <groupId>org.apache.sling</groupId>
-            <artifactId>org.apache.sling.api</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.sling</groupId>
             <artifactId>org.apache.sling.jcr.api</artifactId>
         </dependency>
         <dependency>
             <groupId>com.adobe.aem</groupId>
-            <artifactId>uber-jar</artifactId>
-            <version>6.1.0</version>
-            <scope>provided</scope>
-            <classifier>obfuscated-apis</classifier>
+            <artifactId>aem-api</artifactId>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>

@@ -6,7 +6,7 @@
     <!-- P A R E N T P R O J E C T D E S C R I P T I O N -->
     <!-- ====================================================================== -->
     <parent>
-        <groupId>com.shashi</groupId>
+        <groupId>com-shashi</groupId>
         <artifactId>WorkFlow</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
