@@ -7,9 +7,14 @@ of time.
 
 ### AEM SPA Example
 
+Found on This [link!](https://github.com/AdobeAtAdobe/aem-spa-example)
 Contains an AEM Single Page Application(SPA) demo.
 Slide for the same is at [SlideShare Link!](http://www.slideshare.net/AdobeMarketingCloud/build-single-page-applications-using-angularjs-on-aem-51639249)
 
+###Granite App Project Template
+
+Found on This [link!](https://github.com/pdimarco/aem-datalayer)
+This is a project template for Granite-based applications. It is intended as a starting point to develop your own functionality.
 
 # Competitive Programming
 --------------
