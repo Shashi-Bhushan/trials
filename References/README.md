@@ -11,14 +11,21 @@ Found on This [link!](https://github.com/AdobeAtAdobe/aem-spa-example)
 Contains an AEM Single Page Application(SPA) demo.
 Slide for the same is at [SlideShare Link!](http://www.slideshare.net/AdobeMarketingCloud/build-single-page-applications-using-angularjs-on-aem-51639249)
 
-###Granite App Project Template
+### Granite App Project Template
 
 Found on This [link!](https://github.com/pdimarco/aem-datalayer)
 This is a project template for Granite-based applications. It is intended as a starting point to develop your own functionality.
 
-###AEM Integration with Dropbox
+### AEM Integration with Dropbox
 
 [link!](https://github.com/jatingupta030/dropbox-integration)
+
+### Export user und user acl via script in CQ5
+
+Import all user info from an excel file having User name, id etc to AEM Users<br/>
+[Helpful SO Link!](http://stackoverflow.com/questions/29435318/how-import-users-to-aem-cq-from-excel)
+[Another Helpful SO Link](http://stackoverflow.com/questions/13155130/export-user-und-user-acl-via-script-in-cq5)<br/>
+
 
 # Competitive Programming
 --------------
