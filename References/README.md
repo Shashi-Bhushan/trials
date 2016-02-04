@@ -27,6 +27,11 @@ Import all user info from an excel file having User name, id etc to AEM Users<br
 [Another Helpful SO Link](http://stackoverflow.com/questions/13155130/export-user-und-user-acl-via-script-in-cq5)<br/>
 
 
+### Create Package Based on Xpath in CQ5 / WEM
+
+From a blog[BlogLink](http://www.wemblog.com/2011/11/how-to-create-package-based-on-xpath-in.html).<br/>
+Packages links are on this blog.[CQ 5.6 Package](https://docs.google.com/a/tothenew.com/file/d/0B3d7-oHroQKdd2lNbGlmSFduV1E/edit)
+
 # Competitive Programming
 --------------
 
