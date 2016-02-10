@@ -19,7 +19,6 @@ import com.day.cq.dam.api.renditions.RenditionTemplate;
 import com.day.cq.dam.commons.metadata.SimpleXmpToJcrMetadataBuilder;
 import com.day.cq.dam.commons.util.DamUtil;
 import com.day.cq.dam.commons.util.OrientationUtil;
-//import com.day.cq.dam.core.impl.handler.xmp.XMPWriteBackOptionsImpl;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Dictionary;
@@ -47,8 +46,8 @@ import org.slf4j.LoggerFactory;
         label = "Adobe CQ DAM Rendition Maker",
         description = "Adobe CQ DAM Rendition Maker"
 )
-@Service
-public class RenditionMakerImpl {
+@Service(RenditionMakerImpl.class)
+public class RenditionMakerImpl implements  RenditionMaker {
     private static final Logger log = LoggerFactory.getLogger(RenditionMakerImpl.class);
     public static final String PREFIX_WEB_RENDITION = "cq5dam.web.";
     private static final boolean DEFAULT_PROPAGATE_XMP = false;
@@ -96,7 +95,7 @@ public class RenditionMakerImpl {
         Asset asset = rendition.getAsset();
         boolean useRenditionPath = rendition.equals(asset.getOriginal());
         template.renditionName = DamUtil.getThumbnailName(width, height, doCenter?new String[]{"margin"}:null);
-        template.mimeType = "image/png";
+        template.mimeType = "image/jpg";
         template.plan = this.gfx.createPlan();
         template.plan.layer(0).set("src", useRenditionPath?rendition.getPath():asset.getPath());
         applyOrientation(OrientationUtil.getOrientation(asset), template.plan.layer(0));
@@ -154,11 +153,12 @@ public class RenditionMakerImpl {
         global.set("hei", Integer.valueOf(height));
         global.set("fit", doCenter?"fit,1":"constrain,1");
         String fmt = StringUtils.substringAfter(mimeType, "/");
-        if("png".equals(fmt) || "gif".equals(fmt) || "tif".equals(fmt)) {
+        if("png".equals(fmt) || "gif".equals(fmt) || "tif".equals(fmt) || "jpeg".equals(fmt) || "jpg".equals(fmt)) {
             fmt = fmt + "-alpha";
         }
 
         global.set("fmt", fmt);
+        log.info("global is : {}", global);
     }
 
     private void applyWebRendition(int width, int height, int quality, String mimeType, Plan plan) {
