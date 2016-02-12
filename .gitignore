@@ -26,3 +26,4 @@ generated/
 puppet/r10k
 target/
 *.serialize
+*.class
