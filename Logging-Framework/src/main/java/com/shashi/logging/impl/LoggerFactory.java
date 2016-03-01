@@ -49,7 +49,7 @@ public class LoggerFactory {
         Loggable logger = loggerMap.get(clazz);
 
         if(logger != null){
-            // set explicit LOG_LEVEL if it is not equal to Existing LOG level
+            // set explicit LOG_LEVEL if it is not equal to Existing LOG level of the Loggable Class Object
             if(logger.getLogLevel() != log_level){
                 logger.setLogLevel(log_level);
             }
