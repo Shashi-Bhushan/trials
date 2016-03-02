@@ -1,11 +1,5 @@
 package org.slf4j.impl;
 
-/**
- * @author Shashi Bhushan
- *         Created on 1/3/16.
- *         For Logging-Framework
- */
-
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -13,11 +7,24 @@ import com.shashi.logging.Loggable;
 import org.slf4j.ILoggerFactory;
 import org.slf4j.Logger;
 
+/**
+ * This class is a custom {@link org.slf4j.ILoggerFactory} implementation for slf4j.
+ * Provides a {@code loggerMap}, which holds name of the {@link Class} to initialize the {@link Logger} for and actual
+ * {@link Logger} object in a key value pair. Also, provides a {@link #getLogger(String)} method to return the {@code Logger}
+ * object if it already exists or create one and add this to {@code loggerMap} along with returning it back to the caller.
+ *
+ * @author Shashi Bhushan
+ *         Created on 1/3/16.
+ *         For Logging-Framework
+ */
 public class LoggingLoggerFactory implements ILoggerFactory {
 
     public LoggingLoggerFactory() {
     }
 
+    /**
+     * Resets the {@code loggerMap}
+     */
     void reset() {
         this.loggerMap.clear();
     }
@@ -34,24 +41,17 @@ public class LoggingLoggerFactory implements ILoggerFactory {
     private static final Map<String, Logger> loggerMap = new ConcurrentHashMap<String, Logger>();
 
     /**
-     * This method returns the {@link Loggable} instance for a particular class.
-     * but first, it should check if the {@link Loggable} object alredy exists for that class
+     * This method returns the {@link Logger} instance for a particular class.
+     * but first, it should check if the {@link Logger} object already exists for that class
      * @param clazz
-     *      {@link Class} for which to initialize the Logger
+     *      {@link Class} name for which to initialize the Logger
      * @return
-     *      {@link Loggable} object with Specified {@link Class}
+     *      {@link Logger} object with Specified {@link Class}
      */
     public Logger getLogger(String clazz){
         Logger logger = this.loggerMap.get(clazz);
 
         if(logger != null){
-            // set explicit LOG_LEVEL if it is not equal to Existing LOG level of the Loggable Class Object
-//            if(logger.getCurrentLogLevel() != log_level){
-//                logger.setCurrentLogLevel(log_level);
-//            }
-//            if(out != logger.getOutput()){
-//                logger.setOutput(out);
-//            }
             return logger;
         }else{
             logger = new LoggerImpl(clazz);
