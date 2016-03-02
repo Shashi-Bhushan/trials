@@ -16,6 +16,11 @@ import java.io.PrintStream;
  *      - [ ] Should have multithreaded capabilities, you don't want multiple threads writing to LOG at the same time,else
  *        you'll end up with garbage.
  *      - [ ] Make it expandable and usable with other Third party libraries viz SLF4J
+ *      It should be fairly easy. you'll need to implement your own Logger and LoggerFactory. you will not have to change
+ *      existing code at all. After doing that you'll need to implement StaticLoggerBinder to return your logger factory
+ *      and class name. if you download the slf4j zip file then you get the source for all the implementations too, just
+ *      have a look at the StaticLoggerBinder in slf4j-log4j for an example.
+ *      have a look at this link for details : http://www.slf4j.org/faq.html#slf4j_compatible
  *
  * @author Shashi Bhushan
  *         Created on 26/2/16.
