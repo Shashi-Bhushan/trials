@@ -22,7 +22,7 @@
     <!-- ====================================================================== -->
     <properties>
         <crx.host>localhost</crx.host>
-        <crx.port>4502</crx.port>
+        <crx.port>6502</crx.port>
         <crx.username>admin</crx.username>
         <crx.password>admin</crx.password>
         <publish.crx.host>localhost</publish.crx.host>
@@ -31,6 +31,7 @@
         <publish.crx.password>admin</publish.crx.password>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <slf4jVersion>1.6.1</slf4jVersion>
     </properties>
 
     <dependencyManagement>
@@ -62,8 +63,18 @@
             <dependency>
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-api</artifactId>
-                <version>1.5.10</version>
+                <version>${slf4jVersion}</version>
                 <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-log4j12</artifactId>
+                <version>${slf4jVersion}</version>
+            </dependency>
+            <dependency>
+                <groupId>log4j</groupId>
+                <artifactId>log4j</artifactId>
+                <version>1.2.16</version>
             </dependency>
             <dependency>
                 <groupId>javax.servlet</groupId>
@@ -94,6 +105,12 @@
                 <artifactId>junit</artifactId>
                 <version>4.8.1</version>
                 <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.sling</groupId>
+                <artifactId>org.apache.sling.commons.osgi</artifactId>
+                <version>2.2.0</version>
+                <scope>provided</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
