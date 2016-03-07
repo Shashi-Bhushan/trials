@@ -31,11 +31,15 @@ import java.util.Map;
                         @PropertyOption(name = "Female", value = "FEMALE")
                 }),
         @Property(name = FactoryConfigCleanerWay.PHONE_NUMBERS_PROPERTY ,label="Phone Number", description = "Phone Numbers of the user", cardinality = Integer.MAX_VALUE),
-        @Property(name = FactoryConfigCleanerWay.IS_ALIVE_PROPERTY, boolValue = {false}, label = "Are you alive", description = "Are you seriously Alive Man")
+        @Property(name = FactoryConfigCleanerWay.IS_ALIVE_PROPERTY, boolValue = {false}, label = "Are you alive", description = "Are you seriously Alive Man"),
+        @Property(name = FactoryConfigCleanerWay.HOW_MANY_CHILDREN, intValue = 0, label = "How Many Children", description = "Describes How many Children You Have")
 })
 
 public class FactoryConfigCleanerWay {
 
+    /**
+     * Static Final String variables serves as name for the {@link Property}
+     */
     static final String NAME_PROPERTY = "name.property";
 
     static final String GENDER_PROPERTY = "gender.property";
@@ -44,6 +48,11 @@ public class FactoryConfigCleanerWay {
 
     static final String IS_ALIVE_PROPERTY = "is.alive.property";
 
+    static final String HOW_MANY_CHILDREN = "child.property";
+
+    /**
+     * Private variables to hold the values for individual instances
+     */
     private String name;
 
     private String gender;
@@ -51,6 +60,8 @@ public class FactoryConfigCleanerWay {
     private List<String> phoneNumbers;
 
     private boolean isAlive;
+
+    private int children;
 
     private static final Logger LOG = LoggerFactory.getLogger(FactoryConfigCleanerWay.class);
 
@@ -65,6 +76,7 @@ public class FactoryConfigCleanerWay {
         this.gender = String.valueOf(properties.get(GENDER_PROPERTY));
         this.phoneNumbers = Arrays.asList(PropertiesUtil.toStringArray(properties.get(PHONE_NUMBERS_PROPERTY)));
         this.isAlive = PropertiesUtil.toBoolean(properties.get(IS_ALIVE_PROPERTY), false);
+        this.children = PropertiesUtil.toInteger(properties.get(HOW_MANY_CHILDREN), 0);
 
         LOG.info("Map is : {}", properties);
         LOG.info("Phone Number is : {} and are you alive : {}", this.phoneNumbers, this.isAlive);

@@ -85,6 +85,11 @@ public class FactoryConfig {
      */
     @Property(label="Phone Number", description = "Phone Numbers of the user", cardinality = Integer.MAX_VALUE)
     private static final String PHONE_NUMBER_PROPERTY = "phoneNumber.property";
+    /**
+     * BOOLEAN VALUE (Checkbox)
+     */
+    @Property(boolValue = {false}, label = "Are you alive", description = "Are you seriously Alive Man")
+    private static final String IS_ALIVE_PROPERTY = "is.alive.property";
 
     /**
      * This is a normal instance variable in this Class and is used to getProperty once from the map and set in this
@@ -93,6 +98,7 @@ public class FactoryConfig {
     private String name;
     private String gender;
     private List<String> phoneNumbers;
+    private boolean isAlive;
 
     @Activate
     public void activate(final Map<String, Object> properties){
@@ -105,6 +111,7 @@ public class FactoryConfig {
         name = String.valueOf(properties.get("name.property"));
         gender = String.valueOf(properties.get(GENDER_PROPERTY));
         this.phoneNumbers = Arrays.asList(PropertiesUtil.toStringArray(properties.get(PHONE_NUMBER_PROPERTY)));
+        this.isAlive = PropertiesUtil.toBoolean(properties.get(IS_ALIVE_PROPERTY), false);
 
         log.info("Map is : {}", properties);
         log.info("Phone Number is : {}" ,  this.phoneNumbers);
