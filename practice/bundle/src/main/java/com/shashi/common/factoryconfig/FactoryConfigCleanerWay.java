@@ -34,7 +34,7 @@ import java.util.Map;
         @Property(name = FactoryConfigCleanerWay.IS_ALIVE_PROPERTY, boolValue = {false}, label = "Are you alive", description = "Are you seriously Alive Man"),
         @Property(name = FactoryConfigCleanerWay.HOW_MANY_CHILDREN, intValue = 0, label = "How Many Children", description = "Describes How many Children You Have")
 })
-
+@Service(FactoryConfigCleanerWay.class)
 public class FactoryConfigCleanerWay {
 
     /**
@@ -78,7 +78,17 @@ public class FactoryConfigCleanerWay {
         this.isAlive = PropertiesUtil.toBoolean(properties.get(IS_ALIVE_PROPERTY), false);
         this.children = PropertiesUtil.toInteger(properties.get(HOW_MANY_CHILDREN), 0);
 
-        LOG.info("Map is : {}", properties);
-        LOG.info("Phone Number is : {} and are you alive : {}", this.phoneNumbers, this.isAlive);
+        LOG.info("Map is : {}", this.toString());
+    }
+
+    @Override
+    public String toString() {
+        return "FactoryConfigCleanerWay{" +
+                "name='" + name + '\'' +
+                ", gender='" + gender + '\'' +
+                ", phoneNumbers=" + phoneNumbers +
+                ", isAlive=" + isAlive +
+                ", children=" + children +
+                '}';
     }
 }
