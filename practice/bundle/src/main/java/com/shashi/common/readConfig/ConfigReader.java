@@ -1,6 +1,6 @@
 package com.shashi.common.readConfig;
 
-import com.shashi.common.factoryconfig.FactoryConfigCleanerWay;
+import com.shashi.common.factoryconfig.FactoryConfig;
 import org.apache.felix.scr.annotations.Activate;
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Modified;
@@ -22,6 +22,7 @@ import java.util.Map;
         label = "Factory Config Reader",
         metatype = false,
         enabled = true,
+        immediate = true,
         description = "Factory Configuration Reader - Using to read configurations for FactoryConfig Class"
 )
 public class ConfigReader {
@@ -36,14 +37,14 @@ public class ConfigReader {
     @Activate
     @Modified
     public void activate(final Map<String, Object> properties){
-
         try {
-            configuration = configadmin.getConfiguration(FactoryConfigCleanerWay.class.getName());
+            configuration = configadmin.getConfiguration(FactoryConfig.class.getName());
         } catch (IOException cause) {
             LOG.error("Error is : {}", cause.getMessage());
             cause.getMessage();
         }
 
-        LOG.info("Configuration is : {}", "Activate MThod called again");
+        LOG.info("Configuration Admin is : {}", configadmin);
+        LOG.info("Configuration is : {}", configuration);
     }
 }

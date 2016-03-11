@@ -21,7 +21,8 @@ import java.util.Map;
         immediate = true,
         metatype = true,
         enabled = true,
-        description = "Sample Factory Configuration having Some Properties - is a cleaner way of doing things"
+        description = "Sample Factory Configuration having Some Properties - is a cleaner way of doing things",
+        configurationFactory = true
 )
 @Properties({
         @Property(name = FactoryConfigCleanerWay.NAME_PROPERTY, label = "Name Property", description = "Name of the User"),
