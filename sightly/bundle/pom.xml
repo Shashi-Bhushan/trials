@@ -41,8 +41,20 @@
             <artifactId>slf4j-api</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+        </dependency>
+        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
         </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
@@ -59,6 +71,10 @@
         <dependency>
             <groupId>org.apache.sling</groupId>
             <artifactId>org.apache.sling.jcr.api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.adobe.aem</groupId>
+            <artifactId>aem-api</artifactId>
         </dependency>
     </dependencies>
 
@@ -86,6 +102,34 @@
                 <configuration>
                     <instructions>
                         <Bundle-SymbolicName>com.general.sightly.sightly-bundle</Bundle-SymbolicName>
+                        <Export-Package>
+                            <!-- Let's export our primary package -->
+                            com.general.sightly.components
+                            <!-- By default, don't export any other packages -->
+
+                        </Export-Package>
+                        <Import-Package>
+
+                            <!-- JSR 250 && 330 -->
+                            javax.annotation;version=0.0.0.1_007_JavaSE,
+                            javax.inject,
+
+                            <!-- JEE Servlet -->
+                            javax.servlet,
+                            javax.servlet.http,
+
+                            <!-- Sling -->
+                            org.apache.sling.api,
+                            org.apache.sling.api.resource,
+                            org.apache.sling.auth.core,
+
+
+
+                            org.apache.sling.jcr.api,
+                            com.adobe.cq.sightly,
+                            javax.jcr,
+                            !*
+                        </Import-Package>
                     </instructions>
                 </configuration>
             </plugin>

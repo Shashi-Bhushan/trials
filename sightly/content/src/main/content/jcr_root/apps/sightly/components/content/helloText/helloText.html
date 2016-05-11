@@ -1,0 +1,20 @@
+<p>This is your Sightly component:</p>
+
+
+<div data-sly-resource="${ 'par' @
+resourceType='foundation/components/parsys'}">
+</div>
+
+<div data-sly-use.heroTextObject="com.general.sightly.components.HelloTextComponent" data-sly-test="${heroTextObject}">
+    Heading text from Bean : ${heroTextObject.helloTextBean.headingText}
+    <br/>
+    Description from Bean  : ${heroTextObject.helloTextBean.description}
+    <hr/>
+
+    Heading Text from properties : ${heroTextObject.jcr:heading}
+    <br/>
+    Description from properties : ${properties.jcr:description}
+    <hr/>
+</div>
+
+End of Sightly Component.
