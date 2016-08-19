@@ -32,23 +32,26 @@ Import all user info from an excel file having User name, id etc to AEM Users<br
 From a blog[BlogLink](http://www.wemblog.com/2011/11/how-to-create-package-based-on-xpath-in.html).<br/>
 Packages links are on this blog.[CQ 5.6 Package](https://docs.google.com/a/tothenew.com/file/d/0B3d7-oHroQKdd2lNbGlmSFduV1E/edit)
 
+### Youtube playlist having videos regarding AEM. <br/>
+https://www.youtube.com/playlist?list=PLt-dhGa951MRZZ-iznMKlgp-XK-ft_KDM
+
 # Competitive Programming
 --------------
 
 Links to the Repositories i intend to take a look at for Competitive 
 Programming references
 
-- https://github.com/tapasweni-pathak/Competitive-Programming
+- https://github.com/tapasweni-pathak/Competitive-Programming<br/>
 	Have seen code written in c++
 
-- https://github.com/esbanarango/Competitive-Programming
+- https://github.com/esbanarango/Competitive-Programming<br/>
 	This Repository have some [Pdf](https://github.com/esbanarango/Competitive-Programming/tree/master/%C2%B7Documentation/Books) and Documentation as well. 
 	All in all code written in c++ and ruby.
 
-- http://codeforces.com/blog/entry/23054
+- http://codeforces.com/blog/entry/23054<br/>
 	Page having Links to other competitive reference material.
 
-- http://www.forbes.com/sites/quora/2013/07/03/how-do-i-strengthen-my-knowledge-of-data-structures-and-algorithms/#1a6b96bc50c5
+- http://www.forbes.com/sites/quora/2013/07/03/how-do-i-strengthen-my-knowledge-of-data-structures-and-algorithms/#1a6b96bc50c5<br/>
 	Blog of a Google Engineer regarding what he would expect in a interviewee in terms of DS and Algorithm knowledge
 
 # Books And Documentation
