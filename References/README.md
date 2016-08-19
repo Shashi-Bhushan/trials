@@ -45,6 +45,12 @@ Programming references
 	This Repository have some [Pdf](https://github.com/esbanarango/Competitive-Programming/tree/master/%C2%B7Documentation/Books) and Documentation as well. 
 	All in all code written in c++ and ruby.
 
+- http://codeforces.com/blog/entry/23054
+	Page having Links to other competitive reference material.
+
+- http://www.forbes.com/sites/quora/2013/07/03/how-do-i-strengthen-my-knowledge-of-data-structures-and-algorithms/#1a6b96bc50c5
+	Blog of a Google Engineer regarding what he would expect in a interviewee in terms of DS and Algorithm knowledge
+
 # Books And Documentation
 ----------------------
 
