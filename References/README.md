@@ -50,6 +50,9 @@ Programming references
 - https://github.com/tapasweni-pathak/Competitive-Programming<br/>
 	Have seen code written in c++
 
+- https://github.com/haseebr/competitive-programming/tree/master/Materials<br/>
+	Good Material
+
 - https://github.com/esbanarango/Competitive-Programming<br/>
 	This Repository have some [Pdf](https://github.com/esbanarango/Competitive-Programming/tree/master/%C2%B7Documentation/Books) and Documentation as well. 
 	All in all code written in c++ and ruby.
