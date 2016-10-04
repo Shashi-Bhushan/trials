@@ -4,6 +4,9 @@
 
 https://www.quora.com/I-am-really-a-stupid-developer-how-should-I-push-myself-to-limit-in-learning-algorithms-and-competitive-programming/answer/Ayush-Pareek-2?srid=wdzW&share=89280d85
 
+## Where can I find the course material for algorithms I & II from Princeton?
+
+https://www.quora.com/Where-can-I-find-the-course-material-for-algorithms-I-II-from-Princeton
 <br/>
 # Books
 
