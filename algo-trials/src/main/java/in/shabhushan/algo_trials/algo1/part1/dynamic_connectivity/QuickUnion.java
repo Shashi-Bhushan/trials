@@ -2,6 +2,12 @@ package in.shabhushan.algo_trials.algo1.part1.dynamic_connectivity;
 
 import java.util.Arrays;
 
+/**
+ * This is the lazy approach
+ * Union is quick but find takes more time if the tree is too tall.
+ *
+ * on n objects, find would take O(n^2) time
+ */
 public class QuickUnion implements UnionFind {
 
   private int[] array;

@@ -9,7 +9,7 @@ package in.shabhushan.algo_trials.algo1.part1.dynamic_connectivity;
 public interface UnionFind {
 
   /**
-   * Add a connection between p and q
+   * Add a connection between two sites p and q
    *
    * @param p
    *  Component from first set
@@ -19,7 +19,7 @@ public interface UnionFind {
   void union(int p, int q);
 
   /**
-   * Check if two objects are in same component
+   * Check if two sites are in same component
    *
    * @param p
    *  Component from first set
@@ -31,12 +31,12 @@ public interface UnionFind {
   boolean connected(int p, int q);
 
   /**
-   * component identifier for p (0..N-1)
+   * Give component identifier for site p (0..N-1)
    */
   int find(int p);
 
   /**
-   * Returns the number of components
+   * Returns the number of components in graph
    */
   int count();
 }
