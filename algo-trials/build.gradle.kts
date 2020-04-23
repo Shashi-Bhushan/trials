@@ -22,7 +22,7 @@ dependencies {
 }
 
 configure<JavaPluginConvention> {
-  sourceCompatibility = JavaVersion.VERSION_12
+  sourceCompatibility = JavaVersion.VERSION_11
 }
 
 tasks {
