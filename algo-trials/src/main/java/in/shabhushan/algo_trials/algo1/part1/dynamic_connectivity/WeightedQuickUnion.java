@@ -1,24 +1,25 @@
 package in.shabhushan.algo_trials.algo1.part1.dynamic_connectivity;
 
-import java.util.Arrays;
-
 /**
  * This is the lazy approach
  * Union is quick but find takes more time if the tree is too tall.
  *
  * on n objects, find would take O(n^2) time
  */
-public class QuickUnion implements UnionFind {
+public class WeightedQuickUnion implements UnionFind {
 
   private int[] parent;
+  private int[] size;
   private int count;
 
-  public QuickUnion(int numComponents) {
+  public WeightedQuickUnion(int numComponents) {
     parent = new int[numComponents];
+    size = new int[numComponents];
     count = numComponents;
 
     for (int i = 0; i < numComponents; i++) {
       parent[i] = i;
+      size[i] = 1;
     }
   }
 
@@ -29,7 +30,13 @@ public class QuickUnion implements UnionFind {
 
     if (rootP == rootQ) return;
 
-    parent[rootP] = rootQ;
+    if (size[rootP] < size[rootQ]) {
+      parent[rootP] = rootQ;
+      size[rootQ] += size[rootP];
+    } else {
+      parent[rootQ] = rootP;
+      size[rootP] += rootQ;
+    }
     count--;
   }
 

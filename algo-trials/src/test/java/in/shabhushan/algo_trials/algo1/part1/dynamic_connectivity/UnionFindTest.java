@@ -36,6 +36,23 @@ public class UnionFindTest {
     return unionFind;
   }
 
+  public UnionFind getWeightedQuickUnion() {
+    UnionFind unionFind = new WeightedQuickUnion(10);
+
+    // child, parent
+    unionFind.union(6, 5);
+    unionFind.union(2, 1);
+    unionFind.union(5, 0);
+    unionFind.union(0, 1);
+    unionFind.union(7, 1);
+    unionFind.union(1, 8);
+    unionFind.union(3, 8);
+    unionFind.union(4, 3);
+    unionFind.union(9, 8);
+
+    return unionFind;
+  }
+
   @Test
   public void testQuickFind() {
     UnionFind unionFind = getQuickFind();
@@ -46,9 +63,26 @@ public class UnionFindTest {
     assertTrue(unionFind.connected(2, 3));
   }
 
+  /**
+   *          8
+   *        / | \
+   *       1  9  3
+   *     / | \   |
+   *    0  2  7  4
+   *    |
+   *    5
+   *    |
+   *    6
+   */
   @Test
   public void testQuickUnion() {
     UnionFind unionFind = getQuickUnion();
-    assertEquals(1, unionFind.find(2));
+    assertEquals(8, unionFind.find(2));
+  }
+
+  @Test
+  public void testWeightedQuickUnion() {
+    UnionFind unionFind = getWeightedQuickUnion();
+    assertEquals(6, unionFind.find(2));
   }
 }
