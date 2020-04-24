@@ -1,4 +1,4 @@
-package in.shabhushan.algo_trials.algo1.part1.dynamic_connectivity;
+package in.shabhushan.algo_trials.algorithms.chapter1.section5;
 
 /**
  * This is the lazy approach
@@ -11,6 +11,10 @@ public class WeightedQuickUnion implements UnionFind {
   private int[] parent;
   private int[] size;
   private int count;
+  private int totalCount;
+  private int findCount;
+  private int checkParentCount;
+  private int updateParentCount;
 
   public WeightedQuickUnion(int numComponents) {
     parent = new int[numComponents];
@@ -30,6 +34,8 @@ public class WeightedQuickUnion implements UnionFind {
 
     if (rootP == rootQ) return;
 
+    updateParentCount++;
+    totalCount++;
     if (size[rootP] < size[rootQ]) {
       parent[rootP] = rootQ;
       size[rootQ] += size[rootP];
@@ -50,8 +56,14 @@ public class WeightedQuickUnion implements UnionFind {
 
   @Override
   public int find(int p) {
-    while (parent[p] != p)
+    findCount++;
+    totalCount++;
+
+    while (parent[p] != p) {
+      checkParentCount++;
+      totalCount++;
       p = parent[p];
+    }
 
     return p;
   }
@@ -59,5 +71,26 @@ public class WeightedQuickUnion implements UnionFind {
   @Override
   public int count() {
     return count;
+  }
+
+  @Override
+  public int[] getParent() {
+    return parent;
+  }
+
+  @Override
+  public int[] getTotalCount() {
+    int[] stats = new int[]{totalCount, findCount, checkParentCount, updateParentCount};
+
+    resetStats();
+
+    return stats;
+  }
+
+  private void resetStats() {
+    totalCount = 0;
+    findCount = 0;
+    checkParentCount = 0;
+    updateParentCount = 0;
   }
 }

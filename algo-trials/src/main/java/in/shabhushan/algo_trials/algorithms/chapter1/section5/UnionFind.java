@@ -1,4 +1,4 @@
-package in.shabhushan.algo_trials.algo1.part1.dynamic_connectivity;
+package in.shabhushan.algo_trials.algorithms.chapter1.section5;
 
 /**
  * Goal: Design an efficient data structure for union find
@@ -39,4 +39,8 @@ public interface UnionFind {
    * Returns the number of components in graph
    */
   int count();
+
+  public int[] getParent();
+
+  public int[] getTotalCount();
 }

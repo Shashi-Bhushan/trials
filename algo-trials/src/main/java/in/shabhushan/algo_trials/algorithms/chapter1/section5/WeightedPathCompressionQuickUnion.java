@@ -1,6 +1,4 @@
-package in.shabhushan.algo_trials.algo1.part1.dynamic_connectivity;
-
-import java.util.Arrays;
+package in.shabhushan.algo_trials.algorithms.chapter1.section5;
 
 /**
  * This is the lazy approach
@@ -8,17 +6,21 @@ import java.util.Arrays;
  *
  * on n objects, find would take O(n^2) time
  */
-public class QuickUnion implements UnionFind {
+public class WeightedPathCompressionQuickUnion implements UnionFind {
 
   private int[] parent;
+  private int[] size;
   private int count;
+  private int arrayAccessCount;
 
-  public QuickUnion(int numComponents) {
+  public WeightedPathCompressionQuickUnion(int numComponents) {
     parent = new int[numComponents];
+    size = new int[numComponents];
     count = numComponents;
 
     for (int i = 0; i < numComponents; i++) {
       parent[i] = i;
+      size[i] = 1;
     }
   }
 
@@ -29,7 +31,13 @@ public class QuickUnion implements UnionFind {
 
     if (rootP == rootQ) return;
 
-    parent[rootP] = rootQ;
+    if (size[rootP] < size[rootQ]) {
+      parent[rootP] = rootQ;
+      size[rootQ] += size[rootP];
+    } else {
+      parent[rootQ] = rootP;
+      size[rootP] += rootQ;
+    }
     count--;
   }
 
@@ -43,8 +51,10 @@ public class QuickUnion implements UnionFind {
 
   @Override
   public int find(int p) {
-    while (parent[p] != p)
+    while (parent[p] != p) {
+      parent[p] = parent[parent[p]];
       p = parent[p];
+    }
 
     return p;
   }
@@ -52,5 +62,15 @@ public class QuickUnion implements UnionFind {
   @Override
   public int count() {
     return count;
+  }
+
+  @Override
+  public int[] getParent() {
+    return parent;
+  }
+
+  @Override
+  public int[] getTotalCount() {
+    return new int[] { arrayAccessCount };
   }
 }

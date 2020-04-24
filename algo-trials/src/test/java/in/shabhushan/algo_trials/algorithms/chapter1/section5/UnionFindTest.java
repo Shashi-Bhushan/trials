@@ -1,4 +1,4 @@
-package in.shabhushan.algo_trials.algo1.part1.dynamic_connectivity;
+package in.shabhushan.algo_trials.algorithms.chapter1.section5;
 
 import org.junit.Test;
 
@@ -80,6 +80,11 @@ public class UnionFindTest {
     assertEquals(8, unionFind.find(2));
   }
 
+  /**
+   *        6
+   *   4 8 1 5 0 7 3 9
+   *       2
+   */
   @Test
   public void testWeightedQuickUnion() {
     UnionFind unionFind = getWeightedQuickUnion();
