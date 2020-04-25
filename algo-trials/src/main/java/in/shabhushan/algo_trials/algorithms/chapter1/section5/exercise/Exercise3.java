@@ -1,4 +1,7 @@
-package in.shabhushan.algo_trials.algorithms.chapter1.section5;
+package in.shabhushan.algo_trials.algorithms.chapter1.section5.exercise;
+
+import in.shabhushan.algo_trials.algorithms.chapter1.section5.Stats;
+import in.shabhushan.algo_trials.algorithms.chapter1.section5.WeightedQuickUnion;
 
 /**
  * Use Weighted quick union for the same sequence of operations

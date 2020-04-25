@@ -1,4 +1,7 @@
-package in.shabhushan.algo_trials.algorithms.chapter1.section5;
+package in.shabhushan.algo_trials.algorithms.chapter1.section5.exercise;
+
+import in.shabhushan.algo_trials.algorithms.chapter1.section5.QuickFind;
+import in.shabhushan.algo_trials.algorithms.chapter1.section5.Stats;
 
 /**
  * Show the contents of the id[] array and the number of times the array is accessed for each input pair when you use quick-find for the sequence

@@ -8,11 +8,13 @@ version = "0.0.1-SNAPSHOT"
 
 repositories {
   mavenCentral()
+  maven("https://dl.bintray.com/algs4/maven/")
 }
 
 dependencies {
   implementation(kotlin("stdlib-jdk8"))
   testCompile("junit", "junit", "4.12")
+  implementation("edu.princeton.cs", "algs4", "1.0.1")
 
   // Use the Kotlin test library.
   testImplementation("org.jetbrains.kotlin:kotlin-test")
