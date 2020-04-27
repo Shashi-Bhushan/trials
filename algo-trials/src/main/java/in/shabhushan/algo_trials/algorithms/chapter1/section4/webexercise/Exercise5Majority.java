@@ -36,11 +36,18 @@ public class Exercise5Majority {
       }
     }
 
-    int m = majorityNumber;
-    if (Arrays.stream(nums).filter(num -> num == m).count() > n/2)
-      return majorityNumber;
-    else
-      return -1;
+    int count = 0;
+
+    // NOTE: Arrays.stream(nums).filter(num -> num == m).count() > n/2 turned out to be slowing factor :(
+    // otherwise this solution is faster than map version by around 40%
+    for (int num : nums) {
+      if (num == majorityNumber)
+        count++;
+      if (count > n / 2)
+        return majorityNumber;
+    }
+
+    return -1;
   }
 
   /**
