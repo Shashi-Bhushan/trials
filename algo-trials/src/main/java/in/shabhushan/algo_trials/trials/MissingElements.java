@@ -5,6 +5,10 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class MissingElements {
+  /**
+   * Check the answer for detail
+   * https://stackoverflow.com/a/5752304/2449146
+   */
   public static List<Integer> missingElements(int[] nums, int k) {
     int[] numbers = new int[nums.length + k];
 
