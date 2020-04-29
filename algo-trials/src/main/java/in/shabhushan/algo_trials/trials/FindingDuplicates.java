@@ -1,7 +1,6 @@
 package in.shabhushan.algo_trials.trials;
 
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -31,5 +30,25 @@ public class FindingDuplicates {
     }
 
     return IntStream.range(0, numbers.length).filter(i -> numbers[i] != i).map(i -> numbers[i]).boxed().collect(Collectors.toList());
+  }
+
+  /**
+   * If there are n numbers, choosing 2 at once
+   * there would be nC2 pairs = [n * n - 1]/2
+   */
+  public static int findDuplicateCount(int[] numbers) {
+    Map<Integer, Integer> map = new HashMap<>();
+
+    for (int num: numbers) {
+      map.put(num, map.getOrDefault(num, 0) + 1);
+    }
+
+    int answer = 0;
+    for(Integer key : map.keySet()) {
+      Integer n = map.get(key);
+      answer += (n * (n - 1)) / 2;
+    }
+
+    return answer;
   }
 }
