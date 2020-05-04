@@ -1,10 +1,8 @@
 package in.shabhushan.algo_trials.algorithms.chapter1.section3;
 
-import jdk.jshell.spi.ExecutionControl;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Iterator;
-import java.util.function.Consumer;
 
 public class Bag<Item> implements Iterable<Item> {
 
@@ -13,11 +11,8 @@ public class Bag<Item> implements Iterable<Item> {
 
   /**
    * Creates an empty bag
-   * @param item
    */
-  public Bag(Item item) {
-    add(item);
-  }
+  public Bag() {}
 
   @NotNull
   @Override

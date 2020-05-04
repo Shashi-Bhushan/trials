@@ -57,13 +57,26 @@ public class ExpressionEvaluation {
     );
 
     public int performOperation(int firstOperand, int secondOperand) {
+      switch (this.operator) {
+        case "+":
+          return firstOperand + secondOperand;
+        case "-":
+          return firstOperand - secondOperand;
+        case "*":
+          return firstOperand * secondOperand;
+        case "/":
+          return firstOperand / secondOperand;
+        default:
+          throw new IllegalStateException(String.format("%s is not a valid operator", this.operator));
+      }
+      /*
       return switch (this.operator) {
         case "+" -> firstOperand + secondOperand;
         case "-" -> firstOperand - secondOperand;
         case "*" -> firstOperand * secondOperand;
         case "/" -> firstOperand / secondOperand;
         default -> throw new IllegalStateException(String.format("%s is not a valid operator", this.operator));
-      };
+      };*/
     }
   }
 }
