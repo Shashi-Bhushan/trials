@@ -21,4 +21,4 @@ I took inspiration from this on some of the solutions I wrote and blatantly copi
 - [Common Elements](https://github.com/Shashi-Bhushan/trials/blob/master/algo-trials/src/main/java/in/shabhushan/algo_trials/algorithms/chapter1/section4/exercise/Exercise12CommonElements.java)
 - Check Chapter 1, Section 4, Exercise 15 both solutions (One map based, other sum based Three sum solution)
 - [Local Minimum](https://github.com/Shashi-Bhushan/trials/blob/master/algo-trials/src/main/java/in/shabhushan/algo_trials/algorithms/chapter1/section4/exercise/Exercise18LocalMinimum.java)
-- [Less Than](https://github.com/Shashi-Bhushan/trials/blob/master/algo-trials/src/main/java/in/shabhushan/algo_trials/algorithms/chapter1/section1/exercise/Exercise28.java)
+- [Less Than, Exercise 29 Section 1, Chapter 1](https://github.com/Shashi-Bhushan/trials/blob/master/algo-trials/src/main/java/in/shabhushan/algo_trials/algorithms/chapter1/section1/exercise/Exercise28.java)

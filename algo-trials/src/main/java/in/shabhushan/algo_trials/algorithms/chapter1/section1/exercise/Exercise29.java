@@ -1,8 +1,10 @@
 package in.shabhushan.algo_trials.algorithms.chapter1.section1.exercise;
 
-public class Exercise28 {
+public class Exercise29 {
   /**
    * Don't stop the loop at arr[mid] = element
+   *
+   * Similarly do for greater than
    */
   public static int lessThan(int element, int[] array) {
     int low = 0;
