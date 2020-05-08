@@ -4,6 +4,7 @@
 target
 out
 .gradle
+*.hprof
 
 # Compiled class file
 *.class
