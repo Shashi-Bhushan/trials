@@ -28,37 +28,37 @@ public class Exercise39 {
     int[] array2 = new int[n];
 
     for (int i = 0; i < n; i++) {
-      array1[i] = StdRandom.uniform(100000, 1000000); //6 digit random value - StdRandom uniform is [a, b)
+      array1[i] = StdRandom.uniform(100000, 1000000);
       array2[i] = StdRandom.uniform(100000, 1000000);
     }
 
     Arrays.sort(array1);
     Arrays.sort(array2);
 
-    int numbersInBothArrays = 0;
+    int numInBoth = 0;
 
     for (int i = 0; i < n; i++) {
 
       if (binarySearch(array1[i], array2, 0, array2.length -1)) {
-        numbersInBothArrays++;
+        numInBoth++;
       }
 
     }
 
-    return numbersInBothArrays;
+    return numInBoth;
   }
 
-  private static boolean binarySearch(int key, int[] arr, int lo, int hi) {
+  private static boolean binarySearch(int key, int[] arr, int low, int high) {
 
     boolean found = false;
 
-    if (lo <= hi) {
-      int mid = lo + (hi - lo) / 2;
+    if (low <= high) {
+      int mid = low + (high - low) / 2;
 
       if (key < arr[mid]) {
-        binarySearch(key, arr, lo, mid - 1);
+        binarySearch(key, arr, low, mid - 1);
       } else if (key > arr[mid]) {
-        binarySearch(key, arr, mid + 1, hi);
+        binarySearch(key, arr, mid + 1, high);
       } else {
         found = true;
       }
