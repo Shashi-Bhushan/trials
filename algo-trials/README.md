@@ -13,6 +13,14 @@ Kevin Wayne's [github repo](https://github.com/kevin-wayne/algs4) which hosts th
 Also, check out [this](https://github.com/reneargento/algorithms-sedgewick-wayne) repo. The guy is nice enough to share the solutions for all the questions in the book.
 I took inspiration from this on some of the solutions I wrote and blatantly copied his code in some other places :D
 
+##### Useful Reads
+- [Chapter 1, Section 1](https://github.com/Shashi-Bhushan/trials/blob/master/algo-trials/notes/chapter1/README.md)
+
+##### Useful Links
+
+- [Book Site](https://algs4.cs.princeton.edu/home/)
+- [Java Algorithms and Clients](https://algs4.cs.princeton.edu/code/)
+
 ##### Few noteworthy Solutions
 
 - [Majority](https://github.com/Shashi-Bhushan/trials/blob/master/algo-trials/src/main/java/in/shabhushan/algo_trials/algorithms/chapter1/section4/webexercise/Exercise5Majority.java)
