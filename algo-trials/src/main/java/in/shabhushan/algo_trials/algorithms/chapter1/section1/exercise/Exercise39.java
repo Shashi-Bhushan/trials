@@ -5,7 +5,7 @@ import edu.princeton.cs.algs4.StdRandom;
 import java.util.Arrays;
 
 public class Exercise39 {
-  public static int[] mainExperiment(int n) {
+  public static int[] mainExperiment(int trials) {
     int n1 = (int) Math.pow(10, 3);
     int n2 = (int) Math.pow(10, 4);
     int n3 = (int) Math.pow(10, 5);
@@ -13,7 +13,7 @@ public class Exercise39 {
 
     int[] results = new int[4];
 
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < trials; i++) {
       results[0] += experiment(n1);
       results[1] += experiment(n2);
       results[2] += experiment(n3);

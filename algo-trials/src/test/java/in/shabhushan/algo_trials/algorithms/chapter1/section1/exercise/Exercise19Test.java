@@ -5,7 +5,7 @@ import org.junit.Test;
 public class Exercise19Test {
   @Test
   public void testFibonacci() {
-    Exercise19 exercise = new Exercise19(1, 40);
+    Exercise19 exercise = new Exercise19(10, 40);
     exercise.runTrials();
   }
 }
