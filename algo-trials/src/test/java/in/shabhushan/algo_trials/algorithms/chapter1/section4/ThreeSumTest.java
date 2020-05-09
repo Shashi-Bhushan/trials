@@ -3,6 +3,7 @@ package in.shabhushan.algo_trials.algorithms.chapter1.section4;
 import edu.princeton.cs.algs4.StdOut;
 import edu.princeton.cs.algs4.StdRandom;
 import edu.princeton.cs.algs4.Stopwatch;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static in.shabhushan.algo_trials.algorithms.chapter1.section4.ThreeSum.count;
@@ -49,6 +50,7 @@ public class ThreeSumTest {
     performTrial(n);
   }
 
+  @Ignore
   @Test
   public void testThreeSumFor2000() {
     int n = 2000;
@@ -56,6 +58,7 @@ public class ThreeSumTest {
     performTrial(n);
   }
 
+  @Ignore
   @Test
   public void testThreeSumFor4000() {
     int n = 4000;
@@ -63,6 +66,7 @@ public class ThreeSumTest {
     performTrial(n);
   }
 
+  @Ignore
   @Test
   public void testThreeSumFor8000() {
     int n = 8000;

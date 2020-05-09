@@ -21,6 +21,13 @@ dependencies {
   // Use the Kotlin JUnit integration.
   testImplementation("org.jetbrains.kotlin:kotlin-test-junit")
   implementation(kotlin("reflect"))
+
+  // Benchmarking
+  "1.22".let {
+    implementation("org.openjdk.jmh", "jmh-core", it)
+
+  }
+
 }
 
 configure<JavaPluginConvention> {
