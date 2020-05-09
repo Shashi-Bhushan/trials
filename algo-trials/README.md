@@ -32,3 +32,4 @@ I took inspiration from this on some of the solutions I wrote and blatantly copi
 - [Less Than, Exercise 29 Section 1, Chapter 1](https://github.com/Shashi-Bhushan/trials/blob/master/algo-trials/src/main/java/in/shabhushan/algo_trials/algorithms/chapter1/section1/exercise/Exercise28.java)
 - [Dice Distribution Generation Logic](https://github.com/Shashi-Bhushan/trials/blob/master/algo-trials/src/main/java/in/shabhushan/algo_trials/algorithms/chapter1/section1/exercise/Exercise35.java)
 - [Circular Sorted String](https://github.com/Shashi-Bhushan/trials/blob/master/algo-trials/src/main/java/in/shabhushan/algo_trials/algorithms/chapter1/section2/webexercise/Exercise6.java)
+- [Binary Representation String](https://github.com/Shashi-Bhushan/trials/blob/master/algo-trials/src/main/java/in/shabhushan/algo_trials/algorithms/chapter1/section3/exercise/Exercise5.java)
