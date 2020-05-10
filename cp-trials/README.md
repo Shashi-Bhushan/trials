@@ -1,4 +1,4 @@
-## CP Trials
+# CP Trials
 
 This repository contains my submitted solutions for various competitive programming challenges.
 I've added the page link along with the solution in some classes.
@@ -10,7 +10,12 @@ Happy Coding, Enjoy.
 Note: Initially this whole directory was part of a private repo. When I moved the directory to this public repo, I've tried my best to remove all codewars' solutions.
 But there might be some here or there. Apologies for that.
 
-## Algorithms
+
+### Profiles' Link
+
+![Codewars](https://www.codewars.com/users/Shashi-Bhushan/badges/large)
+
+### Algorithms
 Collections of few good problem solving algorithms I have learned over time.
 
 - **Kadane’s algorithm**
@@ -37,9 +42,9 @@ Then, when creating the tree structure, add to stack if character and remove las
 
 Also read, [Backtracking](src/main/kotlin/in/shabhushan/cp_trials/dsbook/methods/backtracking/README.md)
 
-## Problems Worth Checking
+### Problems Worth Checking
 
-### Leetcode and Codewars Solutions
+#### Leetcode and Codewars Solutions
 
 - [Pawn Move Tracker](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/string/logic/PawnMoveTracker.java)
 - [Path Finder](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/dsbook/methods/backtracking/PathFinder.java)
