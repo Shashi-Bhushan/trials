@@ -58,17 +58,22 @@ public class Weekly188 {
   }
 
   private static class Node {
-    public Node(Integer n) {this.node = n;}
+    public Node(Integer n) {this.parent = n;}
 
-    Integer node;
+    Integer parent;
     List<Integer> children = new ArrayList<>();
+
+    @Override
+    public String toString() {
+      return String.format("Node { %d, %s }", parent, children);
+    }
   }
 
   /**
    * Problem 3
    */
-  public int minTime(int n1, int[][] edges, List<Boolean> hasApple) {
-    Map<Integer, Node> m = new HashMap();
+  public static int minTime(int n1, int[][] edges, List<Boolean> hasApple) {
+    Map<Integer, Node> m = new HashMap<>();
 
     for (int[] edge: edges) {
       if (m.containsKey(edge[0])) {
@@ -80,6 +85,8 @@ public class Weekly188 {
       } else {
         m.put(edge[0], new Node(edge[0]));
         m.get(edge[0]).children.add(edge[1]);
+
+        m.put(edge[1], new Node(edge[0]));
       }
     }
 
