@@ -33,4 +33,4 @@ I took inspiration from this on some of the solutions I wrote and blatantly copi
 - [Dice Distribution Generation Logic](https://github.com/Shashi-Bhushan/trials/blob/master/algo-trials/src/main/java/in/shabhushan/algo_trials/algorithms/chapter1/section1/exercise/Exercise35.java)
 - [Circular Sorted String](https://github.com/Shashi-Bhushan/trials/blob/master/algo-trials/src/main/java/in/shabhushan/algo_trials/algorithms/chapter1/section2/webexercise/Exercise6.java)
 - [Binary Representation String](https://github.com/Shashi-Bhushan/trials/blob/master/algo-trials/src/main/java/in/shabhushan/algo_trials/algorithms/chapter1/section3/exercise/Exercise5.java)
-- [To Proper Infix Expression](https://github.com/Shashi-Bhushan/trials/blob/master/jetbrains://idea/navigate/reference?project=algo-trials&path=in/shabhushan/algo_trials/algorithms/chapter1/section3/exercise/Exercise9.java)
+- [To Proper Infix Expression](https://github.com/Shashi-Bhushan/trials/blob/master/algo-trials/src/main/java/in/shabhushan/algo_trials/algorithms/chapter1/section3/exercise/Exercise9.java)
