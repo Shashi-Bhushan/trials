@@ -47,6 +47,16 @@ public class FloodFill {
 
   }
 
+
+  public static int[][] floodFill2(int[][] image, int sr, int sc, int newColor) {
+    int color = image[sr][sc];
+
+    if (color != newColor)
+      changeColor2(image, sr, sc, color, newColor);
+
+    return image;
+  }
+
   /**
    * Recursive Stack Solution
    */
