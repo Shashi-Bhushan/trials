@@ -69,4 +69,5 @@ Also read, [Backtracking](src/main/kotlin/in/shabhushan/cp_trials/dsbook/methods
 - [Count Sum Squares](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/math/algebra/SumOfSquares.java)
 - [MaxScore](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/contest/Weekly186.java)
 - [Longest Sub-array](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/contest/Weekly187.java)
-- [Find the Judge](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/logic/CelebrityProblem.java)
+- [Find the Judge(Similar to celebrity problem)](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/logic/CelebrityProblem.java)
+- [Single Element in Sorted Array](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/math/logic/SingleElementInSortedArray.java)
