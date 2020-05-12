@@ -46,6 +46,10 @@ Also read, [Backtracking](src/main/kotlin/in/shabhushan/cp_trials/dsbook/methods
 
 #### Leetcode and Codewars Solutions
 
+I try to keep a list of problems that teach some new way of looking at a potential problem.
+The idea here is to keep repeating these questions every now and then until you know the pattern like the back of your hand.
+Phased repetition is the key.
+
 - [Pawn Move Tracker](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/string/logic/PawnMoveTracker.java)
 - [Path Finder](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/dsbook/methods/backtracking/PathFinder.java)
 - [Max Sum sub-array](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/math/logic/MaxSumSubarray.java)
@@ -71,3 +75,4 @@ Also read, [Backtracking](src/main/kotlin/in/shabhushan/cp_trials/dsbook/methods
 - [Longest Sub-array](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/contest/Weekly187.java)
 - [Find the Judge(Similar to celebrity problem)](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/logic/CelebrityProblem.java)
 - [Single Element in Sorted Array](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/math/logic/SingleElementInSortedArray.java)
+- [Daily Temperature(Stack Solution)](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/math/logic/DailyTemperature.java)
