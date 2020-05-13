@@ -76,3 +76,4 @@ Phased repetition is the key.
 - [Find the Judge(Similar to celebrity problem)](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/logic/CelebrityProblem.java)
 - [Single Element in Sorted Array](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/math/logic/SingleElementInSortedArray.java)
 - [Daily Temperature(Stack Solution)](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/math/logic/DailyTemperature.java)
+- [Find Peak](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/binarySearch/FindPeakElement.java)
