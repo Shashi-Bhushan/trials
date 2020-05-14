@@ -19,7 +19,10 @@ class RemoveKDigits {
         k--;
       }
 
-      if (stack.size() == 0 && x == 0) {} else
+      if (stack.isEmpty() && x == 0) {
+        // do nothing
+      }
+      else
         stack.push(x);
     }
 
