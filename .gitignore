@@ -27,3 +27,6 @@ puppet/r10k
 target/
 *.serialize
 *.class
+input.txt
+output.txt
+*.swp
