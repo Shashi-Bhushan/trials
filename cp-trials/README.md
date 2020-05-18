@@ -79,3 +79,4 @@ Phased repetition is the key.
 - [Find Peak](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/binarySearch/FindPeakElement.java)
 - [Remove K Digits](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/stack/RemoveKDigits.java)
 - [Trie DS](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/tree/Trie.java)
+- [Primality Check](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/search/PrimeNumberCheck.java)
