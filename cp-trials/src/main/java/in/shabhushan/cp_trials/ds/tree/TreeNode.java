@@ -1,8 +1,8 @@
-package in.shabhushan.cp_trials.tree;
+package in.shabhushan.cp_trials.ds.tree;
 
 import java.util.Objects;
 
-class TreeNode<T> {
+public class TreeNode<T> {
   TreeNode left;
   TreeNode right;
   T value;
@@ -28,20 +28,5 @@ class TreeNode<T> {
   @Override
   public int hashCode() {
     return Objects.hash(value);
-  }
-}
-
-public class FindMaxValueInTree {
-
-  static int findMax(TreeNode<Integer> root) {
-    if (root == null)
-      return Integer.MIN_VALUE;
-    else {
-      int leftMax = findMax(root.left);
-      int rightMax = findMax(root.right);
-
-      int max = Math.max(leftMax, rightMax);
-      return Math.max(max, root.value);
-    }
   }
 }

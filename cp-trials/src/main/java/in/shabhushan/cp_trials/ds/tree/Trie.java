@@ -1,8 +1,8 @@
-package in.shabhushan.cp_trials.tree;
+package in.shabhushan.cp_trials.ds.tree;
 
 import java.util.*;
 
-class Trie {
+public class Trie {
 
   private static class Node {
     final char c;

@@ -1,5 +1,6 @@
 package in.shabhushan.cp_trials.bytes;
 
+import in.shabhushan.cp_trials.logic.bytes.ByteStream;
 import org.junit.Ignore;
 import org.junit.Test;
 

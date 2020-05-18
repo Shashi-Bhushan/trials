@@ -1,9 +1,9 @@
-package in.shabhushan.cp_trials.tree;
+package in.shabhushan.cp_trials.ds.tree;
 
 import java.util.SortedSet;
 import java.util.TreeSet;
 
-class DoubleLinear {
+public class DoubleLinear {
 
   public static int dblLinear(int n) {
     int[] arr = new int[n + 1];

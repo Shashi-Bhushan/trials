@@ -1,10 +1,10 @@
-package in.shabhushan.cp_trials.stack;
+package in.shabhushan.cp_trials.ds.stack;
 
 import org.junit.Ignore;
 import org.junit.Test;
 
-import static in.shabhushan.cp_trials.stack.FloodFill.floodFill;
-import static in.shabhushan.cp_trials.stack.FloodFill.floodFill2;
+import static in.shabhushan.cp_trials.ds.stack.FloodFill.floodFill;
+import static in.shabhushan.cp_trials.ds.stack.FloodFill.floodFill2;
 import static org.junit.Assert.assertArrayEquals;
 
 /**

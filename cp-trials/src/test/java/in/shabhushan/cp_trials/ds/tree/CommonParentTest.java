@@ -1,8 +1,9 @@
-package in.shabhushan.cp_trials.tree;
+package in.shabhushan.cp_trials.ds.tree;
 
+import in.shabhushan.cp_trials.ds.tree.TreeNode;
 import org.junit.Test;
 
-import static in.shabhushan.cp_trials.tree.CommonParent.commonNode;
+import static in.shabhushan.cp_trials.ds.tree.CommonParent.commonNode;
 import static org.junit.Assert.assertEquals;
 
 public class CommonParentTest {

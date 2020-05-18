@@ -1,5 +1,6 @@
 package in.shabhushan.cp_trials.bytes;
 
+import in.shabhushan.cp_trials.logic.bytes.ByteStore;
 import org.junit.Test;
 
 import java.io.IOException;

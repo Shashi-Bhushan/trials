@@ -1,4 +1,4 @@
-package in.shabhushan.cp_trials.stack;
+package in.shabhushan.cp_trials.ds.stack;
 
 import java.util.Stack;
 

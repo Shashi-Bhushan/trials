@@ -1,4 +1,4 @@
-package in.shabhushan.cp_trials.kickstart.roundB2020;
+package in.shabhushan.cp_trials.competition.kickstart.roundB2020;
 
 import java.io.PrintWriter;
 import java.util.Locale;

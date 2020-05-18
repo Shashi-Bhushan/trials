@@ -1,5 +1,6 @@
-package in.shabhushan.cp_trials.tree;
+package in.shabhushan.cp_trials.ds.tree;
 
+import in.shabhushan.cp_trials.ds.tree.Trie;
 import org.junit.BeforeClass;
 import org.junit.Test;
 

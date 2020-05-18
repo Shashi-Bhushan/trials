@@ -1,6 +1,8 @@
-package in.shabhushan.cp_trials.tree;
+package in.shabhushan.cp_trials.ds.tree;
 
 import static org.junit.Assert.*;
+
+import in.shabhushan.cp_trials.ds.tree.DoubleLinear;
 import org.junit.Test;
 
 

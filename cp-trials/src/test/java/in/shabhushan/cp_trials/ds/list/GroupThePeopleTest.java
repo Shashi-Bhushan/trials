@@ -1,11 +1,11 @@
-package in.shabhushan.cp_trials.list;
+package in.shabhushan.cp_trials.ds.list;
 
 import org.junit.Test;
 
 import java.util.List;
 
-import static in.shabhushan.cp_trials.list.GroupThePeople.groupThePeople;
-import static in.shabhushan.cp_trials.list.GroupThePeople.groupThePeople2;
+import static in.shabhushan.cp_trials.ds.list.GroupThePeople.groupThePeople;
+import static in.shabhushan.cp_trials.ds.list.GroupThePeople.groupThePeople2;
 import static org.junit.Assert.assertEquals;
 
 public class GroupThePeopleTest {

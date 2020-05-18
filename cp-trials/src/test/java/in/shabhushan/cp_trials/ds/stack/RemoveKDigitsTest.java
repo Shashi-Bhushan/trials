@@ -1,8 +1,8 @@
-package in.shabhushan.cp_trials.stack;
+package in.shabhushan.cp_trials.ds.stack;
 
 import org.junit.Test;
 
-import static in.shabhushan.cp_trials.stack.RemoveKDigits.removeKdigits;
+import static in.shabhushan.cp_trials.ds.stack.RemoveKDigits.removeKdigits;
 import static org.junit.Assert.assertEquals;
 
 public class RemoveKDigitsTest {

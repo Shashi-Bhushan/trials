@@ -1,4 +1,4 @@
-package in.shabhushan.cp_trials.tree;
+package in.shabhushan.cp_trials.ds.tree;
 
 public class CommonParent {
   public static TreeNode commonNode(TreeNode parent, TreeNode a, TreeNode b) {

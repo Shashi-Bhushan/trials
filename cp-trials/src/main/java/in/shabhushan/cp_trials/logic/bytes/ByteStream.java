@@ -1,4 +1,4 @@
-package in.shabhushan.cp_trials.bytes;
+package in.shabhushan.cp_trials.logic.bytes;
 
 import java.io.IOException;
 

@@ -1,4 +1,4 @@
-package in.shabhushan.cp_trials.list;
+package in.shabhushan.cp_trials.ds.list;
 
 import java.util.*;
 
@@ -6,7 +6,7 @@ import java.util.*;
  * Leetcode solution for
  * https://leetcode.com/problems/group-the-people-given-the-group-size-they-belong-to/submissions/
  */
-class GroupThePeople {
+public class GroupThePeople {
   public static List<List<Integer>> groupThePeople(int[] groupSizes) {
     Map<Integer, List<Integer>> map = new HashMap<>();
 

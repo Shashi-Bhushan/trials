@@ -1,4 +1,4 @@
-package in.shabhushan.cp_trials.stack;
+package in.shabhushan.cp_trials.ds.stack;
 
 import java.util.*;
 
@@ -8,7 +8,7 @@ import java.util.*;
  *
  * Check https://www.youtube.com/watch?v=BbNS_sKBAqo for reference
  */
-class RemoveKDigits {
+public class RemoveKDigits {
   public static String removeKdigits(String num, int k) {
     ArrayDeque<Integer> stack = new ArrayDeque<>();
 
