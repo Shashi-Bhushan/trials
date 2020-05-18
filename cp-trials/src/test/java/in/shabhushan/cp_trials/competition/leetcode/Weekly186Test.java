@@ -1,8 +1,8 @@
-package in.shabhushan.cp_trials.competition.contest;
+package in.shabhushan.cp_trials.competition.leetcode;
 
 import org.junit.Test;
 
-import static in.shabhushan.cp_trials.competition.contest.Weekly186.maxScore;
+import static in.shabhushan.cp_trials.competition.leetcode.Weekly186.maxScore;
 import static org.junit.Assert.assertEquals;
 
 public class Weekly186Test {

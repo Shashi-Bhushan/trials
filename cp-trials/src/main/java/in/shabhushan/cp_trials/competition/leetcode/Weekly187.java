@@ -1,4 +1,4 @@
-package in.shabhushan.cp_trials.competition.contest;
+package in.shabhushan.cp_trials.competition.leetcode;
 
 import java.util.ArrayList;
 import java.util.Collections;

@@ -1,11 +1,11 @@
-package in.shabhushan.cp_trials.competition.contest;
+package in.shabhushan.cp_trials.competition.leetcode;
 
 import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.List;
 
-import static in.shabhushan.cp_trials.competition.contest.Weekly188.*;
+import static in.shabhushan.cp_trials.competition.leetcode.Weekly188.*;
 import static org.junit.Assert.assertEquals;
 
 public class Weekly188Test {

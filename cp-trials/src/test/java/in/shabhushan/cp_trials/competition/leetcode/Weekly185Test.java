@@ -1,9 +1,8 @@
-package in.shabhushan.cp_trials.competition.contest;
+package in.shabhushan.cp_trials.competition.leetcode;
 
-import in.shabhushan.cp_trials.competition.contest.Weekly185;
 import org.junit.Test;
 
-import static in.shabhushan.cp_trials.competition.contest.Weekly185.minNumberOfFrogs;
+import static in.shabhushan.cp_trials.competition.leetcode.Weekly185.minNumberOfFrogs;
 import static org.junit.Assert.assertEquals;
 
 public class Weekly185Test {
