@@ -1,9 +1,9 @@
-package in.shabhushan.cp_trials.contest;
+package in.shabhushan.cp_trials.competition.contest;
 
 import org.junit.Test;
 
-import static in.shabhushan.cp_trials.contest.Weekly187.kthSmallest;
-import static in.shabhushan.cp_trials.contest.Weekly187.longestSubarray;
+import static in.shabhushan.cp_trials.competition.contest.Weekly187.kthSmallest;
+import static in.shabhushan.cp_trials.competition.contest.Weekly187.longestSubarray;
 import static org.junit.Assert.assertEquals;
 
 public class Weekly187Test {

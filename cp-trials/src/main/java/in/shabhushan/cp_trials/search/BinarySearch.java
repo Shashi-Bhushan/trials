@@ -1,4 +1,4 @@
-package in.shabhushan.cp_trials.dsbook.methods.search;
+package in.shabhushan.cp_trials.search;
 
 public class BinarySearch {
   /**

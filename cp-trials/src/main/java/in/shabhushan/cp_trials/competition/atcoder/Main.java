@@ -1,4 +1,4 @@
-package in.shabhushan.cp_trials.atcoder;
+package in.shabhushan.cp_trials.competition.atcoder;
 
 import java.util.ArrayList;
 import java.util.List;

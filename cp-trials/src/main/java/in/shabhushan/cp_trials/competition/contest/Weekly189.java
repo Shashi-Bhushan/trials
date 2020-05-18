@@ -1,4 +1,4 @@
-package in.shabhushan.cp_trials.contest;
+package in.shabhushan.cp_trials.competition.contest;
 
 import java.util.ArrayList;
 import java.util.HashSet;

@@ -1,4 +1,4 @@
-package in.shabhushan.cp_trials.atcoder;
+package in.shabhushan.cp_trials.competition.atcoder;
 
 /**
  * Atcoder begineer competition 166

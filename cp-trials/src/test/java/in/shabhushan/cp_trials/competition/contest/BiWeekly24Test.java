@@ -1,8 +1,8 @@
-package in.shabhushan.cp_trials.contest;
+package in.shabhushan.cp_trials.competition.contest;
 
 import org.junit.Test;
 
-import static in.shabhushan.cp_trials.contest.BiWeekly24.findMinFibonacciNumbers;
+import static in.shabhushan.cp_trials.competition.contest.BiWeekly24.findMinFibonacciNumbers;
 import static org.junit.Assert.assertEquals;
 
 public class BiWeekly24Test {

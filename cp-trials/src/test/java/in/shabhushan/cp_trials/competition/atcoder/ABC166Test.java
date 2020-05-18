@@ -1,8 +1,8 @@
-package in.shabhushan.cp_trials.atcoder;
+package in.shabhushan.cp_trials.competition.atcoder;
 
 import org.junit.Test;
 
-import static in.shabhushan.cp_trials.atcoder.ABC166.problemD;
+import static in.shabhushan.cp_trials.competition.atcoder.ABC166.problemD;
 import static org.junit.Assert.assertArrayEquals;
 
 public class ABC166Test {
