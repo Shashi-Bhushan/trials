@@ -1,4 +1,4 @@
-package in.shabhushan.cp_trials.dsbook.methods.dynamic_programming;
+package in.shabhushan.cp_trials.dynamic_programming;
 
 import java.io.*;
 import java.util.Arrays;

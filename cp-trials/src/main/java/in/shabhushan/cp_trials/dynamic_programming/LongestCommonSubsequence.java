@@ -1,4 +1,4 @@
-package in.shabhushan.cp_trials.dsbook.methods.dynamic_programming;
+package in.shabhushan.cp_trials.dynamic_programming;
 
 public class LongestCommonSubsequence {
   public static String lcs(String x, String y) {

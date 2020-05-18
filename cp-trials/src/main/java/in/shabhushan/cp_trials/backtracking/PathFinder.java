@@ -1,4 +1,4 @@
-package in.shabhushan.cp_trials.dsbook.methods.backtracking;
+package in.shabhushan.cp_trials.backtracking;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -45,7 +45,7 @@ public class PathFinder {
    * @param maze
    * @return
    */
-  static boolean pathFinderOne(String maze) {
+  public static boolean pathFinderOne(String maze) {
     final String[] rows = maze.split("\n");
     final Boolean[][] grid = new Boolean[rows.length][];
 

@@ -1,10 +1,10 @@
-package in.shabhushan.cp_trials.dsbook.methods.dfs;
+package in.shabhushan.cp_trials.dfs;
 
 /**
  * Leetcode solution for "Number of Islands"
  * https://leetcode.com/explore/challenge/card/30-day-leetcoding-challenge/530/week-3/3302/
  */
-class CountIslands {
+public class CountIslands {
   public int numIslands(char[][] grid) {
     if (grid.length == 0) return 0;
 

@@ -1,5 +1,6 @@
-package in.shabhushan.cp_trials.dsbook.methods.dfs;
+package in.shabhushan.cp_trials.dfs;
 
+import in.shabhushan.cp_trials.dfs.CountIslands;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

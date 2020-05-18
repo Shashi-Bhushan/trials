@@ -1,4 +1,4 @@
-package in.shabhushan.cp_trials.dsbook.methods.backtracking;
+package in.shabhushan.cp_trials.backtracking;
 
 import java.util.Arrays;
 

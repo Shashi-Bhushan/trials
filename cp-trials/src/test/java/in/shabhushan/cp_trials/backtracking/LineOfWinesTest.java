@@ -1,8 +1,8 @@
-package in.shabhushan.cp_trials.dsbook.methods.backtracking;
+package in.shabhushan.cp_trials.backtracking;
 
 import org.junit.Test;
 
-import static in.shabhushan.cp_trials.dsbook.methods.backtracking.LineOfWines.lineOfWines;
+import static in.shabhushan.cp_trials.backtracking.LineOfWines.lineOfWines;
 import static org.junit.Assert.assertEquals;
 
 public class LineOfWinesTest {

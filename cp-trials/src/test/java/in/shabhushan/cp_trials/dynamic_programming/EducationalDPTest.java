@@ -1,8 +1,8 @@
-package in.shabhushan.cp_trials.dsbook.methods.dynamic_programming;
+package in.shabhushan.cp_trials.dynamic_programming;
 
 import org.junit.Test;
 
-import static in.shabhushan.cp_trials.dsbook.methods.dynamic_programming.Frog.frogOne;
+import static in.shabhushan.cp_trials.dynamic_programming.Frog.frogOne;
 import static org.junit.Assert.assertEquals;
 
 public class EducationalDPTest {

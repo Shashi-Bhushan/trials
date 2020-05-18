@@ -1,9 +1,10 @@
-package in.shabhushan.cp_trials.dsbook.methods.backtracking;
+package in.shabhushan.cp_trials.backtracking;
 
+import in.shabhushan.cp_trials.backtracking.PathFinder;
 import org.junit.Test;
 
-import static in.shabhushan.cp_trials.dsbook.methods.backtracking.PathFinder.pathFinderThree;
-import static in.shabhushan.cp_trials.dsbook.methods.backtracking.PathFinder.pathFinderTwo;
+import static in.shabhushan.cp_trials.backtracking.PathFinder.pathFinderThree;
+import static in.shabhushan.cp_trials.backtracking.PathFinder.pathFinderTwo;
 import static org.junit.Assert.assertEquals;
 
 // TODO: Replace examples and use TDD development by writing your own tests
