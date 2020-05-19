@@ -1,7 +1,6 @@
 package in.shabhushan.cp_trials.search;
 
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.PriorityQueue;
 
 public class KthLargestElement {
@@ -9,9 +8,14 @@ public class KthLargestElement {
    * O(NlogN)
    */
   public static int findKthLargest(int[] nums, int k) {
-    Arrays.sort(nums);
+    int[] numsCopy = new int[nums.length];
+    for (int i = 0; i < nums.length; i++) {
+      numsCopy[i] = nums[i];
+    }
 
-    return nums[nums.length - k];
+    Arrays.sort(numsCopy);
+
+    return numsCopy[numsCopy.length - k];
   }
 
   /**
@@ -31,30 +35,51 @@ public class KthLargestElement {
     return minHeap.poll();
   }
 
+  /**
+   * O(N)
+   */
   public static int findKthLargest3(int[] nums, int k) {
-    int min = Integer.MAX_VALUE;
-    int max = Integer.MIN_VALUE;
+    int left = 0;
+    int right = nums.length - 1;
 
-    for (int num: nums) {
-      min = Math.min(min, num);
-      max = Math.max(max, num);
-    }
+    return helper(nums, k, left, right);
+  }
 
-    int[] bucket = new int[max - min + 1];
+  private static int helper(int[] nums, int k, int left, int right) {
 
-    for (int num: nums) {
-      bucket[num - min]++;
-    }
 
-    int m = 0;
-    for (int i = bucket.length - 1; i >= 0; i--) {
-      m += bucket[i];
+    while (left <= right) {
+      // consider left as pivot
+      // move it to right
+      swap(nums, left, right);
 
-      if (m >= k) {
-        return i + min;
+      int pivot = nums[right];
+      int listTail = left;
+
+      for (int i = left; i < right; i++) {
+        if (nums[i] <= pivot) {
+          swap(nums, i, listTail);
+          listTail++;
+        }
+      }
+
+      swap(nums, listTail, right);
+
+      if (listTail == nums.length - k) {
+        return nums[listTail];
+      } else if (listTail < nums.length - k) {
+        left = listTail + 1;
+      } else {
+        right = listTail - 1;
       }
     }
 
-    return -1;
+    return left;
+  }
+
+  private static void swap(int[] nums, int left, int right) {
+    int temp = nums[left];
+    nums[left] = nums[right];
+    nums[right] = temp;
   }
 }

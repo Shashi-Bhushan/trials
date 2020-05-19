@@ -20,5 +20,6 @@ public class PrimeNumberCheckTest {
     assertFalse(isPrime(25));
     assertTrue(isPrime(29));
     assertTrue(isPrime(31));
+    assertTrue(isPrime(23));
   }
 }
