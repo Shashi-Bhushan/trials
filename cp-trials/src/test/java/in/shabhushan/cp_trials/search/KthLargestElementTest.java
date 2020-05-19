@@ -12,14 +12,10 @@ public class KthLargestElementTest {
 
   private static final int ARRAY_SIZE = 100_00_00;
 
-  private static int[] ar;
+  private static final int[] ar;
 
   static {
     ar = IntStream.range(0, ARRAY_SIZE).toArray();
-    // If running on Java 6 or older, use `new Random()` on RHS here
-    for (int i = ar.length - 1; i > 0; i--) {
-      ar[i] = i;
-    }
 
     Random rnd = new Random();
     for (int i = ar.length - 1; i > 0; i--) {
@@ -51,6 +47,7 @@ public class KthLargestElementTest {
     assertEquals(19, findKthLargest3(new int[]{3, 2, 5, 6, 4, 7, 8, 10, 9, 12, 11, 15, 14, 13, 20, 19, 18, 17, 16}, 2));
     assertEquals(24, findKthLargest3(new int[]{3, 2, 5, 6, 4, 7, 8, 10, 9, 12, 21, 22, 23, 24, 25, 11, 15, 14, 13, 20, 19, 18, 17, 16}, 2));
     assertEquals(6, findKthLargest3(new int[]{3, 2, 1, 5, 6, 4}, 1));
+    assertEquals(9, findKthLargest3(new int[]{5, 4, 3, 7, 8, 9}, 1));
     assertEquals(4, findKthLargest3(new int[]{3, 2, 3, 1, 2, 4, 5, 5, 6}, 4));
   }
 

@@ -45,9 +45,12 @@ public class KthLargestElement {
     return helper(nums, k, left, right);
   }
 
+  /**
+   * Check these for details
+   * https://www.youtube.com/watch?v=hGK_5n81drs
+   * https://www.youtube.com/watch?v=uXBnyYuwPe8
+   */
   private static int helper(int[] nums, int k, int left, int right) {
-
-
     while (left <= right) {
       // consider left as pivot
       // move it to right
@@ -77,7 +80,7 @@ public class KthLargestElement {
     return left;
   }
 
-  private static void swap(int[] nums, int left, int right) {
+  public static void swap(int[] nums, int left, int right) {
     int temp = nums[left];
     nums[left] = nums[right];
     nums[right] = temp;
