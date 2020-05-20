@@ -2,6 +2,10 @@ package in.shabhushan.cp_trials.sorting;
 
 import static in.shabhushan.cp_trials.search.KthLargestElement.swap;
 
+/**
+ * Check this
+ * https://www.youtube.com/watch?v=uXBnyYuwPe8
+ */
 public class QuickSort {
   public static void quickSort(int[] array) {
     helper(array, 0, array.length - 1);

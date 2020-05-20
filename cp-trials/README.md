@@ -21,7 +21,7 @@ Collections of few good problem solving algorithms I have learned over time.
 - **Kadane’s algorithm**
 *Maximum sum subarray problem*
 - Finding the maximum sum of a contiguous subsequence in an array.
-Solution available [here](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/math/logic/MaxSumSubarray.java)
+Solution available [here](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/search/MaximumSumSubarray.javaa)
 
 
 - **Binary Tree Traversal**
