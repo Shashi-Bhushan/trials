@@ -82,3 +82,4 @@ Phased repetition is the key.
 - [Primality Check](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/search/PrimeNumberCheck.java)
 - [Composite Sum](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/prefix_sum/CompositeNumbersSum.java)
 - [Kth largest(Using Partition)](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/search/KthLargestElement.java)
+- [Maximum Sum subarray](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/search/MaximumSumSubarray.java)
