@@ -4,6 +4,9 @@ import java.util.*;
 
 public class SumOfSquares {
 
+  /**
+   * How many perfect squares required to make up the number n
+   */
   public static int nSquaresFor(int n) {
     // perfect square
     double d = Math.sqrt(n);

@@ -11,6 +11,7 @@ public class SumOfSquaresTest {
     assertEquals(4, SumOfSquares.nSquaresFor(15));
     assertEquals(1, SumOfSquares.nSquaresFor(16));
     assertEquals(2, SumOfSquares.nSquaresFor(17));
+    // (3 * 3) + (3 * 3)
     assertEquals(2, SumOfSquares.nSquaresFor(18));
     assertEquals(3, SumOfSquares.nSquaresFor(19));
   }
