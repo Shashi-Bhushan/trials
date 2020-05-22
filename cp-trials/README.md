@@ -102,4 +102,4 @@ Phased repetition is the key.
 - [Kth largest(Using Partition)](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/search/KthLargestElement.java)
 
 #### Backtracking
-- [Backtracking](src/main/kotlin/in/shabhushan/cp_trials/dsbook/methods/backtracking/README.md)
+- [Backtracking](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/backtracking/README.md)

@@ -2,6 +2,9 @@
 
 Backtracking is a method to solve the problems by making **a series of choices** that we can *return or backtrack* to.
 The call stack remembers our choices and knows what to choose.
+Backtracking is brute force method with an optimization. We take the choice that seems most logical at the moment and move forward from there.
+But if at any point, we don't have any choice to move forward with, we track back to the most recent choice selection (using stack) and make the second choice.
+In the worst case, it will also end up exhaustively searching like bruteforce method.
 
 There are 3 key concepts here. Let us understand it with the example of N queen problem.
 

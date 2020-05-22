@@ -2,6 +2,10 @@ package in.shabhushan.cp_trials.sweepline;
 
 import java.util.*;
 
+/**
+ * Leetcode solution for
+ * https://leetcode.com/problems/find-right-interval/submissions/
+ */
 class RightInterval {
 
   private static class Interval implements Comparable<Interval> {
