@@ -84,6 +84,7 @@ Phased repetition is the key.
 - [Primality Check](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/search/PrimeNumberCheck.java)
 - [Kth largest(Using Partition)](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/search/KthLargestElement.java)
 - [Maximum Sum subarray](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/search/MaximumSumSubarray.java)
+- [Palindrome Path(problem 3 in Set)](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/competition/leetcode/Weekly190.java)
 - [Place 2 queen in n positions](https://codereview.stackexchange.com/questions/152545/2-queens-on-n-x-n-board) Also check Section 3.2.2 in CSES book
 - [Count Square Submatrix](https://leetcode.com/problems/count-square-submatrices-with-all-ones/discuss/643429/Python-DP-Solution-%2B-Thinking-Process-Diagrams-(O(mn)-runtime-O(1)-space))
 
@@ -103,3 +104,5 @@ Phased repetition is the key.
 
 #### Backtracking
 - [Backtracking](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/backtracking/README.md)
+
+#### DFS
