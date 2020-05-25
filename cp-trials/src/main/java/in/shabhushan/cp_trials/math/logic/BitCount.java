@@ -2,6 +2,9 @@ package in.shabhushan.cp_trials.math.logic;
 
 import java.math.BigInteger;
 
+/**
+ * Count Ones in a given range
+ */
 public class BitCount {
 
   public static BigInteger countOnes(long left, long right) {
