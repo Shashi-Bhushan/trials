@@ -56,7 +56,6 @@ Phased repetition is the key.
 - [Path Finder](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/dsbook/methods/backtracking/PathFinder.java)
 - [Max Sum sub-array](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/math/logic/MaxSumSubarray.java)
 - [Sum of Intervals](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/math/logic/SumofIntervals.java)
-- [Gray Code to Binary](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/math/fundamental/MysteryFunction.java)
 - [Bird Mountain](https://codewars.com/kata/5c09ccc9b48e912946000157/solutions/java/all/best_practice)
 - [Product Except Self](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/math/fundamental/ProductExceptSelf.java)
 - [Lexicographically Smaller number](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/math/fundamental/NextSmaller.java)
@@ -68,7 +67,6 @@ Phased repetition is the key.
 - [MinFrogs](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/contest/Weekly185.java#minNumberOfFrogs)
 - [Tree Common Parent](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/tree/CommonParent.java)
 - [Playing Cards](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/string/logic/PlayingCards.java)
-- [Count Ones](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/math/logic/BitCount.java)
 - [Ten Pin Bowling](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/math/logic/TenPinBowling.java)
 - [Matrix Determinant](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/math/algebra/Matrix.java)
 - [Tail Recursive Fibonacci](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/math/fundamental/Fibonacci.java)
@@ -106,3 +104,9 @@ Phased repetition is the key.
 - [Backtracking](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/backtracking/README.md)
 
 #### DFS
+
+
+#### Bit Manipulation
+- [Gray Code to Binary](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/math/fundamental/MysteryFunction.java)
+- [Bit Ones Count](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/bits/CountBits.java)
+- [Bit Ones in Range](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/math/logic/BitCount.java)
