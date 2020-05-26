@@ -91,6 +91,9 @@ Phased repetition is the key.
 
 -----------------
 
+#### Linked List
+- [Linked List Deep copy](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/linked_list/CopyRandomDoubleList.java)
+
 #### Sweep Line
 - [Sweep Line](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/sweepline/RightInterval.java)
 - [Course Schedule](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/sweepline/CourseSchedule.java)
