@@ -93,6 +93,7 @@ Phased repetition is the key.
 
 #### Arrays
 - [Contiguous Array](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/array/ContiguousArray.java)
+- [Array Sum Target](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/array/ArraySumTarget.java)
 
 #### Linked List
 - [Linked List Deep copy](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/linked_list/CopyRandomDoubleList.java)
