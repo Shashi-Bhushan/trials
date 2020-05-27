@@ -91,8 +91,14 @@ Phased repetition is the key.
 
 -----------------
 
+#### Arrays
+- [Contiguous Array](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/array/ContiguousArray.java)
+
 #### Linked List
 - [Linked List Deep copy](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/linked_list/CopyRandomDoubleList.java)
+
+#### Tree
+- [Count Smaller Element](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/tree/CountSmallerThan.java)
 
 #### Sweep Line
 - [Sweep Line](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/sweepline/RightInterval.java)
@@ -122,5 +128,3 @@ Phased repetition is the key.
 #### Dynamic Programming
 - [Coin Change](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/dynamic_programming/CoinChange.java)
 
-#### Tree
-- [Count Smaller Element](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/tree/CountSmallerThan.java)
