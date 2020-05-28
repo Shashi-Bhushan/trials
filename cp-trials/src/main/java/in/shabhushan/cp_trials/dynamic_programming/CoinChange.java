@@ -1,6 +1,8 @@
 package in.shabhushan.cp_trials.dynamic_programming;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class CoinChange {
   public static int coinChangeRecursiveWithMemoization(int[] coins, int x) {
@@ -47,5 +49,52 @@ public class CoinChange {
     }
 
     return memory[x];
+  }
+
+  public static CoinChangeSolution coinChangeIterativeWithCounting(int[] coins, int target) {
+    int[] memory = new int[target + 1];
+    memory[0] = 0;
+
+    int[] sequence = new int[target + 1];
+
+    for (int i = 1; i <= target; i++) {
+      memory[i] = 100_00_00;
+
+      // for each coin, check the min value required
+      for (int coin: coins) {
+        if (i - coin >= 0 && memory[i - coin] + 1 < memory[i]) {
+          memory[i] = memory[i - coin] + 1;
+          sequence[i] = coin;
+        }
+      }
+    }
+
+    CoinChangeSolution solution = new CoinChangeSolution();
+    solution.solution = memory[target];
+    solution.sequence = sequence;
+    return solution;
+  }
+
+  public static class CoinChangeSolution {
+    public int solution;
+    public int[] sequence;
+  }
+
+  /**
+   * Total number of ways to form the target
+   */
+  public static int totalWaysCoinChange(int[] coins, int target) {
+    int[] memory = new int[target + 1];
+    memory[0] = 1;
+
+    for (int i = 1; i <= target; i++) {
+      for (int coin: coins) {
+        if (i - coin >= 0) {
+          memory[i] += memory[i - coin];
+        }
+      }
+    }
+
+    return memory[target];
   }
 }
