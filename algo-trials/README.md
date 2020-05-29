@@ -5,7 +5,7 @@ This directory has been my primary playground for algorithm trials.
 I've started with this course and will be logging progress here
 
 #### 1. **Algorithms** - *Rebort Sedgewick and Kevin Wayne*
-
+---------------------
 Coursera link [here](https://www.coursera.org/learn/algorithms-part1/home/welcome)
 
 Kevin Wayne's [github repo](https://github.com/kevin-wayne/algs4) which hosts the base code for standard input output that I used in this project at many places.
@@ -36,3 +36,8 @@ I took inspiration from this on some of the solutions I wrote and blatantly copi
 - [To Proper Infix Expression](https://github.com/Shashi-Bhushan/trials/blob/master/algo-trials/src/main/java/in/shabhushan/algo_trials/algorithms/chapter1/section3/exercise/Exercise9.java)
 - [Josepheus Problem](https://github.com/Shashi-Bhushan/trials/blob/master/algo-trials/src/main/java/in/shabhushan/algo_trials/algorithms/chapter1/section3/exercise/Exercise37.java)
 - [Move to Front](https://github.com/Shashi-Bhushan/trials/blob/master/algo-trials/src/main/java/in/shabhushan/algo_trials/algorithms/chapter1/section3/exercise/Exercise40.java)
+
+#### 2. **Dynamic Programming** - *Meenakshi, Kamal Rawat*
+---------------------
+
+##### Few noteworthy Solutions
