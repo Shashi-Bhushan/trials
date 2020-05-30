@@ -126,6 +126,7 @@ Phased repetition is the key.
 
 #### Graph
 - [Course Schedule 1](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/dfs/CourseSchedule.java)
+- [Course Schedule 4](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/graph/CourseScheduleIV.java)
 
 #### Dynamic Programming
 - [Coin Change](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/dynamic_programming/CoinChange.java)
