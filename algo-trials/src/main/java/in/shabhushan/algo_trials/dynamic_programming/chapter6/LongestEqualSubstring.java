@@ -1,5 +1,7 @@
 package in.shabhushan.algo_trials.dynamic_programming.chapter6;
 
+import java.util.Arrays;
+
 /**
  * Example 6.1
  * Find the length of longest substring of a given string of digits,
@@ -30,6 +32,35 @@ public class LongestEqualSubstring {
           if (leftSum == rightSum) {
             maxLength = currentLength;
           }
+        }
+      }
+    }
+
+    return maxLength;
+  }
+
+  public static int maxSubstringLengthDP(String string) {
+    char[] chars = string.toCharArray();
+
+    int[][] sum = new int[chars.length][chars.length];
+
+    for (int i = 0; i < chars.length; i++) {
+      sum[i][i] = chars[i] - '0';
+    }
+
+    int maxLength = 0;
+    for (int len = 2; len <= chars.length; len++) {
+      int mid = len / 2;
+
+      for (int i = 0; i < chars.length - len + 1; i++) {
+        int j = i + len - 1;
+        // Both give same result
+        //sum[i][j] = sum[i][j - 1] + sum[i + len - 1][j];
+        sum[i][j] = sum[i][j - mid] + sum[j - mid + 1][j];
+
+        if (len % 2 == 0 && len > maxLength) {
+          if (sum[i][j - mid] == sum[j - mid + 1][j])
+            maxLength = len;
         }
       }
     }
