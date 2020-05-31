@@ -41,3 +41,5 @@ I took inspiration from this on some of the solutions I wrote and blatantly copi
 ---------------------
 
 ##### Few noteworthy Solutions
+
+- [Count 3 Ways](https://github.com/Shashi-Bhushan/trials/blob/master/algo-trials/src/main/java/in/shabhushan/algo_trials/dynamic_programming/chapter8/Count3Ways.java)
