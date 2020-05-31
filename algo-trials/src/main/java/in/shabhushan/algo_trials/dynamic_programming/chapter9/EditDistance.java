@@ -12,7 +12,8 @@ public class EditDistance {
     else {
       int delete = editDistance(one.substring(1), two); // delete first char from one
       int update = editDistance(one.substring(1), two.substring(1)); // consider one of these have been updated to other
-      int insert = editDistance(one, two.substring(1)); // delete first char from second
+      // insert first char from second to one, Since here size of one has increased by one, we won't move pointer forward
+      int insert = editDistance(one, two.substring(1));
 
       return Math.min(delete, Math.min(update, insert)) + 1;
     }
