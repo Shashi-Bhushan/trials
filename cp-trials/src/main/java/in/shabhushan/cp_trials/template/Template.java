@@ -38,11 +38,79 @@ public class Template {
     tr(G - S + "ms");
   }
 
-  static int ni() {
+  private static int ni() {
     return Integer.parseInt(in.next());
   }
 
+  private static long nl() {
+    return Long.parseLong(in.next());
+  }
+
+  // Math Utils
+  private static int pi(int num, int pow) {
+    int result = 1;
+
+    while (pow > 0) {
+      if (pow % 2 == 1) {
+        result *= num;
+      }
+
+      num *= num;
+      pow /= 2;
+    }
+
+    return result;
+  }
+
+  private static int pim(int num, int pow, int mod) {
+    int result = 1;
+
+    while (pow > 0) {
+      if (pow % 2 == 1) {
+        // keep collecting `odd` num in result
+        result = (result * num) % mod;
+      }
+
+      num = (num * num) % mod;
+      pow /= 2;
+    }
+
+    return result;
+  }
+
+  private static long pl(long num, long pow) {
+    long result = 1;
+
+    while (pow > 0) {
+      if (pow % 2 == 1) {
+        result *= num;
+      }
+
+      num *= num;
+      pow /= 2;
+    }
+
+    return result;
+  }
+
+  private static long plm(long num, long pow, long mod) {
+    long result = 1;
+
+    while (pow > 0) {
+      if (pow % 2 == 1) {
+        // keep collecting `odd` num in result
+        result = (result * num) % mod;
+      }
+
+      num = (num * num) % mod;
+      pow /= 2;
+    }
+
+    return result;
+  }
+
   static void tr(Object... o) {
-    if (!INPUT.isEmpty()) System.out.println(Arrays.deepToString(o));
+    if (!INPUT.isEmpty())
+      out.println(Arrays.deepToString(o));
   }
 }
