@@ -6,6 +6,8 @@ import java.util.Arrays;
  * Example 6.1
  * Find the length of longest substring of a given string of digits,
  * such that sum of digits in the first half and the second half is equal.
+ *
+ * Also see solutions on https://www.geeksforgeeks.org/longest-even-length-substring-sum-first-second-half/
  */
 public class LongestEqualSubstring {
   public static int getLongestEqualString(String string) {
