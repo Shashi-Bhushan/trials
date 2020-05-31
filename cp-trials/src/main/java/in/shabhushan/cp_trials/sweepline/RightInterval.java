@@ -65,4 +65,40 @@ class RightInterval {
 
     return ans;
   }
+
+  /**
+   * Faster Solution
+   */
+  public static int[] findRightInterval2(int[][] intervals) {
+    Map<Integer, Integer> itemToIndex = new HashMap<>();
+
+    int[] a = new int[intervals.length];
+
+    for (int i = 0; i < intervals.length; i++) {
+      a[i] = intervals[i][0];
+      itemToIndex.put(intervals[i][0], i);
+    }
+
+    // ascending sort
+    Arrays.sort(a);
+
+    int[] ans = new int[intervals.length];
+    for (int i = 0; i < intervals.length; i++) {
+      int end = intervals[i][1];
+      int endId = Arrays.binarySearch(a, end);
+
+      if (endId < 0)
+        endId = -(endId + 1);
+
+      // element would be inserted at the end
+      if (endId >= ans.length) {
+        ans[i] = -1;
+      } else {
+        ans[i] = itemToIndex.get(a[endId]);
+      }
+    }
+
+
+    return ans;
+  }
 }
