@@ -1,8 +1,6 @@
 package in.shabhushan.cp_trials.dynamic_programming;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 public class CoinChange {
   public static int coinChangeRecursiveWithMemoization(int[] coins, int x) {
@@ -96,5 +94,102 @@ public class CoinChange {
     }
 
     return memory[target];
+  }
+
+  /**
+   * Leetcode Solution for https://leetcode.com/problems/coin-change/
+   * Minimum number of coins required to make target sum
+   */
+  public static int coinChangeMinimumCoins(int[] coins, int target) {
+    int[] dp = new int[target + 1];
+    Arrays.fill(dp, -1);
+    dp[0] = 0;
+
+    int best = coinChangeMinimumCoinshelper(coins, target, dp);
+
+    if (best < 0 || best == Integer.MAX_VALUE) return -1;
+    else return best;
+  }
+
+  public static int coinChangeMinimumCoinshelper(int[] coins, int target, int[] dp) {
+    if (coins.length == 0 || target == 0) return 0;
+    else if (target < 0) return Integer.MIN_VALUE;
+    else if (dp[target] != -1) return dp[target];
+    else {
+      int best = Integer.MAX_VALUE;
+
+      for (int coin: coins) {
+        int min = coinChangeMinimumCoinshelper(coins, target - coin, dp);
+
+        if (min != Integer.MIN_VALUE) {
+          best = Math.min(best, min + 1);
+        }
+      }
+
+      dp[target] = best;
+      return best;
+    }
+  }
+
+  // reduce 1 coin at a time (not amount/coin i.e. greedy solution won't work)
+  public static int coinChangeMinimumCoinsDP(int[] coins, int target) {
+    int[] dp = new int[target + 1];
+    dp[0] = 0;
+
+    for (int amt = 1; amt <= target; amt++) {
+      int min = Integer.MAX_VALUE;
+
+      for (int coin: coins) {
+        if (amt >= coin && dp[amt - coin] != Integer.MAX_VALUE) {
+          min = Math.min(min, dp[amt - coin] + 1);
+        }
+      }
+
+      dp[amt] = min;
+    }
+
+    if (dp[target] != Integer.MAX_VALUE) return dp[target];
+    else return -1;
+  }
+
+  /**
+   * Leetcode solution for
+   * https://leetcode.com/problems/coin-change-2/
+   * Total number of unique ways to make the sum, Note that 1 + 2 + 1 is considered same than 2 + 1 + 1
+   */
+  public static int change(int[] coins, int target) {
+    int[] dp = new int[target + 1];
+    dp[0] = 1; // one way to make 0 sum
+
+    for (int coin: coins) {
+      for (int amt = 1; amt <= target; amt++) {
+        if (amt >= coin) {
+          dp[amt] += dp[amt - coin];
+        }
+      }
+    }
+
+    return dp[target];
+  }
+
+  /**
+   * Leetcode solution for
+   * https://leetcode.com/problems/combination-sum-iv/submissions/
+   * Total number of ways to generate a target, Note that 1 + 2 + 1 is considered different than 2 + 1 + 1
+   */
+  public int combinationSum4(int[] coins, int target) {
+    int[] dp = new int[target + 1];
+    dp[0] = 1; // one way to make 0 sum
+
+
+    for (int amt = 1; amt <= target; amt++) {
+      for (int coin: coins) {
+        if (amt >= coin) {
+          dp[amt] += dp[amt - coin];
+        }
+      }
+    }
+
+    return dp[target];
   }
 }
