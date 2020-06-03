@@ -3,50 +3,41 @@ package in.shabhushan.cp_trials.dynamic_programming;
 import java.util.*;
 
 public class CoinChange {
-  public static int coinChangeRecursiveWithMemoization(int[] coins, int x) {
-    int[] memory = new int[x + 1];
-    Arrays.fill(memory, -1);
-    memory[0] = 0;
+  /**
+   * Given a set of coins, fetch minimum number of coins needed to make up the combinations for a target amount.
+   * Eg. 1, 3, 4 as coins and 6 as target amount, as answer would be 3 + 3, return 2 for this pair.
+   */
+  public static int minimumCoinChange(int[] coins, int target) {
+    if (target == 0 || coins.length == 0) return 0;
 
-    return solve(coins, x, memory);
-  }
+    int min = Integer.MAX_VALUE;
 
-  private static int solve(int[] coins, int x, int[] memory) {
-    //System.out.println("Solve called for " + x);
-    if (x < 0) {
-      return 100_00_00; // prevents overflow
-    } else if (x == 0) {
-      return 0;
-    } else if (memory[x] != -1) {
-      return memory[x];
+    // iterate over candidates first
+    for (int coin: coins) {
+      if (target >= coin)
+        min = Math.min(min, minimumCoinChange(coins, target - coin) + 1);
     }
 
-    int best = Integer.MAX_VALUE;
-    for (int coin : coins) {
-      best = Math.min(best, solve(coins, x - coin, memory) + 1);
-    }
-
-    memory[x] = best;
-    //System.out.println("Solving for x " + x + " best " + best);
-    return best;
+    return min == Integer.MAX_VALUE || min == Integer.MIN_VALUE || min == 0 ? -1 : min;
   }
 
-  public static int coinChangeIterative(int[] coins, int x) {
-    int[] memory = new int[x + 1];
-    memory[0] = 0;
+  public static int coinChangeIterative(int[] coins, int target) {
+    if (target == 0 || coins.length == 0) return 0;
 
-    for (int i = 1; i <= x; i++) {
-      memory[i] = 100_00_00;
+    int[] dp = new int[target + 1];
+    dp[0] = 0;
 
-      // for each coin, check the min value required
-      for (int coin : coins) {
-        if (i - coin >= 0) {
-          memory[i] = Math.min(memory[i], memory[i - coin] + 1);
+    for (int amt = 1; amt <= target; amt++) {
+      dp[amt] = Integer.MAX_VALUE;
+
+      for (int coin: coins) {
+        if (amt >= coin) {
+          dp[amt] = Math.min(dp[amt], dp[amt - coin] + 1);
         }
       }
     }
 
-    return memory[x];
+    return dp[target] == Integer.MAX_VALUE || dp[target] == Integer.MIN_VALUE ? -1 : dp[target];
   }
 
   public static CoinChangeSolution coinChangeIterativeWithCounting(int[] coins, int target) {
@@ -79,21 +70,21 @@ public class CoinChange {
   }
 
   /**
-   * Total number of ways to form the target
+   * Given a set of coins, Give Total number of ways to form the target amount
    */
   public static int totalWaysCoinChange(int[] coins, int target) {
-    int[] memory = new int[target + 1];
-    memory[0] = 1;
+    int[] dp = new int[target + 1];
+    dp[0] = 1;
 
     for (int i = 1; i <= target; i++) {
       for (int coin : coins) {
         if (i - coin >= 0) {
-          memory[i] += memory[i - coin];
+          dp[i] += dp[i - coin];
         }
       }
     }
 
-    return memory[target];
+    return dp[target];
   }
 
   /**

@@ -8,12 +8,18 @@ import static org.junit.Assert.assertEquals;
 public class CoinChangeTest {
   @Test
   public void testCoinChangeRecursiveWithMemoization() {
-    assertEquals(2, coinChangeRecursiveWithMemoization(new int[]{1, 3, 4}, 6));
+    assertEquals(2, minimumCoinChange(new int[]{1, 3, 4}, 6));
+    assertEquals(2, minimumCoinChange(new int[]{1, 3, 4}, 7));
+    assertEquals(3, minimumCoinChange(new int[]{1, 2, 5}, 11));
+    assertEquals(-1, minimumCoinChange(new int[]{2}, 3));
   }
 
   @Test
   public void testCoinChangecoinChangeIterative() {
     assertEquals(2, coinChangeIterative(new int[]{1, 3, 4}, 6));
+    assertEquals(2, coinChangeIterative(new int[]{1, 3, 4}, 7));
+    assertEquals(3, coinChangeIterative(new int[]{1, 2, 5}, 11));
+    assertEquals(-1, coinChangeIterative(new int[]{2}, 3));
   }
 
   @Test
