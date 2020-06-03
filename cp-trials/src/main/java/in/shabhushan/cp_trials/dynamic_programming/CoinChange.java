@@ -1,6 +1,8 @@
 package in.shabhushan.cp_trials.dynamic_programming;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class CoinChange {
   public static int coinChangeRecursiveWithMemoization(int[] coins, int x) {
@@ -22,7 +24,7 @@ public class CoinChange {
     }
 
     int best = Integer.MAX_VALUE;
-    for (int coin: coins) {
+    for (int coin : coins) {
       best = Math.min(best, solve(coins, x - coin, memory) + 1);
     }
 
@@ -39,7 +41,7 @@ public class CoinChange {
       memory[i] = 100_00_00;
 
       // for each coin, check the min value required
-      for (int coin: coins) {
+      for (int coin : coins) {
         if (i - coin >= 0) {
           memory[i] = Math.min(memory[i], memory[i - coin] + 1);
         }
@@ -59,7 +61,7 @@ public class CoinChange {
       memory[i] = 100_00_00;
 
       // for each coin, check the min value required
-      for (int coin: coins) {
+      for (int coin : coins) {
         if (i - coin >= 0 && memory[i - coin] + 1 < memory[i]) {
           memory[i] = memory[i - coin] + 1;
           sequence[i] = coin;
@@ -86,7 +88,7 @@ public class CoinChange {
     memory[0] = 1;
 
     for (int i = 1; i <= target; i++) {
-      for (int coin: coins) {
+      for (int coin : coins) {
         if (i - coin >= 0) {
           memory[i] += memory[i - coin];
         }
@@ -118,7 +120,7 @@ public class CoinChange {
     else {
       int best = Integer.MAX_VALUE;
 
-      for (int coin: coins) {
+      for (int coin : coins) {
         int min = coinChangeMinimumCoinshelper(coins, target - coin, dp);
 
         if (min != Integer.MIN_VALUE) {
@@ -139,7 +141,7 @@ public class CoinChange {
     for (int amt = 1; amt <= target; amt++) {
       int min = Integer.MAX_VALUE;
 
-      for (int coin: coins) {
+      for (int coin : coins) {
         if (amt >= coin && dp[amt - coin] != Integer.MAX_VALUE) {
           min = Math.min(min, dp[amt - coin] + 1);
         }
@@ -161,7 +163,7 @@ public class CoinChange {
     int[] dp = new int[target + 1];
     dp[0] = 1; // one way to make 0 sum
 
-    for (int coin: coins) {
+    for (int coin : coins) {
       for (int amt = 1; amt <= target; amt++) {
         if (amt >= coin) {
           dp[amt] += dp[amt - coin];
@@ -170,6 +172,38 @@ public class CoinChange {
     }
 
     return dp[target];
+  }
+
+  public static int changeRecursive(int[] coins, int target) {
+    if (coins == null) return 0;
+    Map<Integer, Map<Integer, Integer>> dp = new HashMap<>();
+    int ans = changeHelper(target, coins, 0, 0, dp);
+    System.out.println(dp);
+    return ans;
+  }
+
+  private static int changeHelper(
+      int amount, int[] coins, int sum, int index, Map<Integer, Map<Integer, Integer>> dp
+  ) {
+    if (dp.containsKey(index) && dp.get(index).containsKey(sum)) {
+      return dp.get(index).get(sum);
+    }
+    if (sum == amount) {
+      return 1;
+    }
+    int result = 0;
+    // for each coin, starting from index
+    for (int i = index; i < coins.length; i++) {
+      int coin = coins[i];
+      if (sum + coin <= amount)
+        result += changeHelper(amount, coins, sum + coin, i, dp);
+    }
+    Map<Integer, Integer> sumToCount = dp.getOrDefault(index, new HashMap<>());
+
+    sumToCount.put(sum, result);
+    dp.put(index, sumToCount);
+
+    return result;
   }
 
   /**
@@ -183,7 +217,7 @@ public class CoinChange {
 
 
     for (int amt = 1; amt <= target; amt++) {
-      for (int coin: coins) {
+      for (int coin : coins) {
         if (amt >= coin) {
           dp[amt] += dp[amt - coin];
         }
