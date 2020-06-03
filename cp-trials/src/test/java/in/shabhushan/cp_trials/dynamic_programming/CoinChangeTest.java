@@ -69,4 +69,10 @@ public class CoinChangeTest {
     assertEquals(1, changeRecursive(new int[]{10}, 10));
   }
 
+  @Test
+  public void testNumSquares() {
+    assertEquals(2, numSquares(5));
+    assertEquals(3, numSquares(11));
+  }
+
 }

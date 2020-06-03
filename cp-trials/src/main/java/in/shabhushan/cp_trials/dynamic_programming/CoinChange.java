@@ -1,8 +1,6 @@
 package in.shabhushan.cp_trials.dynamic_programming;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class CoinChange {
   public static int coinChangeRecursiveWithMemoization(int[] coins, int x) {
@@ -225,5 +223,34 @@ public class CoinChange {
     }
 
     return dp[target];
+  }
+
+  /**
+   * Leetcode Solution for
+   * https://leetcode.com/problems/perfect-squares/
+   *
+   * Note that here we need to create our own list of candidate answers i.e. squares
+   */
+  public static int numSquares(int n) {
+    int[] dp = new int[n + 1];
+    Arrays.fill(dp, Integer.MAX_VALUE);
+
+    dp[0] = 0;
+
+    List<Integer> list = new ArrayList<>();
+
+    for (int i = 1; i * i <= n; i++) {
+      list.add(i * i);
+    }
+
+    for (int i: list) {
+      for (int j = 1; j <= n ;j++) {
+        if (j >= i) {
+          dp[j] = Math.min(dp[j], dp[j - i] + 1);
+        }
+      }
+    }
+
+    return dp[n];
   }
 }
