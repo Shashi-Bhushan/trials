@@ -132,4 +132,5 @@ Phased repetition is the key.
 #### Dynamic Programming
 - [Coin Change](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/dynamic_programming/CoinChange.java)
 - [Edit Distance](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/dynamic_programming/EditDistance.java)
+- [House Robber](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/dynamic_programming/HouseRobber.java)
 

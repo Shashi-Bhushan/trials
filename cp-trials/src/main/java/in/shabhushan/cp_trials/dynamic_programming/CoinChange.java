@@ -72,6 +72,20 @@ public class CoinChange {
   /**
    * Given a set of coins, Give Total number of ways to form the target amount
    */
+  public static int totalWaysCoinChangeRecursive(int[] coins, int target) {
+    if (target == 0)
+      return 1;
+
+    int total = 0;
+
+    for (int coin: coins) {
+      if (target >= coin)
+        total += totalWaysCoinChangeRecursive(coins, target - coin);
+    }
+
+    return total;
+  }
+
   public static int totalWaysCoinChange(int[] coins, int target) {
     int[] dp = new int[target + 1];
     dp[0] = 1;
