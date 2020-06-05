@@ -29,4 +29,26 @@ public class AllStringInterleaving {
 
     return answer;
   }
+
+  public static List<String> interleave(String s, String t) {
+    List<String> result = new ArrayList<>();
+    if (t.isEmpty()) {
+      result.add(s);
+    } else if (s.isEmpty()) {
+      result.add(t);
+    } else {
+      char c = firstChar(t);
+      String last = t.substring(1);
+
+      for (int i = 0; i <= s.length(); i++) {
+        String left = s.substring(0, i);
+        String right = s.substring(i);
+
+        for (String u : interleave(right, last)) {
+          result.add(left + c + u);
+        }
+      }
+    }
+    return result;
+  }
 }
