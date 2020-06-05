@@ -96,6 +96,9 @@ Phased repetition is the key.
 - [Array Sum Target](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/array/ArraySumTarget.java)
 - [Bipartition](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/array/Bipartition.java)
 
+#### Binary Search
+- [Probabilities](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/binarySearch/Probabilities.java)
+
 #### Linked List
 - [Linked List Deep copy](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/linked_list/CopyRandomDoubleList.java)
 
