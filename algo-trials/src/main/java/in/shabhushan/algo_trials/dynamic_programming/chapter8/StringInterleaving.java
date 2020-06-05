@@ -1,5 +1,9 @@
 package in.shabhushan.algo_trials.dynamic_programming.chapter8;
 
+/**
+ * Leetcode solution
+ * https://leetcode.com/problems/interleaving-string/
+ */
 public class StringInterleaving {
   // Greedy won't work, check isInterleavingString("bcc", "bbca", "bbcbcac")
   public static boolean isInterleavingStringGreedy(String a, String b, String c) {
@@ -75,11 +79,11 @@ public class StringInterleaving {
   }
 
   // if string is empty, give a `empty char` instead of first char(Exception)
-  private static char firstChar(String s) {
+  public static char firstChar(String s) {
     return (s.length() != 0) ? s.charAt(0) : ' ';
   }
 
-  private static String dropFirstChar(String s) {
+  public static String dropFirstChar(String s) {
     return s.substring(1);
   }
 }
