@@ -52,4 +52,20 @@ class QueueReconstruction {
 
     return a;
   }
+
+  /**
+   * Same insertion sort approach, easier to understand solution
+   * Check https://leetcode.com/problems/queue-reconstruction-by-height/discuss/673000/Java-Solution-Explained-w-code
+   */
+  public int[][] reconstructQueue2(int[][] people) {
+    Arrays.sort(people, (a, b) -> a[0] == b[0] ? a[1] - b[1]: b[0] - a[0]);
+
+    List<int[]> ans = new ArrayList<>();
+
+    for (int[] person: people) {
+      ans.add(person[1], person);
+    }
+
+    return ans.toArray(new int[people.length][2]);
+  }
 }

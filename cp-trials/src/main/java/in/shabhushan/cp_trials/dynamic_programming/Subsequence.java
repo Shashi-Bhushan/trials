@@ -1,5 +1,6 @@
 package in.shabhushan.cp_trials.dynamic_programming;
 
+import  java.util.*;
 /**
  * Leetcode solution for
  * https://leetcode.com/problems/is-subsequence/submissions/
@@ -44,5 +45,38 @@ class Subsequence {
     }
 
     return dp[s.length()][t.length()];
+  }
+
+  public int jump(int[] nums) {
+    ArrayDeque<List<Integer>> s = new ArrayDeque<>();
+
+    s.add(List.of(0, nums[0]));
+
+    int count = 0;
+    while (!s.isEmpty()) {
+      ArrayDeque<List<Integer>> temp = new ArrayDeque<>();
+
+      while (!s.isEmpty()) {
+        List<Integer> l = s.pop();
+
+        if (l.get(0) == nums.length - 1) {
+          return count;
+        } else {
+          // from index `first` till 'last'
+          int idx = l.get(0);
+
+          while (idx < l.get(1)) {
+            temp.add(List.of(idx + 1, nums[idx + 1]));
+            idx++;
+          }
+        }
+
+      }
+
+      s = temp;
+      count++;
+    }
+
+    return -1;
   }
 }

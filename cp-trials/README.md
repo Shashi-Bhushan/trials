@@ -94,6 +94,7 @@ Phased repetition is the key.
 #### Arrays
 - [Contiguous Array](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/array/ContiguousArray.java)
 - [Array Sum Target](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/array/ArraySumTarget.java)
+- [Jump 2](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/array/JumpGame2.java)
 - [Bipartition](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/array/Bipartition.java)
 - [Queue Reconstruction](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/array/QueueReconstruction.java)
 
