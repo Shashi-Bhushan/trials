@@ -179,18 +179,12 @@ public class CoinChange {
 
   public static int changeRecursive(int[] coins, int target) {
     if (coins == null) return 0;
-    Map<Integer, Map<Integer, Integer>> dp = new HashMap<>();
-    int ans = changeHelper(target, coins, 0, 0, dp);
-    System.out.println(dp);
-    return ans;
+    return changeHelper(target, coins, 0, 0);
   }
 
   private static int changeHelper(
-      int amount, int[] coins, int sum, int index, Map<Integer, Map<Integer, Integer>> dp
+      int amount, int[] coins, int sum, int index
   ) {
-    if (dp.containsKey(index) && dp.get(index).containsKey(sum)) {
-      return dp.get(index).get(sum);
-    }
     if (sum == amount) {
       return 1;
     }
@@ -199,12 +193,8 @@ public class CoinChange {
     for (int i = index; i < coins.length; i++) {
       int coin = coins[i];
       if (sum + coin <= amount)
-        result += changeHelper(amount, coins, sum + coin, i, dp);
+        result += changeHelper(amount, coins, sum + coin, i);
     }
-    Map<Integer, Integer> sumToCount = dp.getOrDefault(index, new HashMap<>());
-
-    sumToCount.put(sum, result);
-    dp.put(index, sumToCount);
 
     return result;
   }
