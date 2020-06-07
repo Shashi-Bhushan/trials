@@ -31,6 +31,9 @@ public class LongestCommonSubsequence {
     }
   }
 
+  /**
+   * The problem is in-fact NP-Complete (There is no known polynomial time solution for this problem).
+   */
   public static int longestCommonSubsequence2(String text1, String text2) {
     int[][] dp = new int[text1.length() + 1][text2.length() + 1];
 
