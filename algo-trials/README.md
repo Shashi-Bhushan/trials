@@ -47,3 +47,4 @@ I took inspiration from this on some of the solutions I wrote and blatantly copi
 - [String Interleaving](https://github.com/Shashi-Bhushan/trials/blob/master/algo-trials/src/main/java/in/shabhushan/algo_trials/dynamic_programming/chapter8/StringInterleaving.java)
 - [Cutting Rod](https://github.com/Shashi-Bhushan/trials/blob/master/algo-trials/src/main/java/in/shabhushan/algo_trials/dynamic_programming/chapter9/CuttingRod.java)
 - [0/1 Knapsack](https://github.com/Shashi-Bhushan/trials/blob/master/algo-trials/src/main/java/in/shabhushan/algo_trials/dynamic_programming/chapter9/Knapsack.java)
+- [LPS](https://github.com/Shashi-Bhushan/trials/blob/master/algo-trials/src/main/java/in/shabhushan/algo_trials/dynamic_programming/chapter9/LongestPalindromicSubsequence.java)
