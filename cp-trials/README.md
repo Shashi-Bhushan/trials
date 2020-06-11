@@ -97,6 +97,7 @@ Phased repetition is the key.
 - [Jump 2](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/array/JumpGame2.java)
 - [Bipartition](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/array/Bipartition.java)
 - [Queue Reconstruction](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/array/QueueReconstruction.java)
+- [Dutch National Flag problem](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/array/SortColors.java)
 
 #### Binary Search
 - [Probabilities](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/binarySearch/Probabilities.java)
