@@ -39,3 +39,5 @@ Similar for min as well
 
 Thing to note here is you check for biggest number first, then second biggest number, then third biggest number etc.
 You already know how many top max numbers to search for, Then use this. Otherwise sort and fetch.
+
+Check these problems for practice, [Maximum product 2](https://leetcode.com/problems/maximum-product-of-two-elements-in-an-array/submissions/) and [Maximum product 3](https://leetcode.com/problems/maximum-product-of-three-numbers/)

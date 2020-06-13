@@ -19,6 +19,7 @@ But there might be some here or there. Apologies for that.
 Collections of few good problem solving algorithms/tricks I have learned over time.
 
 - [Maximum of n elements](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/notes/maxThree.md)
+- [Is Subsequence](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/notes/subsequence.md)
 
 - **Kadane’s algorithm**
 *Maximum sum subarray problem*

@@ -37,6 +37,7 @@ public class LongestIncreasingSubsequence {
 
     int ans = 1;
 
+    // between 0 and i, whichever nums[j] is greater than nums[i], get max of dp[j] for those.
     for (int i = 1; i < nums.length; i++) {
       int max = 1;
       for (int j = i - 1; j >=0; j--) {

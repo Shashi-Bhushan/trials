@@ -3,6 +3,10 @@ package in.shabhushan.cp_trials.dynamic_programming;
 /**
  * Leetcode solution for
  * https://leetcode.com/problems/is-subsequence/submissions/
+ *
+ * Three Solutions
+ * One recursive, one iterative DP
+ * and third one O(n) solution
  */
 class Subsequence {
   public boolean isSubsequence2(String s, String t) {
@@ -44,5 +48,19 @@ class Subsequence {
     }
 
     return dp[s.length()][t.length()];
+  }
+
+  public boolean isSubsequence3(String s, String t) {
+    int a = 0;
+    int b = 0;
+
+    while (a < s.length() && b < t.length()) {
+      if (s.charAt(a) == t.charAt(b))
+        a++;
+
+      b++;
+    }
+
+    return a == s.length();
   }
 }
