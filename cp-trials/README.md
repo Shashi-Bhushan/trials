@@ -104,6 +104,7 @@ Phased repetition is the key.
 
 #### Binary Search
 - [Probabilities](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/binarySearch/Probabilities.java)
+- [M bouquet](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/binarySearch/Mbouquet.java)
 - [Insert Position](https://leetcode.com/problems/search-insert-position/)
 
 #### Linked List
