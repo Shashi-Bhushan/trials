@@ -38,6 +38,16 @@ public class Template {
     tr(G - S + "ms");
   }
 
+  private static int gcd(int a, int b) {
+    while (b != 0) {
+      int t = b;
+      b = a % b;
+      a = t;
+    }
+
+    return a;
+  }
+
   private static int ni() {
     return Integer.parseInt(in.next());
   }
