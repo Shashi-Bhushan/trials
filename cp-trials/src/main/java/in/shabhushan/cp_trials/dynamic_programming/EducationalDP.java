@@ -206,6 +206,85 @@ public class EducationalDP {
     return maxValue;
   }
 
+  // PROBLEM 5
+  static void problem5() {
+    int items = ni();
+    int capacity = ni();
+    int[][] arr = new int[items][2];
+
+    int totalValue = 0;
+
+    for (int i = 0; i < items; i++) {
+      for (int j = 0; j < 2; j++) {
+        arr[i][j] = ni();
+
+        if (j == 1)
+          totalValue += arr[i][j];
+      }
+    }
+
+    long[] dp = new long[totalValue + 1];
+    Arrays.fill(dp, (long) 1E18 + 5);
+    dp[0] = 0;
+
+    for (int i = 0; i < items; i++) {
+      for (int j = totalValue; j >= 0; j--) {
+        int[] currentElement = arr[i];
+
+        if (0 <= j - currentElement[1]) {
+          dp[j] = Math.min(
+              dp[j],
+              currentElement[0] + dp[j - currentElement[1]]
+          );
+        }
+      }
+    }
+
+    long ans = 0;
+    // maximum index of i greater than capacity
+    for (int i = 0; i <= totalValue; i++) {
+      if (dp[i] <= capacity)
+        ans = Math.max(i, ans);
+    }
+
+    out.println(ans);
+  }
+
+  // PROBLEM 6
+  static void problem6() {
+    char[] a = ns().toCharArray();
+    char[] b = ns().toCharArray();
+
+    int[][] dp = new int[a.length + 1][b.length + 1];
+
+    for (int i = 1; i <= a.length; i++) {
+      for (int j = 1; j <= b.length; j++) {
+        if (a[i - 1] == b[j - 1]) {
+          dp[i][j] = dp[i - 1][j - 1] + 1;
+        } else {
+          dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]);
+        }
+      }
+    }
+
+    int x = a.length, y = b.length;
+
+    StringBuilder sb = new StringBuilder();
+    while (x > 0 && y > 0) {
+      if (dp[x - 1][y] == dp[x][y -1] && dp[x][y] == dp[x-1][y-1] + 1) {
+        sb.append(a[x - 1]); // b[y - 1] also works
+        x--;
+        y--;
+      } else if (dp[x - 1][y] > dp[x][y -1]) {
+        x--;
+      } else {
+        y--;
+      }
+    }
+
+    out.print(sb.reverse().toString());
+  }
+
   public static void main(String[] args) throws Exception {
     long S = System.currentTimeMillis();
     in = INPUT.isEmpty() ? new Scanner(System.in) : new Scanner(INPUT);
@@ -233,6 +312,10 @@ public class EducationalDP {
 
   private static long nl() {
     return Long.parseLong(in.next());
+  }
+
+  private static String ns() {
+    return in.nextLine();
   }
 
   // Math Utils
