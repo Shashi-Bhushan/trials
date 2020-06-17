@@ -1,9 +1,7 @@
 package in.shabhushan.cp_trials.dynamic_programming;
 
 import java.io.PrintWriter;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 import java.util.stream.Collectors;
 
 // Solution
@@ -283,6 +281,49 @@ public class EducationalDP {
     }
 
     out.print(sb.reverse().toString());
+  }
+
+  // PROBLEM 7 Recursive Solution
+  static void problem7() {
+    int n = ni();
+    int m = ni();
+
+    Map<Integer, Set<Integer>> adj = new HashMap<>();
+
+    for (int i = 1; i <= n; i++) {
+      adj.put(i, new HashSet<>());
+    }
+
+    for (int i = 0; i < m; i++) {
+      adj.get(ni()).add(ni());
+    }
+
+    boolean[] visited = new boolean[n];
+    int[] score = new int[n];
+    int max = 0;
+
+
+    for (int i = 1; i <= n; i++) {
+      max = Math.max(max, problem7Helper(adj, i, visited, score));
+    }
+
+    out.println(max);
+  }
+
+  static int problem7Helper(Map<Integer, Set<Integer>> adj, int index, boolean[] visited, int[] score) {
+    if (!visited[index - 1]) {
+      int max = 0;
+
+      // get all adjacents of index
+      for (int neighbour: adj.get(index)) {
+        max = Math.max(max, 1 + problem7Helper(adj, neighbour, visited, score));
+      }
+
+      visited[index - 1] = true;
+      score[index - 1] = max;
+    }
+
+    return score[index - 1];
   }
 
   public static void main(String[] args) throws Exception {
