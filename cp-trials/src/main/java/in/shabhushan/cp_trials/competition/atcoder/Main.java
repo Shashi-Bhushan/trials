@@ -1,10 +1,8 @@
 package in.shabhushan.cp_trials.competition.atcoder;
 
 import java.io.PrintWriter;
-import java.util.*;
-
-import static java.util.stream.Collectors.joining;
-import static java.util.stream.Collectors.mapping;
+import java.util.Arrays;
+import java.util.Scanner;
 
 // Solution
 public class Main {
@@ -22,45 +20,37 @@ public class Main {
   }
 
   static void solve() {
-    int n = ni();
-    int m = ni();
+    int h = ni();
+    int w = ni();
 
-    Map<Integer, Set<Integer>> adj = new HashMap<>();
+    // is this empty space
+    boolean[][] arr = new boolean[h][w];
+    for (int i = 0; i < h; i++) {
+      char[] split = in.next().toCharArray();
+      int j = 0;
 
-    for (int i = 1; i <= n; i++) {
-      adj.put(i, new HashSet<>());
-    }
-
-    for (int i = 0; i < m; i++) {
-      adj.get(ni()).add(ni());
-    }
-
-    boolean[] visited = new boolean[n];
-    int[] score = new int[n];
-    int max = 0;
-
-
-    for (int i = 1; i <= n; i++) {
-      max = Math.max(max, helper(adj, i, visited, score));
-    }
-
-    out.println(max);
-  }
-
-  static int helper(Map<Integer, Set<Integer>> adj, int index, boolean[] visited, int[] score) {
-    if (!visited[index - 1]) {
-      int max = 0;
-
-      // get all adjacents of index
-      for (int neighbour: adj.get(index)) {
-        max = Math.max(max, 1 + helper(adj, neighbour, visited, score));
+      for (char s : split) {
+        arr[i][j++] = s == '.';
       }
-
-      visited[index - 1] = true;
-      score[index - 1] = max;
     }
 
-    return score[index - 1];
+    long[][] dp = new long[h][w];
+    dp[0][0] = 1;
+
+    for (int i = 1; i < h; i++)
+      dp[i][0] = arr[i][0] ? dp[i - 1][0] : 0;
+    for (int j = 1; j < w; j++)
+      dp[0][j] = arr[0][j] ? dp[0][j - 1] : 0;
+
+    int mod = (int) 1e9 + 7;
+
+    for (int i = 1; i < h; i++) {
+      for (int j = 1; j < w; j++) {
+        dp[i][j] = arr[i][j] ? (dp[i][j - 1] % mod + dp[i - 1][j] % mod) % mod : 0;
+      }
+    }
+
+    out.println(dp[h - 1][w - 1]);
   }
 
   public static void main(String[] args) throws Exception {
@@ -85,7 +75,11 @@ public class Main {
   }
 
   private static int ni() {
-    return Integer.parseInt(in.next());
+    return in.nextInt();
+  }
+
+  private static String nt() {
+    return in.next();
   }
 
   private static String ns() {
@@ -93,7 +87,7 @@ public class Main {
   }
 
   private static long nl() {
-    return Long.parseLong(in.next());
+    return in.nextLong();
   }
 
   // Math Utils
