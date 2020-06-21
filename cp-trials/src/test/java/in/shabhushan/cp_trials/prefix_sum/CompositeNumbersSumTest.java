@@ -10,7 +10,7 @@ public class CompositeNumbersSumTest {
   public void testCompositeNumbersSum() {
     // in this range 10-13, 10 and 12 are composite
     assertEquals(22, getCompositeNumbersSum(10, 13));
-    // in the range 12-22, 2 + 14 + 15 + 16 + 18 + 20 + 21 = 116
+    // in the range 12-22, 12 + 14 + 15 + 16 + 18 + 20 + 21 = 116
     assertEquals(116, getCompositeNumbersSum(12, 21));
   }
 }

@@ -17,10 +17,10 @@ public class CompositeNumbersSum {
   }
 
   private static int returnIfComposite(int k) {
-    if (k == 2 || k == 3 || k == 1)
+    if (0 <= k && k <= 3)
       return 0;
 
-    if (k < 1 || k % 2 == 0 || k % 3 == 0)
+    if (k % 2 == 0 || k % 3 == 0)
       return k;
 
     for (int i = 5; i * i <= k; i += 6) {

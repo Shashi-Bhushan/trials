@@ -68,7 +68,7 @@ public class MysteryFunction {
     StringBuilder binary = new StringBuilder(String.valueOf(binaryString.charAt(0)));
 
     for (int i = 1; i < binaryString.length(); i++) {
-      char prevChar = binary.charAt(binary.length() - 1);//binary.charAt(i-1);
+      char prevChar = binary.charAt(binary.length() - 1);
       char currentChar = binaryString.charAt(i);
 
       if (prevChar != currentChar)
