@@ -150,3 +150,4 @@ Phased repetition is the key.
 - Longest Common Subsequence - The problem is a NP-complete problem. There is no known polynomial time solution for the problem. DP gives a pseudo polynomial time solution. check [this](https://www.geeksforgeeks.org/subset-sum-problem-dp-25/).
 - [Longest Increasing Subsequence](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/dynamic_programming/LongestIncreasingSubsequence.java)
 - [Knapsack possible](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/dynamic_programming/KnapsackPossible.java)
+- [Dungeon Game](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/dynamic_programming/DungeonGame.java)
