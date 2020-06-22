@@ -135,6 +135,7 @@ Phased repetition is the key.
 - [Gray Code to Binary](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/math/fundamental/MysteryFunction.java)
 - [Bit Ones Count](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/bits/CountBits.java)
 - [Bit Ones in Range](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/math/logic/BitCount.java)
+- [Single Number in Triplet](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/bits/SingleNumberII.java)
 
 #### Graph
 - [Course Schedule 1](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/dfs/CourseSchedule.java)
