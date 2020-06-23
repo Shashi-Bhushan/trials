@@ -102,6 +102,10 @@ Phased repetition is the key.
 - [Queue Reconstruction](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/array/QueueReconstruction.java)
 - [Dutch National Flag problem](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/array/SortColors.java)
 
+#### String
+- [Top k Frequent String](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/string/TopKFrequentStrings.java)
+
+
 #### Binary Search
 - [Probabilities](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/binarySearch/Probabilities.java)
 - [M bouquet](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/binarySearch/Mbouquet.java)
