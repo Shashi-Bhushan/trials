@@ -131,6 +131,9 @@ Phased repetition is the key.
 #### DFS
 
 
+#### Tree
+- [Complete binary tree height](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/tree/CountCompleteTreeHeight.java)
+
 #### Bit Manipulation
 - [Gray Code to Binary](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/math/fundamental/MysteryFunction.java)
 - [Bit Ones Count](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/bits/CountBits.java)
