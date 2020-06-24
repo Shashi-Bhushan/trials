@@ -2,6 +2,13 @@ package in.shabhushan.cp_trials.array;
 
 import java.util.*;
 
+/**
+ * Leetcode solution for
+ * https://leetcode.com/problems/online-election
+ *
+ * a nice explanation of problem given here
+ * https://leetcode.com/problems/online-election/discuss/681301/An-extremely-detailed-explanation-accompanied-with-Code
+ */
 class TopVotedCandidate {
 
   // person to frequency map
