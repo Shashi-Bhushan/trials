@@ -121,6 +121,7 @@ Phased repetition is the key.
 #### Sweep Line
 - [Sweep Line](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/sweepline/RightInterval.java)
 - [Course Schedule](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/sweepline/CourseSchedule.java)
+- [Car Pooling](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/sweepline/CarPooling.java)
 - [Tasks and Deadline - Section 4.2.3 in CSES Book]
 
 #### Prefix Sum
