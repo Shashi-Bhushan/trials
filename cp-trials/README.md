@@ -43,6 +43,9 @@ Expression tree is a binary tree in which each internal node corresponds to oper
 Also, worth noting is post-order is widely use in mathematical expression. This means is, keep the string representation of the expression in postfix notation.
 Then, when creating the tree structure, add to stack if character and remove last two element from stack if it's an operator. See implementation [here](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/kotlin/in/shabhushan/cp_trials/tree/expressionTree.kt)
 
+- **Tortoise and Hare**
+https://leetcode.com/articles/find-the-duplicate-number/
+
 Also read, [Backtracking](src/main/kotlin/in/shabhushan/cp_trials/dsbook/methods/backtracking/README.md)
 
 ### Problems Worth Checking
@@ -103,6 +106,9 @@ Phased repetition is the key.
 - [Queue Reconstruction](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/array/QueueReconstruction.java)
 - [Dutch National Flag problem](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/array/SortColors.java)
 - [Top Voted Candidates](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/array/TopVotedCandidate.java)
+
+#### Stack
+- [Frequency Stack](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/stack/FreqStack.java)
 
 #### String
 - [Top k Frequent String](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/string/TopKFrequentStrings.java)
