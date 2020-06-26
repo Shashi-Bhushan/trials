@@ -169,3 +169,4 @@ Phased repetition is the key.
 - [Knapsack possible](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/dynamic_programming/KnapsackPossible.java)
 - [Dungeon Game](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/dynamic_programming/DungeonGame.java)
 - [Structurally Unique BST](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/dynamic_programming/StructurallyUniqueBST.java)
+- [Ugly Numbers II](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/array/UglyNumbersII.java)
