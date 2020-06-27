@@ -17,6 +17,18 @@ public class TreeNode<T> {
     this.value = value;
   }
 
+  public TreeNode getLeft() {
+    return left;
+  }
+
+  public TreeNode getRight() {
+    return right;
+  }
+
+  public T getValue() {
+    return value;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) return true;

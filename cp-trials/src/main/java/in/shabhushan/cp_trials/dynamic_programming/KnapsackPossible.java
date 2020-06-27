@@ -61,4 +61,60 @@ public class KnapsackPossible {
 
     return ans;
   }
+
+  public static boolean[] isPossible2(int[] weight) {
+    int sum = 0;
+    for (int w: weight)
+      sum += w;
+
+    boolean[] dp = new boolean[sum + 1];
+    dp[0] = true;
+
+    for (int i = 1; i <= sum; i++) {
+      dp[i] = helper2(weight, 0, i);
+    }
+
+    return dp;
+  }
+
+  private static boolean helper2(int[] weight, int firstIndex, int target) {
+    if (target == 0) return true;
+    if (firstIndex == weight.length - 1) return weight[firstIndex] == target;
+
+    if (weight[firstIndex] <= target) {
+      return helper2(weight, firstIndex + 1, target - weight[firstIndex]) ||
+          helper2(weight, firstIndex + 1, target);
+    } else {
+      return helper2(weight, firstIndex + 1, target);
+    }
+  }
+
+  public static boolean[] isPossibleDP2(int[] weight) {
+    int sum = 0;
+
+    for (int w: weight)
+      sum += w;
+
+    int n = weight.length;
+    boolean[][] dp = new boolean[sum + 1][n + 1];
+
+    for (int i = 0; i <= n; i++)
+      dp[0][i] = true;
+
+    for (int target = 1; target <= sum; target++) {
+      for (int j = 1; j <= n; j++) {
+        if (weight[j - 1] <= target)
+          dp[target][j] = dp[target][j] || dp[target - weight[j - 1]][j - 1] || dp[target][j - 1];
+        else
+          dp[target][j] = dp[target][j] || dp[target][j - 1];
+      }
+    }
+
+    // select last column
+    boolean[] ans = new boolean[sum + 1];
+    for (int i = 0; i <= sum; i++)
+      ans[i] = dp[i][weight.length];
+
+    return ans;
+  }
 }

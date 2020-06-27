@@ -241,6 +241,7 @@ public class CoinChange {
     for (int i: list) {
       for (int j = 1; j <= n ;j++) {
         if (j >= i) {
+          // minimum of previous solution or add one to [j - i]
           dp[j] = Math.min(dp[j], dp[j - i] + 1);
         }
       }
