@@ -106,6 +106,7 @@ Phased repetition is the key.
 - [Queue Reconstruction](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/array/QueueReconstruction.java)
 - [Dutch National Flag problem](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/array/SortColors.java)
 - [Top Voted Candidates](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/array/TopVotedCandidate.java)
+- [Number Subsequence](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/array/NumberSubsequence.java)
 
 #### Stack
 - [Frequency Stack](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/stack/FreqStack.java)
