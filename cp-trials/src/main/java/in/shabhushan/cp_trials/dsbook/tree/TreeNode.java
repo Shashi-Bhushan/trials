@@ -4,6 +4,7 @@ public class TreeNode {
 
     long sum;
     long depth;
+    public int val;
     public TreeNode left;
     public TreeNode right;
 
