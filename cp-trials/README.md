@@ -110,6 +110,7 @@ Phased repetition is the key.
 
 #### Stack
 - [Frequency Stack](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/stack/FreqStack.java)
+- [Letter Tile Possibilities](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/string/LetterTilePossibilities.java)
 
 #### String
 - [Top k Frequent String](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/string/TopKFrequentStrings.java)
@@ -148,6 +149,7 @@ Phased repetition is the key.
 #### Tree
 - [Complete binary tree height](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/tree/CountCompleteTreeHeight.java)
 - [Sub Tree with Deepest Nodes](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/tree/SubTreeDeepestNode.java)
+- [Insufficient Nodes](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/tree/InsufficientNodes.java)
 
 #### Bit Manipulation
 - [Gray Code to Binary](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/math/fundamental/MysteryFunction.java)
