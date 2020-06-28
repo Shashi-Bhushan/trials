@@ -16,7 +16,8 @@ class LetterTilePossibilities {
     boolean[] visited = new boolean[c.length];
     
     Arrays.sort(c);
-    
+
+    // subtract by 1 to remove empty sequence from result
     return helper(c, visited) - 1;
   }
   
@@ -39,6 +40,10 @@ class LetterTilePossibilities {
     return ans;
   }
 
+  /**
+   * Since we are asked sequences and not the sub sequence of the original String, we could shuffle the characters in original string to get a new String
+   * Hence, we only need consider the frequencies of the letter involved
+   */
   public int numTilePossibilities2(String tiles) {
     if (tiles == null || tiles.length() == 0)
       return 0;
