@@ -81,4 +81,10 @@ public class CoinChangeTest {
     assertEquals(3, numSquares(11));
   }
 
+  @Test
+  public void testNumSquaresRec() {
+    assertEquals(2, numSquaresRec(5));
+    assertEquals(3, numSquaresRec(11));
+  }
+
 }

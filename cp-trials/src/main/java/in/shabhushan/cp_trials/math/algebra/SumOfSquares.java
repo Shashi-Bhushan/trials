@@ -2,6 +2,12 @@ package in.shabhushan.cp_trials.math.algebra;
 
 import java.util.*;
 
+/**
+ * Leetcode solution for perfect squares
+ * check this for reference
+ *
+ * https://www.youtube.com/watch?v=o2IBfabt8qM
+ */
 public class SumOfSquares {
 
   /**

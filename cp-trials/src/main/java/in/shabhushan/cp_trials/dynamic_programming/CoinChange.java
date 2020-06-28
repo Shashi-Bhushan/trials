@@ -228,7 +228,7 @@ public class CoinChange {
    */
   public static int numSquares(int n) {
     int[] dp = new int[n + 1];
-    Arrays.fill(dp, Integer.MAX_VALUE);
+    Arrays.fill(dp, n);
 
     dp[0] = 0;
 
@@ -238,15 +238,36 @@ public class CoinChange {
       list.add(i * i);
     }
 
-    for (int i: list) {
+    for (int candidate: list) {
       for (int j = 1; j <= n ;j++) {
-        if (j >= i) {
-          // minimum of previous solution or add one to [j - i]
-          dp[j] = Math.min(dp[j], dp[j - i] + 1);
+        if (j >= candidate) {
+          // minimum of previous solution or add one to [j - candidate]
+          dp[j] = Math.min(dp[j], dp[j - candidate] + 1);
         }
       }
     }
 
     return dp[n];
+  }
+
+  /**
+   * Check this for reference
+   * https://www.youtube.com/watch?v=o2IBfabt8qM
+   */
+  public static int numSquaresRec(int n) {
+    return helper(n);
+  }
+
+  private static int helper(int n) {
+    if (n < 0) return Integer.MAX_VALUE;
+    else if (n == 0) return 0;
+    else {
+      int min = n;
+
+      for (int i = 1; i * i <= n; i++)
+        min = Math.min(min, helper(n - (i*i)) + 1);
+
+      return min;
+    }
   }
 }
