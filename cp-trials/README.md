@@ -159,6 +159,9 @@ Phased repetition is the key.
 - [Bit Ones in Range](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/math/logic/BitCount.java)
 - [Single Number in Triplet](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/bits/SingleNumberII.java)
 
+#### Math
+- [Elimination Game](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/math/logic/EliminationGame.java)
+
 #### Graph
 - [Course Schedule 1](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/dfs/CourseSchedule.java)
 - [Course Schedule 4](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/graph/CourseScheduleIV.java)
