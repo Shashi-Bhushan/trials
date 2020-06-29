@@ -164,6 +164,7 @@ Phased repetition is the key.
 - [Course Schedule 4](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/graph/CourseScheduleIV.java)
 - [Min Reorder](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/graph/MinimumReorder.java)
 - [Cheapest Flight K Stop](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/graph/CheapestFlightWithinKStop.java)
+- [Is Graph Bipartite](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/graph/GraphBipartite.java)
 
 #### Dynamic Programming
 - [Coin Change](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/dynamic_programming/CoinChange.java)
