@@ -9,7 +9,7 @@ import java.util.*;
  * Given a binary array, find the maximum length of a contiguous subarray with equal number of 0 and 1.
  */
 class ContiguousArray {
-  public static int findMaxLength(int[] nums) {
+  public static int findMaxLength2(int[] nums) {
     Map<Integer, Integer> map = new HashMap<>();
     map.put(0, -1);
 
@@ -26,5 +26,30 @@ class ContiguousArray {
     }
 
     return maximumLength;
+  }
+
+  public int findMaxLength(int[] nums) {
+    int level = nums.length;
+
+    if (level < 2)
+      return 0;
+
+    int[] countMap = new int[level * 2 + 1];
+    Arrays.fill(countMap, -1);
+
+    int ans = 0;
+    countMap[level] = 0;
+
+    for (int i = 0; i < nums.length; i++) {
+      level += (nums[i] == 1) ? 1 : -1;
+
+      if (countMap[level] == -1) {
+        countMap[level] = i + 1;
+      } else {
+        ans = Math.max(ans, (i + 1) - countMap[level]);
+      }
+    }
+
+    return ans;
   }
 }
