@@ -28,7 +28,7 @@ class ContiguousArray {
     return maximumLength;
   }
 
-  public int findMaxLength(int[] nums) {
+  public static int findMaxLength(int[] nums) {
     int level = nums.length;
 
     if (level < 2)
