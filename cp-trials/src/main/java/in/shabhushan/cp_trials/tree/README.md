@@ -38,3 +38,12 @@ Your set would include 1,2,3 and 4 but you don't have a way of knowing that ther
 Prim's algorithm adds the smallest node in the start and then adds the smallest of the adjacent nodes.  
 
 Check the explanation [here](https://www.youtube.com/watch?v=4ZlRH0eK-qQ)
+
+#### Cycle Detection
+
+Additionally, just for cycle detection, you could do BFS or DFS from one vertex to another and check if there is a path that already exists between two vertices.
+If there is a path, that means they are in the same connected component and we should not add edge between these two vertices.
+Check [this](https://www.youtube.com/watch?v=mFVivXZrwyg) for reference at time 9:50 with time complexity of O(V + E)  
+edges are approximately V^2 hence this way is O(V^2)
+
+It is for this precise reason that we use `Union Find` and not BFS or DFS here for cycle detection. 

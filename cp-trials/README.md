@@ -15,7 +15,7 @@ But there might be some here or there. Apologies for that.
 
 ![Codewars](https://www.codewars.com/users/Shashi-Bhushan/badges/large)
 
-### Algorithms
+### Algorithms and Notes
 Collections of few good problem solving algorithms/tricks I have learned over time.
 
 - [Maximum of n elements](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/notes/maxThree.md)
@@ -116,6 +116,7 @@ Phased repetition is the key.
 
 #### String
 - [Top k Frequent String](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/string/TopKFrequentStrings.java)
+- [Rabin Karp/KMP](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/string/RepeatedSubstringPattern.java)
 
 
 #### Binary Search
