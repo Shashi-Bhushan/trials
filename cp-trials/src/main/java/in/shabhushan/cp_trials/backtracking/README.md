@@ -28,3 +28,8 @@ What are we trying to achieve ?
 Note that this defines our base case.
 
 The goal that we are trying to achieve with N queen problem is to be able to reach the end row. This would signify that we have placed all the queens successfully, thus solving the problem.
+
+## Problems to Solve
+
+1. [Subsets](https://leetcode.com/explore/challenge/card/july-leetcoding-challenge/545/week-2-july-8th-july-14th/3387/)
+2. [Letter Tile possibilities](https://leetcode.com/problems/letter-tile-possibilities/)
