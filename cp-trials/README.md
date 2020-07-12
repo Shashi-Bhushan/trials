@@ -113,6 +113,7 @@ Phased repetition is the key.
 - [Letter Tile Possibilities](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/string/LetterTilePossibilities.java)
 - [Smallest Subsequence](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/string/SmallestSubsequence.java)
 - [Remove Duplicates](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/string/RemoveDuplicateString.java)
+- [Infix to postfix expression](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/stack/PolishNotation.java)
 
 #### String
 - [Top k Frequent String](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/string/TopKFrequentStrings.java)
