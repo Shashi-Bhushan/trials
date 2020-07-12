@@ -170,6 +170,7 @@ Phased repetition is the key.
 - [Cheapest Flight K Stop](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/graph/CheapestFlightWithinKStop.java)
 - [Is Graph Bipartite](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/graph/GraphBipartite.java)
 - [Graph valid tree](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/tree/GraphValidTree.java)
+- [Maximum Probability](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/graph/MaxProbability.java)
 
 #### Dynamic Programming
 - [Coin Change](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/dynamic_programming/CoinChange.java)
