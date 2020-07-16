@@ -3,9 +3,9 @@ package in.shabhushan.cp_trials.ds.tree;
 import java.util.Objects;
 
 public class TreeNode<T> {
-  TreeNode left;
-  TreeNode right;
-  T value;
+  public TreeNode<T> left;
+  public TreeNode<T> right;
+  public T value;
 
   public TreeNode(T value, TreeNode left, TreeNode right) {
     this.value = value;

@@ -133,6 +133,7 @@ Phased repetition is the key.
 - [Count Smaller Element](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/tree/CountSmallerThan.java)
 - [Diameter of binary tree](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/tree/DiameterBinaryTree.java)
 - [In order Successor](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/tree/InorderSuccessor.java)
+- [Tree Traversal DFS](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/tree/TraversalDFS.java)
 
 #### Sweep Line
 - [Sweep Line](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/sweepline/RightInterval.java)
