@@ -1,24 +1,27 @@
 package in.shabhushan.cp_trials.tree;
 
-import com.sun.source.tree.Tree;
 import in.shabhushan.cp_trials.ds.tree.TreeNode;
 
 import java.util.ArrayDeque;
+import java.util.ArrayList;
 import java.util.Deque;
+import java.util.List;
 
 /**
  * Traverse a Tree in DFS using iterations
  */
 public class TraversalDFS {
 
-  public static void preOrder(TreeNode<Integer> root) {
+  public static List<Integer> preOrder(TreeNode<Integer> root) {
+    List<Integer> answer = new ArrayList<>();
+
     Deque<TreeNode<Integer>> stack = new ArrayDeque<>();
     stack.push(root);
 
     while (!stack.isEmpty()) {
       TreeNode<Integer> node = stack.pop();
 
-      processNode(node);
+      processNode(answer, node);
 
       if (node.right != null) {
         stack.push(node.right);
@@ -28,10 +31,13 @@ public class TraversalDFS {
         stack.push(node.left);
       }
     }
-    System.out.println();
+
+    return answer;
   }
 
-  public static void inOrder(TreeNode<Integer> root) {
+  public static List<Integer> inOrder(TreeNode<Integer> root) {
+    List<Integer> answer = new ArrayList<>();
+
     Deque<TreeNode<Integer>> stack = new ArrayDeque<>();
 
     TreeNode<Integer> current = root;
@@ -44,13 +50,40 @@ public class TraversalDFS {
 
       current = stack.pop();
 
-      processNode(current);
+      processNode(answer, current);
       current = current.right;
     }
-    System.out.println();
+
+    return answer;
   }
 
-  private static void processNode(TreeNode<Integer> node) {
-    System.out.print(node.value + " ");
+  public static List<Integer> postOrder(TreeNode<Integer> root) {
+    List<Integer> answer = new ArrayList<>();
+
+    Deque<TreeNode<Integer>> stack = new ArrayDeque<>();
+    Deque<TreeNode<Integer>> secondStack = new ArrayDeque<>();
+
+    stack.push(root);
+
+    while (!stack.isEmpty()) {
+      TreeNode<Integer> node = stack.pop();
+      secondStack.push(node);
+
+      if (node.left != null)
+        stack.push(node.left);
+
+      if (node.right != null)
+        stack.push(node.right);
+    }
+
+    while (!secondStack.isEmpty()) {
+      processNode(answer, secondStack.pop());
+    }
+
+    return answer;
+  }
+
+  private static void processNode(List<Integer> answer, TreeNode<Integer> node) {
+    answer.add(node.value);
   }
 }
