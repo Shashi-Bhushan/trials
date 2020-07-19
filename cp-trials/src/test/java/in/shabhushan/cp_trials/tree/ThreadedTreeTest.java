@@ -18,7 +18,7 @@ public class ThreadedTreeTest {
     insert(root, 1);
     insert(root, 8);
     insert(root, 7);
-    
+
     assertEquals(List.of(1,5,6,7,8,9), inorderTraversal(root));
 
     //inorderTraverse(root);
