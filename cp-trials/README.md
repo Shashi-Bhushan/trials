@@ -138,6 +138,7 @@ Phased repetition is the key.
 #### BST
 - [Delete node in BST](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/ds/tree/BST.java)
 - [Integer array to BST](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/tree/gfg/ArrayToBST.java)
+- [AVL Tree min height](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/tree/gfg/MinNodesAVL.java)
 
 #### Sweep Line
 - [Sweep Line](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/sweepline/RightInterval.java)
