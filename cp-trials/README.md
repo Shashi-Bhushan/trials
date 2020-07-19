@@ -134,7 +134,10 @@ Phased repetition is the key.
 - [Diameter of binary tree](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/tree/DiameterBinaryTree.java)
 - [In order Successor](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/tree/InorderSuccessor.java)
 - [Tree Traversal DFS](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/tree/TraversalDFS.java)
+
+#### BST
 - [Delete node in BST](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/ds/tree/BST.java)
+- [Integer array to BST](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/tree/gfg/ArrayToBST.java)
 
 #### Sweep Line
 - [Sweep Line](https://github.com/Shashi-Bhushan/trials/blob/master/cp-trials/src/main/java/in/shabhushan/cp_trials/sweepline/RightInterval.java)
