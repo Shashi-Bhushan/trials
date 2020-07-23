@@ -83,6 +83,33 @@ public class TraversalDFS {
     return answer;
   }
 
+  public static List<Integer> levelOrder(TreeNode<Integer> root) {
+    Deque<TreeNode<Integer>> queue = new ArrayDeque<>();
+    queue.offer(root);
+
+    List<Integer> list = new ArrayList<>();
+
+    while (!queue.isEmpty()) {
+      int size = queue.size();
+
+      for (int i = 0; i < size; i++) {
+        TreeNode<Integer> node = queue.poll();
+
+        list.add(node.value);
+
+        if (node.left != null) {
+          queue.offer(node.left);
+        }
+
+        if (node.right != null) {
+          queue.offer(node.right);
+        }
+      }
+    }
+
+    return list;
+  }
+
   private static void processNode(List<Integer> answer, TreeNode<Integer> node) {
     answer.add(node.value);
   }

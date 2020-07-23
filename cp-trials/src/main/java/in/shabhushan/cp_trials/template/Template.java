@@ -1,5 +1,7 @@
 package in.shabhushan.cp_trials.template;
 
+import in.shabhushan.cp_trials.competition.codejam.twentytwenty.ProblemDEsabAtad;
+
 import java.io.PrintWriter;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -20,11 +22,7 @@ public class Template {
   }
 
   static void solve() {
-    int T = ni();
-
-    for (int cas = 1; T > 0; T--, cas++) {
-      // solve each test case
-    }
+    out.println(gcd(4,6));
   }
 
   public static void main(String[] args) throws Exception {
@@ -88,21 +86,6 @@ public class Template {
     return result;
   }
 
-  private static long pl(long num, long pow) {
-    long result = 1;
-
-    while (pow > 0) {
-      if (pow % 2 == 1) {
-        result *= num;
-      }
-
-      num *= num;
-      pow /= 2;
-    }
-
-    return result;
-  }
-
   private static long plm(long num, long pow, long mod) {
     long result = 1;
 
@@ -119,8 +102,31 @@ public class Template {
     return result;
   }
 
+  public long pow(long a, long n, long mod) {
+    //		a %= mod;
+    long ret = 1;
+    int x = 63 - Long.numberOfLeadingZeros(n);
+    for (; x >= 0; x--) {
+      ret = ret * ret % mod;
+      if (n << 63 - x < 0)
+        ret = ret * a % mod;
+    }
+    return ret;
+  }
+
   static void tr(Object... o) {
     if (!INPUT.isEmpty())
       out.println(Arrays.deepToString(o));
+  }
+
+  private static void fo(int begin, int end, Callback call) {
+    for (int i = begin; i < end; i++) {
+      call.call(i);
+    }
+  }
+
+  @FunctionalInterface
+  private interface Callback {
+    void call(int index);
   }
 }
