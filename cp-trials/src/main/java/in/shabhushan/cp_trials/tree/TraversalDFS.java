@@ -59,30 +59,45 @@ public class TraversalDFS {
     return answer;
   }
 
+  /**
+   * check this for reference
+   * https://www.udemy.com/course/datastructurescncpp/learn/lecture/13168646#overview
+   */
   public static List<Integer> postOrder(TreeNode<Integer> root) {
     List<Integer> answer = new ArrayList<>();
 
-    Deque<TreeNode<Integer>> stack = new ArrayDeque<>();
-    Deque<TreeNode<Integer>> secondStack = new ArrayDeque<>();
+    Deque<TreeInfo> stack = new ArrayDeque<>();
 
-    stack.push(root);
+    TreeNode<Integer> node = root;
 
-    while (!stack.isEmpty()) {
-      TreeNode<Integer> node = stack.pop();
-      secondStack.push(node);
+    while (node != null || !stack.isEmpty()) {
+      if (node != null) {
+        stack.push(new TreeInfo(node, false));
+        node = node.left;
+      } else {
+        TreeInfo info = stack.pop();
 
-      if (node.left != null)
-        stack.push(node.left);
-
-      if (node.right != null)
-        stack.push(node.right);
-    }
-
-    while (!secondStack.isEmpty()) {
-      processNode(answer, secondStack.pop());
+        if (!info.print) {
+          stack.push(new TreeInfo(info.node, true));
+          node = info.node.right;
+        } else {
+          processNode(answer, info.node);
+          node = null;
+        }
+      }
     }
 
     return answer;
+  }
+
+  private static class TreeInfo {
+    TreeNode<Integer> node;
+    boolean print;
+
+    public TreeInfo(TreeNode<Integer> node, boolean print) {
+      this.node = node;
+      this.print = print;
+    }
   }
 
   public static List<Integer> levelOrder(TreeNode<Integer> root) {
