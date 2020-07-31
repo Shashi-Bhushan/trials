@@ -12,23 +12,25 @@ import java.util.List;
  */
 public class TraversalDFS {
 
+  /**
+   * Check this for reference
+   * https://www.udemy.com/course/datastructurescncpp/learn/lecture/13168610#overview
+   */
   public static List<Integer> preOrder(TreeNode<Integer> root) {
     List<Integer> answer = new ArrayList<>();
 
     Deque<TreeNode<Integer>> stack = new ArrayDeque<>();
-    stack.push(root);
 
-    while (!stack.isEmpty()) {
-      TreeNode<Integer> node = stack.pop();
+    TreeNode<Integer> node = root;
 
-      processNode(answer, node);
-
-      if (node.right != null) {
-        stack.push(node.right);
-      }
-
-      if (node.left != null) {
-        stack.push(node.left);
+    while (node != null || !stack.isEmpty()) {
+      if (node != null) {
+        processNode(answer, node);
+        stack.push(node);
+        node = node.left;
+      } else {
+        node = stack.pop();
+        node = node.right;
       }
     }
 
@@ -40,18 +42,18 @@ public class TraversalDFS {
 
     Deque<TreeNode<Integer>> stack = new ArrayDeque<>();
 
-    TreeNode<Integer> current = root;
+    TreeNode<Integer> node = root;
 
-    while (current != null || !stack.isEmpty()) {
-      while (current != null) {
-        stack.push(current);
-        current = current.left;
+    while (node != null || !stack.isEmpty()) {
+      if (node != null) {
+        stack.push(node);
+        node = node.left;
+      } else {
+        node = stack.pop();
+        processNode(answer, node); // only this step differs from preorder traversal
+
+        node = node.right;
       }
-
-      current = stack.pop();
-
-      processNode(answer, current);
-      current = current.right;
     }
 
     return answer;
