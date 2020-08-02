@@ -107,20 +107,18 @@ public class TraversalDFS {
     List<Integer> list = new ArrayList<>();
 
     while (!queue.isEmpty()) {
-      int size = queue.size();
+      // only when I want to know the level I'm currently traversing, I would traverse using size of queue
+      // int size = queue.size();
+      TreeNode<Integer> node = queue.poll();
 
-      for (int i = 0; i < size; i++) {
-        TreeNode<Integer> node = queue.poll();
+      list.add(node.value);
 
-        list.add(node.value);
+      if (node.left != null) {
+        queue.offer(node.left);
+      }
 
-        if (node.left != null) {
-          queue.offer(node.left);
-        }
-
-        if (node.right != null) {
-          queue.offer(node.right);
-        }
+      if (node.right != null) {
+        queue.offer(node.right);
       }
     }
 
