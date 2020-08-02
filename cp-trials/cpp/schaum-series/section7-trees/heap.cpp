@@ -22,6 +22,11 @@ class Heap {
 		return (oneIndex / 2) - 1;
 	}
 
+	int leftChild(int index) {
+		int oneIndex = index + 1;
+		return (oneIndex * 2) - 1;
+	}
+
 public:
 	// Need to convert zero based lastIndex to one based index for parent calculation
 	void offer(int data) {
@@ -56,7 +61,42 @@ public:
 		return ans;
 	}
 
+	int poll() {
+		lastIndex--;
+		int returnValue = node[0]->data;
+		int last = node[lastIndex ]->data;
 
+		node[lastIndex] = NULL;
+
+		// push parent node to whichever is bigger child
+		int ptr = 0;
+		int left = 1;
+		int right = 2;
+
+		while (right <= lastIndex) {
+			if (last >= node[left]->data && last >= node[right]->data) {
+				node[ptr]->data = last;
+				break;
+			} else if (node[right]->data <= node[left]->data) {
+				node[ptr]->data = node[left]->data;
+				ptr = left;
+			} else {
+				node[ptr]->data = node[right]->data;
+				ptr = right;
+			}							
+
+			left = leftChild(ptr);
+			right = left + 1;
+		}
+
+		if (left == lastIndex && last < node[left]->data) {
+			ptr = left;
+		}
+
+		node[ptr]->data = last;
+		
+		return returnValue;
+	}
 		
 };
 
@@ -77,4 +117,14 @@ int main() {
 	}
 
 	cout << endl;
+
+	cout << "Polled value " << heap->poll() << endl;
+
+	cout << "Heap elements are : ";
+  for (auto a: heap->levelOrder()) {
+	  cout << a << " ";
+  }
+
+  cout << endl;
+
 }
