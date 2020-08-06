@@ -30,3 +30,4 @@ target/
 input.txt
 output.txt
 *.swp
+*.out
