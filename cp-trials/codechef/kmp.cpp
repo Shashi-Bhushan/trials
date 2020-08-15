@@ -30,6 +30,22 @@ void getLps(string pattern, int *lps) {
 	}
 }
 
+void getLps2(string pattern, int *lps) {
+	int size = pattern.size();
+
+	int val = 0;
+	lps[0] = -1;
+
+	for (int i = 1; i < size; i++) {
+		while (val >= 0 && pattern[i] != pattern[val]) {
+			val = lps[val];
+		}
+
+		val++;
+		lps[i + 1] = val;
+	}
+}
+
 bool kmp(string str, string pattern) {
 	// create Longest prefix suffix (LPS) table for the pattern
 	int lps[pattern.size()];
