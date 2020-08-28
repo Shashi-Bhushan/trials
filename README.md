@@ -19,4 +19,6 @@ Google Protocol Buffer and a comparison of three methods of objects persistence 
 My primary playground for doing algorithmic trials. Reading Robert Sedgewick's Algorithms nowadays and I put my solutions for exercises given in the book in this tutorial. Some other utils as well. 
 
 ## Few other userful links
+i
+[Few Great Blogs' Link](https://codeforces.com/blog/entry/79034)
 [VIM Registers](https://3.bp.blogspot.com/-Mp8uW2YRtsQ/TyVC1_JDanI/AAAAAAAAASI/hDfS9m7E3iY/s1600/vim_regs_p1.png)
