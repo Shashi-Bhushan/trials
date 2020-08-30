@@ -42,8 +42,12 @@ struct Matrix {
 	Matrix operator*(const Matrix& other) {
 		Matrix result(a.size(), other.a[0].size());
 
-		REP(i, a.size()) REP(k, a[0].size()) REP(j, other.a[0].size()) {
-			result.a[i][j] = (result.a[i][j] + a[i][k] * other.a[k][j]) % MOD;
+		REP(i, a.size()) REP(j, a[0].size()) REP(k, other.a[0].size()) {
+			result.a[i][k] += (a[i][j] * other.a[j][k]);
+
+			if (result.a[i][k] >= MOD) {
+				result.a[i][k] %= MOD;
+			}
 		}
 
 		return result;
@@ -52,7 +56,7 @@ struct Matrix {
 	Matrix copy() {
 		Matrix copy(a.size(), a[0].size());
 
-		REP(i, a.size()) REP(j, a[0].size()) {
+		REP(i, 2) REP(j, 2) {
 			copy.a[i][j] = a[i][j];
 		}
 
@@ -89,30 +93,20 @@ struct Matrix {
 };
 
 void solve() {
-	ll n, m, k;
-	cin >> n >> m >> k;
+	Matrix trans(2, 2);
 
-	Matrix base(n, n);
+	trans.a = {
+		{0, 1},
+		{1, 1}
+	};
 
-	REP(i, m) {
-		ll x, y;
-		cin >> x >> y;
+	ll x;
+	cin >> x;
 
-		base.a[x - 1][y - 1] += 1;
-	}
+	Matrix base(1, 2);
+	base.a = {{0, 1}};
 
-	
-	base = base.power(k);
-
-	ll count = 0;
-
-	REP(i, n)
-		REP(j, n) {
-			count = (count +  base.a[i][j]) % MOD;
-
-		}
-	
-	cout << count << endl;
+	cout << (base * trans.power(x)).a[0][0] << endl;
 }
 
 int main() {

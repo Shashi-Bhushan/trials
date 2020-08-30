@@ -13,6 +13,7 @@
 #include <unordered_map>
 #include <unordered_set>
 #include <vector>
+#include<bits/stdc++.h>
 
 using namespace std;
 
@@ -22,97 +23,96 @@ using namespace std;
 #define f first
 #define s second
 
-const int MOD = 1e9 + 7;
-
 typedef vector<int> vi;
 typedef long long ll;
 typedef pair<int, int> pii;
+
+const int MOD = 1e9 + 7;
+
+const ll INF = 3e18L + 5;
 
 struct Matrix {
 	vector<vector<ll>> a;
 
 	Matrix(int row, int col) {
-		a.resize(row, vector<ll>(col));
-
-		REP(i, row) REP(j, col) {
-			a[i][j] = 0;
-		}
+		a.resize(row, vector<ll>(col, INF));
 	}
+
+	/*Matrix operator[](int index) {
+		return a[index];
+	}*/
 
 	Matrix operator*(const Matrix& other) {
 		Matrix result(a.size(), other.a[0].size());
 
 		REP(i, a.size()) REP(k, a[0].size()) REP(j, other.a[0].size()) {
-			result.a[i][j] = (result.a[i][j] + a[i][k] * other.a[k][j]) % MOD;
+			result.a[i][j] = min(result.a[i][j], a[i][k] + other.a[k][j]);
 		}
 
 		return result;
 	}
 
-	Matrix copy() {
-		Matrix copy(a.size(), a[0].size());
+	static Matrix identity(int order) {
+		Matrix identity(order, order);
 
-		REP(i, a.size()) REP(j, a[0].size()) {
-			copy.a[i][j] = a[i][j];
+		REP(i, order) identity.a[i][i] = 0;
+
+		return identity;
+	}
+
+	static Matrix copy(const Matrix& m) {
+		Matrix copy(m.a.size(), m.a[0].size());
+
+		REP(i, m.a.size()) REP(j, m.a[0].size()) {
+			copy.a[i][j] = m.a[i][j];
 		}
 
 		return copy;
 	}
 
-	Matrix identity(int order) {
-		Matrix result(order, order);
+	static Matrix power(Matrix &m, int power) {
+		Matrix result = identity(m.a.size());
 
-		REP(i, order) {
-			result.a[i][i] = 1;
-		}
-
-		return result;
-	}
-
-	Matrix power(ll power) {
-		Matrix result = identity(a.size());
-
-		Matrix copy = this->copy();
+		//Matrix copy = copy(m);
 
 		while (power) {
 			if (power & 1) {
-				result = result * copy;
+				result = result * m;
 			}
 
-			copy = copy * copy;
+			m = m * m;
 			power = power >> 1;
 		}
 
 		return result;
-
 	}
 };
 
 void solve() {
-	ll n, m, k;
+	int n, m, k;
 	cin >> n >> m >> k;
 
-	Matrix base(n, n);
+	Matrix single(n, n);
 
-	REP(i, m) {
-		ll x, y;
-		cin >> x >> y;
+	REP(i, n) REP(j, n) single.a[i][j] = INF;
 
-		base.a[x - 1][y - 1] += 1;
+	while (m--) {
+		int u, v, c;
+		cin >> u >> v >> c;
+
+		single.a[u - 1][v - 1] = c;
 	}
-
 	
-	base = base.power(k);
+	single = Matrix::power(single, k);
 
-	ll count = 0;
+	ll ans = INF;
+	REP(i, n) REP(j, n)
+		ans = min(ans, single.a[i][j]);
 
-	REP(i, n)
-		REP(j, n) {
-			count = (count +  base.a[i][j]) % MOD;
 
-		}
-	
-	cout << count << endl;
+	if (ans < INF / 2)
+		cout << ans;
+	else cout << "IMPOSSIBLE";
 }
 
 int main() {
