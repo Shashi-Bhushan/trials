@@ -48,3 +48,10 @@ I took inspiration from this on some of the solutions I wrote and blatantly copi
 - [Cutting Rod](https://github.com/Shashi-Bhushan/trials/blob/master/algo-trials/src/main/java/in/shabhushan/algo_trials/dynamic_programming/chapter9/CuttingRod.java)
 - [0/1 Knapsack](https://github.com/Shashi-Bhushan/trials/blob/master/algo-trials/src/main/java/in/shabhushan/algo_trials/dynamic_programming/chapter9/Knapsack.java)
 - [LPS](https://github.com/Shashi-Bhushan/trials/blob/master/algo-trials/src/main/java/in/shabhushan/algo_trials/dynamic_programming/chapter9/LongestPalindromicSubsequence.java)
+
+#### 3. **CLRS** - *Cormen, Leiserson, Rivest, Stein*
+---------------------
+
+##### Few noteworthy Solutions
+
+- [Chapter 6 Problem - Young Tableau](https://github.com/Shashi-Bhushan/trials/blob/master/algo-trials/clrs/chapter6/youngTableau.cpp)
