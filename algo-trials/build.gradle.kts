@@ -33,15 +33,15 @@ dependencies {
 }
 
 configure<JavaPluginConvention> {
-  sourceCompatibility = JavaVersion.VERSION_14
+  sourceCompatibility = JavaVersion.VERSION_11
 }
 
 tasks {
   compileKotlin {
-    kotlinOptions.jvmTarget = "1.8"
+    kotlinOptions.jvmTarget = "1.9"
   }
   compileTestKotlin {
-    kotlinOptions.jvmTarget = "1.8"
+    kotlinOptions.jvmTarget = "1.9"
   }
 }
 

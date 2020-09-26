@@ -1,0 +1,61 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>in.shabhushan</groupId>
+  <artifactId>algo-trials</artifactId>
+  <packaging>jar</packaging>
+  <version>1.0-SNAPSHOT</version>
+
+  <name>algo-trials</name>
+  <url>http://maven.apache.org</url>
+
+  <repositories>
+    <repository>
+      <id>princeton</id>
+      <url>https://dl.bintray.com/algs4/maven/</url>
+      <layout>default</layout>
+    </repository>
+  </repositories>
+
+  <properties>
+    <jmh.version>
+      1.24
+    </jmh.version>
+    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>11</maven.compiler.target>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>edu.princeton.cs</groupId>
+      <artifactId>algs4</artifactId>
+      <version>1.0.1</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.openjdk.jmh</groupId>
+      <artifactId>jmh-generator-annprocess</artifactId>
+      <version>${jmh.version}</version>
+      <!--
+      the processor artifact is required only during compilation and
+      does not need to be transitive, hence provided scope
+      -->
+      <scope>provided</scope>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.jetbrains/annotations -->
+    <dependency>
+      <groupId>org.jetbrains</groupId>
+      <artifactId>annotations</artifactId>
+      <version>20.1.0</version>
+    </dependency>
+
+  </dependencies>
+
+</project>
