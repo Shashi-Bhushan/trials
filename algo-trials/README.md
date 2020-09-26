@@ -54,4 +54,4 @@ I took inspiration from this on some of the solutions I wrote and blatantly copi
 
 ##### Few noteworthy Solutions
 
-- [Chapter 6 Problem - Young Tableau](https://github.com/Shashi-Bhushan/trials/blob/master/algo-trials/clrs/chapter6/youngTableau.cpp)
+- [Chapter 6 Problem 6.3 - Young Tableau](https://github.com/Shashi-Bhushan/trials/blob/master/algo-trials/clrs/chapter6/youngTableau.cpp)
