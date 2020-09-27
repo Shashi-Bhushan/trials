@@ -25,72 +25,72 @@ StringConcat.testStringPlus     thrpt   10   22226.296 ?  226.593  ops/s
 @Fork(1)
 @State(Scope.Thread)
 public class StringConcat {
-    private static final int STRING_LIST_LENGTH = 100;
-    private static final List<String> stringList = new ArrayList<>();
+  private static final int STRING_LIST_LENGTH = 100;
+  private static final List<String> stringList = new ArrayList<>();
 
-    @Setup
-    public void setup() {
-        for (int index = 0; index < STRING_LIST_LENGTH; index++) {
-            stringList.add(UUID.randomUUID().toString());
-        }
+  @Setup
+  public void setup() {
+    for (int index = 0; index < STRING_LIST_LENGTH; index++) {
+      stringList.add(UUID.randomUUID().toString());
     }
+  }
 
-    @Benchmark
-    public void testStringFormat(Blackhole blackhole) {
-        String result = "";
-        for(String string: stringList) {
-            result = String.format("%s%s", result, string);
-        }
-        blackhole.consume(result);
+  @Benchmark
+  public void testStringFormat(Blackhole blackhole) {
+    String result = "";
+    for (String string : stringList) {
+      result = String.format("%s%s", result, string);
     }
+    blackhole.consume(result);
+  }
 
-    @Benchmark
-    public void testStringPlus(Blackhole blackhole) {
-        String result = "";
+  @Benchmark
+  public void testStringPlus(Blackhole blackhole) {
+    String result = "";
 
-        for(String string: stringList) {
-            result += string;
-        }
-        blackhole.consume(result);
+    for (String string : stringList) {
+      result += string;
     }
+    blackhole.consume(result);
+  }
 
-    @Benchmark
-    public void testStringBuilder(Blackhole bh) {
-        StringBuilder sb = new StringBuilder();
-        for(String s : stringList) {
-            sb.append(s);
-        }
-        bh.consume(sb.toString());
+  @Benchmark
+  public void testStringBuilder(Blackhole bh) {
+    StringBuilder sb = new StringBuilder();
+    for (String s : stringList) {
+      sb.append(s);
     }
+    bh.consume(sb.toString());
+  }
 
-    @Benchmark
-    public void testStringBuffer(Blackhole bh) {
-        StringBuffer sb = new StringBuffer();
-        for(String s : stringList) {
-            sb.append(s);
-        }
-        bh.consume(sb.toString());
+  @Benchmark
+  public void testStringBuffer(Blackhole bh) {
+    StringBuffer sb = new StringBuffer();
+    for (String s : stringList) {
+      sb.append(s);
     }
+    bh.consume(sb.toString());
+  }
 
-    @Benchmark
-    public void testStringJoin(Blackhole bh) {
-        bh.consume(String.join("", stringList));
-    }
+  @Benchmark
+  public void testStringJoin(Blackhole bh) {
+    bh.consume(String.join("", stringList));
+  }
 
-    @Benchmark
-    public void testStringConcat(Blackhole bh) {
-        String combined = "";
-        for(String s : stringList) {
-            combined = combined.concat(s);
-        }
-        bh.consume(combined);
+  @Benchmark
+  public void testStringConcat(Blackhole bh) {
+    String combined = "";
+    for (String s : stringList) {
+      combined = combined.concat(s);
     }
+    bh.consume(combined);
+  }
 
-    @Benchmark
-    public void testStreamJoining(Blackhole bh) {
-        String combined = stringList
-                .stream()
-                .collect(Collectors.joining());
-        bh.consume(combined);
-    }
+  @Benchmark
+  public void testStreamJoining(Blackhole bh) {
+    String combined = stringList
+      .stream()
+      .collect(Collectors.joining());
+    bh.consume(combined);
+  }
 }
