@@ -55,3 +55,12 @@ I took inspiration from this on some of the solutions I wrote and blatantly copi
 ##### Few noteworthy Solutions
 
 - [Chapter 6 Problem 6.3 - Young Tableau](https://github.com/Shashi-Bhushan/trials/blob/master/algo-trials/clrs/chapter6/youngTableau.cpp)
+
+
+#### How to Run Benchmarks
+
+Build the project using maven. No need to run test cases
+`mvn clean install -D skipTests`
+
+Run the perfs jar
+`java -jar target/algo-trials-1.0-SNAPSHOT-perf-tests.jar `
