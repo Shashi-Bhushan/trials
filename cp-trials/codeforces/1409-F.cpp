@@ -29,41 +29,38 @@ typedef pair<int, int> pii;
 const int MOD = 1e9 + 7;
 
 int n, k;
+int dp[201][201][201];
 string s, t;
-int dp[201][201][201]; // [index][remaining k][# seen t[0] upto this point]
 
-
-
-int maxOccurrence() {
+int maxOcc() {
 	int count = 0;
 
-	for (auto a: s) {
-		if (a == t[0]) {
+	for (char c: s) {
+		if (c == t[0]) {
 			count++;
 		}
 	}
 
-	count = max(n, count + k);
-
-	return ((count - 1) * count) >> 1;
+	count = min(n, count + k);
+	return (count * (count - 1)) >> 1;
 }
 
 int solve(int index, int remK, int first) {
 	if (index == n) return 0;
 
-	if (dp[index][remK][first] != -1) 
-		return dp[index][remK][first];
+	if (dp[index][remK][first] != -1)return dp[index][remK][first];
 
 	int ans = 0;
 
 	if (remK == 0) {
-		if (s[index] == t[1]) 
+		if (s[index] == t[1]) {
 			ans = first + solve(index + 1, 0, first);
-		else 
+		} else {
 			ans = solve(index + 1, 0, first + (s[index] == t[0]));
+		}
 	} else {
 		if (s[index] == t[0]) {
-			int ans1 = solve(index + 1, remK, first + 1); // leave as it is
+			int ans1 = solve(index + 1, remK, first + 1); // leave a as it is
 			int ans2 = first + solve(index + 1, remK - 1, first); // change to b
 
 			ans = max(ans1, ans2);
@@ -74,8 +71,8 @@ int solve(int index, int remK, int first) {
 			ans = max(ans1, ans2);
 		} else {
 			int ans1 = solve(index + 1, remK, first); // leave as it is
-			int ans2 = first + solve(index + 1, remK - 1, first); // change to b
-			int ans3 = solve(index + 1, remK - 1, first + 1); // change to a
+			int ans2 = solve(index + 1, remK - 1, first + 1); // change to a
+			int ans3 = first + solve(index + 1, remK - 1, first); // change to b
 
 			ans = max(ans1, max(ans2, ans3));
 		}
@@ -85,19 +82,18 @@ int solve(int index, int remK, int first) {
 }
 
 void solve() {
-	cin >> n;
-	cin >> k;
+	cin >> n >> k;	
 
 	cin >> s;
 	cin >> t;
 
 	if (t[0] == t[1]) {
-		cout << maxOccurrence() << endl;
+		cout << maxOcc() << endl;
 	} else {
 		for (int i = 0; i < n; i++) {
 			for (int j = 0; j <= k; j++) {
-				for (int k = 0; k < n; k++) {
-					dp[i][j][k] = -1;
+				for (int l = 0; l < n; l++) {
+					dp[i][j][l] = -1;
 				}
 			}
 		}
@@ -112,10 +108,7 @@ int main() {
 	// untie cin and cout
 	cin.tie(NULL);
 
-	int t;
-	cin >> t;
-
-		solve();
+	solve();
 
 	return 0;
 }

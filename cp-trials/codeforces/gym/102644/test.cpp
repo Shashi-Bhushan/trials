@@ -22,39 +22,31 @@ using namespace std;
 #define f first
 #define s second
 
-const int MOD = 1e9 + 7;
-
 typedef vector<int> vi;
 typedef long long ll;
 typedef pair<int, int> pii;
 
+const int MOD = 1e9 + 7;
+
 struct Matrix {
-	vector<vector<ll>> a;
-
-	Matrix(int row, int col) {
-		a.resize(row, vector<ll>(col));
-
-		REP(i, row) REP(j, col) {
-			a[i][j] = 0;
-		}
-	}
+	ll a[2][2] = {{0, 0}, {0, 0}};
 
 	Matrix operator*(const Matrix& other) {
-		Matrix result(a.size(), other.a[0].size());
+		Matrix product;
 
-		REP(i, a.size()) REP(j, a[0].size()) REP(k, other.a[0].size()) {
-			result.a[i][k] += (a[i][j] * other.a[j][k]);
+		REP(i, 2) REP(j, 2) REP(k, 2) {
+			product.a[i][k] += a[i][j] * other.a[j][k];
 
-			if (result.a[i][k] >= MOD) {
-				result.a[i][k] %= MOD;
+			if (product.a[i][k] >= MOD) {
+				product.a[i][k] = product.a[i][k] % MOD;
 			}
 		}
 
-		return result;
+		return product;
 	}
 
 	Matrix copy() {
-		Matrix copy(a.size(), a[0].size());
+		Matrix copy;
 
 		REP(i, 2) REP(j, 2) {
 			copy.a[i][j] = a[i][j];
@@ -63,20 +55,20 @@ struct Matrix {
 		return copy;
 	}
 
-	Matrix identity(int order) {
-		Matrix result(order, order);
+	Matrix identity() {
+		Matrix identity;
 
-		REP(i, order) {
-			result.a[i][i] = 1;
+		REP(i, 2) {
+			identity.a[i][i] = 1;
 		}
 
-		return result;
+		return identity;
 	}
 
 	Matrix power(ll power) {
-		Matrix result = identity(a.size());
-
 		Matrix copy = this->copy();
+
+		Matrix result = identity();
 
 		while (power) {
 			if (power & 1) {
@@ -88,25 +80,22 @@ struct Matrix {
 		}
 
 		return result;
-
 	}
+
+
 };
 
 void solve() {
-	Matrix trans(2, 2);
+	ll n;
+	cin >> n;
 
-	trans.a = {
-		{0, 1},
-		{1, 1}
-	};
+	Matrix m;
+	m.a[0][0] = 19;
+	m.a[0][1] = 7;
+	m.a[1][0] = 6;
+	m.a[1][1] = 20;
 
-	ll x;
-	cin >> x;
-
-	Matrix base(1, 2);
-	base.a = {{0, 1}};
-
-	cout << (base * trans.power(x)).a[0][0] << endl;
+	cout << m.power(n).a[0][0] << endl;
 }
 
 int main() {
