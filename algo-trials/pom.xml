@@ -142,7 +142,7 @@
               <attach>true</attach>
               <archive>
                 <manifest>
-                  <mainClass>org.openjdk.jmh.Main</mainClass>
+                  <mainClass>in.shabhushan.algo_trials.benchmark.Main</mainClass>
                 </manifest>
               </archive>
             </configuration>
