@@ -9,11 +9,12 @@ import java.util.concurrent.TimeUnit;
 import static in.shabhushan.algo_trials.benchmark.sort.countingsort.CountingSort.stableCountingSort;
 import static in.shabhushan.algo_trials.benchmark.sort.countingsort.CountingSort.unstableCountingSort;
 import static in.shabhushan.algo_trials.benchmark.sort.quicksort.QuickSort.*;
-import static in.shabhushan.algo_trials.benchmark.sort.radixsort.RadixSort.radixSort;
+import static in.shabhushan.algo_trials.benchmark.sort.radixsort.RadixSort.*;
 
 /**
  * Benchmark                             Mode  Cnt     Score     Error  Units
  * Benchmarks.testRadixSort             thrpt   10   199.995 ±   1.320  ops/s
+ * Benchmarks.testRadixSortUsingList    thrpt   10    96.303 ±   2.600  ops/s
  * Benchmarks.testRandomQuickSort       thrpt   10   105.648 ±   0.678  ops/s
  * Benchmarks.testStableCountingSort    thrpt   10  1321.737 ±   9.023  ops/s
  * Benchmarks.testUnstableCountingSort  thrpt   10  3428.169 ± 204.408  ops/s
@@ -25,12 +26,17 @@ import static in.shabhushan.algo_trials.benchmark.sort.radixsort.RadixSort.radix
 public class Benchmarks {
   private static final int ARRAY_SIZE = 100_000;
 
-  private int[] arr;
-
   /*
+  private int[] arr;
+  private int[] arr2;
+  private int[] arr3;
+
+
   @Setup
   public void setup() {
     arr = getRandomArr(ARRAY_SIZE);
+    arr2 = getRandomArr(ARRAY_SIZE);
+    arr3 = getRandomArr(ARRAY_SIZE);
   }
 
   @Benchmark
@@ -53,6 +59,11 @@ public class Benchmarks {
   @Benchmark
   public void testRadixSort(Blackhole blackhole) {
     radixSort(arr);
+  }
+
+  @Benchmark
+  public void testRadixSortUsingList(Blackhole blackhole) {
+    radixSortUsingList(arr3);
   }
   */
 }
