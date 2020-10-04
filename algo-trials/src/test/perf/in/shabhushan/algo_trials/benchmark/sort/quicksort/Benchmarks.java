@@ -13,6 +13,7 @@ import static in.shabhushan.algo_trials.benchmark.sort.quicksort.QuickSort.*;
 @Fork(1)
 @State(Scope.Thread)
 public class Benchmarks {
+  /*
   @Benchmark
   public void testStartPivot(Blackhole blackhole) {
     int[] arr = getRandomArr(ARRAY_SIZE);
@@ -41,4 +42,5 @@ public class Benchmarks {
     // Check DualArrayPivotSort.sort method for reference
     Arrays.sort(arr);
   }
+  */
 }

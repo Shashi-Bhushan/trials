@@ -25,6 +25,7 @@ StringConcat.testStringPlus     thrpt   10   22226.296 ?  226.593  ops/s
 @Fork(1)
 @State(Scope.Thread)
 public class StringConcat {
+  /*
   private static final int STRING_LIST_LENGTH = 100;
   private static final List<String> stringList = new ArrayList<>();
 
@@ -93,4 +94,5 @@ public class StringConcat {
       .collect(Collectors.joining());
     bh.consume(combined);
   }
+  */
 }
