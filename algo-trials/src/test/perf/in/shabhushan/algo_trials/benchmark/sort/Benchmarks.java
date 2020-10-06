@@ -86,7 +86,7 @@ public class Benchmarks {
   private int[] arr2;
   private int[] arr3;
 
-
+/*
   @Setup
   public void setup() {
     arr = getRandomArr(ARRAY_SIZE);
@@ -120,4 +120,5 @@ public class Benchmarks {
   public void testRadixSortUsingList(Blackhole blackhole) {
     radixSortUsingList(arr3);
   }
+  */
 }
