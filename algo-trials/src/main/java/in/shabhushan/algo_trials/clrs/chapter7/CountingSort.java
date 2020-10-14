@@ -1,4 +1,4 @@
-package in.shabhushan.algo_trials.benchmark.sort.countingsort;
+package in.shabhushan.algo_trials.clrs.chapter7;
 
 public class CountingSort {
   public static int[] stableCountingSort(int[] arr, int range) {

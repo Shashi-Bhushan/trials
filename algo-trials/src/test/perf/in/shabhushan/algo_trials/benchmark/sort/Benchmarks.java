@@ -1,15 +1,11 @@
 package in.shabhushan.algo_trials.benchmark.sort;
 
 import org.openjdk.jmh.annotations.*;
-import org.openjdk.jmh.infra.Blackhole;
 
-import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 
-import static in.shabhushan.algo_trials.benchmark.sort.countingsort.CountingSort.stableCountingSort;
-import static in.shabhushan.algo_trials.benchmark.sort.countingsort.CountingSort.unstableCountingSort;
-import static in.shabhushan.algo_trials.benchmark.sort.quicksort.QuickSort.*;
-import static in.shabhushan.algo_trials.benchmark.sort.radixsort.RadixSort.*;
+import static in.shabhushan.algo_trials.clrs.chapter7.CountingSort.stableCountingSort;
+import static in.shabhushan.algo_trials.clrs.chapter7.CountingSort.unstableCountingSort;
 
 /**
  * Benchmark                             Mode  Cnt     Score     Error  Units

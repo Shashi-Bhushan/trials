@@ -6,8 +6,6 @@ import org.openjdk.jmh.infra.Blackhole;
 import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 
-import static in.shabhushan.algo_trials.benchmark.sort.quicksort.QuickSort.*;
-
 @Warmup(iterations = 3, time = 2, timeUnit = TimeUnit.SECONDS)
 @Measurement(iterations = 10, time = 2, timeUnit = TimeUnit.SECONDS)
 @Fork(1)

@@ -4,8 +4,8 @@ import org.junit.Test;
 
 import java.util.Arrays;
 
-import static in.shabhushan.algo_trials.benchmark.sort.countingsort.CountingSort.stableCountingSort;
-import static in.shabhushan.algo_trials.benchmark.sort.countingsort.CountingSort.unstableCountingSort;
+import static in.shabhushan.algo_trials.clrs.chapter7.CountingSort.stableCountingSort;
+import static in.shabhushan.algo_trials.clrs.chapter7.CountingSort.unstableCountingSort;
 import static org.junit.Assert.assertArrayEquals;
 
 public class CountingSortTest {

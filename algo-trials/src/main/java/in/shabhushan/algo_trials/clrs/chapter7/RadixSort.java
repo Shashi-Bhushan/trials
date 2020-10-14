@@ -1,4 +1,4 @@
-package in.shabhushan.algo_trials.benchmark.sort.radixsort;
+package in.shabhushan.algo_trials.clrs.chapter7;
 
 import java.util.ArrayList;
 import java.util.Arrays;

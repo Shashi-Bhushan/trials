@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import java.util.Arrays;
 
-import static in.shabhushan.algo_trials.benchmark.sort.radixsort.RadixSort.radixSort;
+import static in.shabhushan.algo_trials.clrs.chapter7.RadixSort.radixSort;
 import static org.junit.Assert.assertArrayEquals;
 
 public class RadixSortTest {
