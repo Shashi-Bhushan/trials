@@ -1,4 +1,4 @@
-package in.shabhushan.algo_trials.benchmarks.sort.quicksort;
+package in.shabhushan.algo_trials.clrs.chapter7.quicksort;
 
 import org.junit.Test;
 

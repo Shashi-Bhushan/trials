@@ -1,4 +1,4 @@
-package in.shabhushan.algo_trials.benchmarks.sort.countingsort;
+package in.shabhushan.algo_trials.clrs.chapter7.countingsort;
 
 import org.junit.Test;
 

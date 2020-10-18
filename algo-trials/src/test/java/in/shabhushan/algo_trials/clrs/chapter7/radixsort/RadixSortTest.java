@@ -1,4 +1,4 @@
-package in.shabhushan.algo_trials.benchmarks.sort.radixsort;
+package in.shabhushan.algo_trials.clrs.chapter7.radixsort;
 
 import org.junit.Test;
 

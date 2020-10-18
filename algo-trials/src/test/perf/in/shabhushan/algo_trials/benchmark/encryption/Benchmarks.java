@@ -105,15 +105,15 @@ public class Benchmarks {
   }
 
   public static void main(String[] args) throws NoSuchPaddingException, NoSuchAlgorithmException, InvalidKeyException, BadPaddingException, IllegalBlockSizeException, InvalidAlgorithmParameterException {
-    Benchmarks benchmarks = new Benchmarks();
+    Benchmarks clrs = new Benchmarks();
 
-    benchmarks.setup();
+    clrs.setup();
 
-    byte[] encryptedMessage = benchmarks.aesCbcEncryptionCipher.doFinal(benchmarks.longMessage);
+    byte[] encryptedMessage = clrs.aesCbcEncryptionCipher.doFinal(clrs.longMessage);
 
-    byte[] decryptedMessage = benchmarks.aesCbcDecryptionCipher.doFinal(encryptedMessage);
+    byte[] decryptedMessage = clrs.aesCbcDecryptionCipher.doFinal(encryptedMessage);
 
-    assert Arrays.equals(benchmarks.longMessage, decryptedMessage);
+    assert Arrays.equals(clrs.longMessage, decryptedMessage);
   }
 
 
