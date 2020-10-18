@@ -28,6 +28,10 @@ public class RandomizedSelection {
     return j;
   }
 
+  public static int randomSelection(int[] arr, int key) {
+    return randomSelection(arr, 0, arr.length - 1, key);
+  }
+
   /**
    * Finds what's the value at index ${key} in the sorted arr array without actually sorting it
    * start, end and key is also 0 based

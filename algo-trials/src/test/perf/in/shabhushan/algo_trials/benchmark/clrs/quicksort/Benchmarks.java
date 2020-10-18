@@ -1,9 +1,7 @@
-package in.shabhushan.algo_trials.benchmark.sort.quicksort;
+package in.shabhushan.algo_trials.benchmark.clrs.quicksort;
 
 import org.openjdk.jmh.annotations.*;
-import org.openjdk.jmh.infra.Blackhole;
 
-import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 
 @Warmup(iterations = 3, time = 2, timeUnit = TimeUnit.SECONDS)

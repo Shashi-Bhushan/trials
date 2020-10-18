@@ -1,4 +1,4 @@
-package in.shabhushan.algo_trials.benchmark.sort;
+package in.shabhushan.algo_trials.benchmark.clrs;
 
 import org.openjdk.jmh.annotations.*;
 
