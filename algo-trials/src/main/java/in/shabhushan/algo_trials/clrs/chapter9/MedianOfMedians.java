@@ -1,11 +1,17 @@
 package in.shabhushan.algo_trials.clrs.chapter9;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class MedianOfMedians {
 
+  /**
+   * Sort the List and return the middle elemnt
+   */
   public static int getMedian(List<Integer> list) {
+    Collections.sort(list);
+
     return list.get(list.size() / 2);
   }
 
