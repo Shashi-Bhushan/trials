@@ -64,7 +64,8 @@ public class MedianOfMedians {
       }
     }
 
-    // this includes +1 for pivot as well, since l1.size() is one based index
+    // this includes +1 for pivot as well, since l1.size() is one based index and key is zero based
+    // key will be +1 than l1.size() anyhow
     if (key == l1.size()) {
       return medianOfMedians;
     } else if (key < l1.size()) {
