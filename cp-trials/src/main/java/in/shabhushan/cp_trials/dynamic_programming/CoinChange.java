@@ -28,6 +28,8 @@ public class CoinChange {
 
     dp[0] = 0;
 
+    // count each coin only once,
+    // this loop gives result that if I only had 1$ coins, how many of these I would need for amount
     for (int coin: coins) {
       int min = 0;
 
