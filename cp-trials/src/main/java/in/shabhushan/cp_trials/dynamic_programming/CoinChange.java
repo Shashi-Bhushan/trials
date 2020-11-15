@@ -22,22 +22,31 @@ public class CoinChange {
   }
 
   public static int coinChangeIterative(int[] coins, int target) {
-    if (target == 0 || coins.length == 0) return 0;
-
+    // Write your code here.
     int[] dp = new int[target + 1];
+    Arrays.fill(dp, Integer.MAX_VALUE);
+
     dp[0] = 0;
 
-    for (int amt = 1; amt <= target; amt++) {
-      dp[amt] = Integer.MAX_VALUE;
+    for (int coin: coins) {
+      int min = 0;
 
-      for (int coin: coins) {
-        if (amt >= coin) {
-          dp[amt] = Math.min(dp[amt], dp[amt - coin] + 1);
+      for (int amt = 1; amt <= target; amt++) {
+
+        // amount greater than coin
+        if (amt - coin >= 0) {
+          if (dp[amt - coin] == Integer.MAX_VALUE) {
+            min = Integer.MAX_VALUE; // to prevent integer overflow
+          } else {
+            min = dp[amt - coin] + 1;
+          }
+
+          dp[amt] = Math.min(dp[amt], min);
         }
       }
     }
 
-    return dp[target] == Integer.MAX_VALUE || dp[target] == Integer.MIN_VALUE ? -1 : dp[target];
+    return dp[target] == Integer.MAX_VALUE ? -1 : dp[target];
   }
 
   public static CoinChangeSolution coinChangeIterativeWithCounting(int[] coins, int target) {
