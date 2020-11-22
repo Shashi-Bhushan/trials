@@ -2,7 +2,7 @@ package in.shabhushan.algo_trials.clrs.chapter6;
 
 import java.util.*;
 
-public class InorderHeapSort {
+public class InplaceHeapSort {
 
   public static void inplaceHeapSort(int arr[]) {
     /* Your class should be named Solution
