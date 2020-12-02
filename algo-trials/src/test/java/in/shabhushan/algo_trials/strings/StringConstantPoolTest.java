@@ -29,5 +29,9 @@ public class StringConstantPoolTest {
     final String h = "You can not";
     String i = h + " change me";
     assertTrue(i == c); // final reference, replaced at compile time
+
+    final String j = "You can".concat(" not");
+    String k = j + " change me";
+    assertFalse(k == c); // final reference itself is resolved at runtime, Java doesn't know it's value at compile time
   }
 }
