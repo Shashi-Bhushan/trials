@@ -15,8 +15,9 @@ repositories {
 
 dependencies {
   implementation(kotlin("stdlib-jdk8"))
-  testCompile("junit", "junit", "4.12")
+  testImplementation("junit", "junit", "4.12")
   implementation("edu.princeton.cs", "algs4", "1.0.1")
+  implementation("org.jasypt", "jasypt", "1.9.3")
 
   // Use the Kotlin test library.
   testImplementation("org.jetbrains.kotlin:kotlin-test")
@@ -25,10 +26,7 @@ dependencies {
   implementation(kotlin("reflect"))
 
   // Benchmarking
-  "1.22".let {
-    implementation("org.openjdk.jmh", "jmh-core", it)
-    //implementation("me.champeau.gradle", "jmh-gradle-plugin", "0.5.0")
-  }
+  implementation("org.openjdk.jmh", "jmh-core", "1.22")
 
 }
 

@@ -22,7 +22,7 @@ import java.util.concurrent.TimeUnit;
 @Fork(1)
 @State(Scope.Thread)
 @BenchmarkMode(Mode.Throughput)
-public class Benchmarks {
+public class AESEncryptionBenchmarks {
   /*
   private static final int SHORT_STRING_LENGTH = 1024;
   private static final int LONG_STRING_LENGTH = 6553700;

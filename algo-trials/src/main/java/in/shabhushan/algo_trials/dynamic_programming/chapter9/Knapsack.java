@@ -13,26 +13,32 @@ public class Knapsack {
    * Thus, dp[value.length][capacity] is memoized solution
    */
   public static int knapsack(int[] value, int[] weight, int capacity) {
-    if (capacity == 0) return 0;
+    return knapsack(weight, value, value.length, capacity);
+  }
 
-    int maxValue = 0;
+  public static int knapsack(int[] weights, int[] values, int n, int maxWeight) {
+    //Your code goes here
+    if (n == 0) return 0;
+    else if (maxWeight == 0) return 0;
 
-    for (int i = 0; i < value.length; i++) {
-      if (weight[i] <= capacity) {
-        // Remove i from weight and value array
-        List<Integer> updatedWeights = Arrays.stream(weight).boxed().collect(Collectors.toList());
-        updatedWeights.remove(i);
+    int val = 0;
 
-        List<Integer> updatedValues = Arrays.stream(value).boxed().collect(Collectors.toList());
-        updatedValues.remove(i);
+    for (int i = 0; i < n; i++) {
+      if (weights[i] <= maxWeight) {
+        int w = weights[i];
+        int v = values[i];
 
-        maxValue = Math.max(maxValue, value[i] +
-            knapsack(updatedValues.stream().mapToInt(x -> x).toArray(), updatedWeights.stream().mapToInt(x -> x).toArray(), capacity - weight[i])
-        );
+        values[i] = 0;
+        weights[i] = Integer.MAX_VALUE;
+
+        val = Math.max(val, knapsack(weights, values, n - 1, maxWeight - w) + v);
+
+        values[i] = v;
+        weights[i] = w;
       }
     }
 
-    return maxValue;
+    return val;
   }
 
   public static int knapsackDP(int[] value, int[] weight, int capacity) {
