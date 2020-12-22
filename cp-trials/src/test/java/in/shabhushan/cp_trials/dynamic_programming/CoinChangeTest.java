@@ -44,6 +44,7 @@ public class CoinChangeTest {
 
   @Test
   public void testCoinChangeTotalWays() {
+    assertEquals(6, totalWaysCoinChangeRecursive(new int[]{1, 3, 4}, 5));
     assertEquals(6, totalWaysCoinChange(new int[]{1, 3, 4}, 5));
   }
 
@@ -51,7 +52,7 @@ public class CoinChangeTest {
   public void testCoinChangeMinimumCoins() {
     assertEquals(3, coinChangeMinimumCoins(new int[]{1, 2, 5}, 11));
     assertEquals(-1, coinChangeMinimumCoins(new int[]{2}, 3));
-    //assertEquals(20, coinChangeMinimumCoins(new int[]{186, 419, 83, 408}, 6249));
+    assertEquals(20, coinChangeMinimumCoins(new int[]{186, 419, 83, 408}, 6249));
   }
 
   @Test

@@ -64,17 +64,34 @@ public class KnapsackPossible {
 
   public static boolean[] isPossible2(int[] weight) {
     int sum = 0;
-    for (int w: weight)
+
+    for (int w: weight) {
       sum += w;
-
-    boolean[] dp = new boolean[sum + 1];
-    dp[0] = true;
-
-    for (int i = 1; i <= sum; i++) {
-      dp[i] = helper2(weight, 0, i);
     }
 
-    return dp;
+    boolean[] result = new boolean[sum + 1];
+
+    helper(sum, weight, result, 0);
+
+    return result;
+  }
+
+  private static void helper(int sum, int[] weight, boolean[] result, int index) {
+    if (index <= weight.length) {
+      result[sum] = true;
+
+      for (int i = 0; i < weight.length; i++) {
+        if (weight[i] != 0 && sum - weight[i] >= 0 && result[sum - weight[i]] == false) {
+          int temp = weight[i];
+
+          weight[i] = 0;
+
+          helper(sum - temp, weight, result, index + 1);
+
+          weight[i] = temp;
+        }
+      }
+    }
   }
 
   private static boolean helper2(int[] weight, int firstIndex, int target) {

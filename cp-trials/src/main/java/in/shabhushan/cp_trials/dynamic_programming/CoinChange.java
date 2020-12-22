@@ -112,38 +112,43 @@ public class CoinChange {
     return dp[target];
   }
 
+  private static int[] coins;
+
+  private static Map<Integer, Integer> map;
+
   /**
    * Leetcode Solution for https://leetcode.com/problems/coin-change/
    * Minimum number of coins required to make target sum
    */
-  public static int coinChangeMinimumCoins(int[] coins, int target) {
-    int[] dp = new int[target + 1];
-    Arrays.fill(dp, -1);
-    dp[0] = 0;
+  public static int coinChangeMinimumCoins(int[] coins, int amount) {
+    CoinChange.coins = coins;
 
-    int best = coinChangeMinimumCoinshelper(coins, target, dp);
+    map = new HashMap<>();
 
-    if (best < 0 || best == Integer.MAX_VALUE) return -1;
-    else return best;
+    int r = coinChangeMinimumCoinsHelper(amount);
+
+    return r == Integer.MAX_VALUE ? -1 : r;
   }
 
-  public static int coinChangeMinimumCoinshelper(int[] coins, int target, int[] dp) {
-    if (coins.length == 0 || target == 0) return 0;
-    else if (target < 0) return Integer.MIN_VALUE;
-    else if (dp[target] != -1) return dp[target];
+  private static int coinChangeMinimumCoinsHelper(int amount) {
+    if (amount == 0) return 0;
+    else if (map.containsKey(amount)) return map.get(amount);
     else {
-      int best = Integer.MAX_VALUE;
+      int min = Integer.MAX_VALUE;
 
-      for (int coin : coins) {
-        int min = coinChangeMinimumCoinshelper(coins, target - coin, dp);
+      for (int coin: coins) {
+        if (amount >= coin) {
+          int res = coinChangeMinimumCoinsHelper(amount - coin);
 
-        if (min != Integer.MIN_VALUE) {
-          best = Math.min(best, min + 1);
+          if (res != Integer.MAX_VALUE) {
+            min = Math.min(min, 1 + res);
+          }
         }
       }
 
-      dp[target] = best;
-      return best;
+      map.put(amount, min);
+
+      return min;
     }
   }
 
