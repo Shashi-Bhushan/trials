@@ -182,6 +182,12 @@ public class CoinChange {
     int[] dp = new int[target + 1];
     dp[0] = 1; // one way to make 0 sum
 
+    /**
+     * Yeah the issue is that when you're looping through with amount as the outer loop and looping through every coin at each amount you're not getting duplicate combinations (maybe every permutation?).
+     * For instance outloop i = 3, coins [1,2]. You're getting 1 + 2 and 2 + 1.
+     * To ensure unique combinations you need to go coin by coin as the outer loop so that when you're going to a new coin you're sure it's unique.
+     * You in this case all the 1 coins would be used and you could just get 1 + 2.
+     */
     for (int coin : coins) {
       for (int amt = 1; amt <= target; amt++) {
         if (amt >= coin) {

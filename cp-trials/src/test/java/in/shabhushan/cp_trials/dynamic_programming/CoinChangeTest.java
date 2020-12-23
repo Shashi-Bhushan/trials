@@ -74,6 +74,7 @@ public class CoinChangeTest {
     assertEquals(4, changeRecursive(new int[]{1, 2, 5}, 5));
     assertEquals(0, changeRecursive(new int[]{2}, 3));
     assertEquals(1, changeRecursive(new int[]{10}, 10));
+    assertEquals(35502874, changeRecursive(new int[]{3,5,7,8,9,10,11}, 500));
   }
 
   @Test

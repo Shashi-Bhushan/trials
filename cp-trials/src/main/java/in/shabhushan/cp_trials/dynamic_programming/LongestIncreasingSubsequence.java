@@ -1,28 +1,35 @@
 package in.shabhushan.cp_trials.dynamic_programming;
 
+import java.util.*;
+
 public class LongestIncreasingSubsequence {
+  private static Map<Integer, Integer> map;
+
   public static int lengthOfLIS(int[] nums) {
-    int max = 0;
+    if (nums.length == 0 || nums.length == 1) return nums.length;
+    map = new HashMap<>();
 
-    for (int i = 0; i < nums.length; i++) {
-      max = Math.max(max, helper(nums, i, 1));
-    }
-
-    return max;
+    return helper(nums, -1);
   }
 
-  private static int helper(int[] nums, int index, int sum) {
-    if (index + 1 == nums.length) return sum;
+  private static int helper(int[] nums, int index) {
+    if (index == nums.length - 1) return 1;
+    else if (map.containsKey(index)) return map.get(index);
+    else {
+      int max = 1;
 
-    int max = sum;
-
-    for (int i = index + 1; i < nums.length; i++) {
-      if (nums[index] < nums[i]) {
-        max = Math.max(max, helper(nums, i, sum + 1));
+      for (int i = index + 1; i < nums.length; i++) {
+        if (index == -1) {
+          max = Math.max(max, helper(nums, i));
+        }
+        else if (nums[index] < nums[i]) {
+          max = Math.max(max, 1 + helper(nums, i));
+        }
       }
-    }
 
-    return max;
+      map.put(index, max);
+      return max;
+    }
   }
 
   /**
