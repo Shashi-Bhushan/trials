@@ -37,26 +37,27 @@ public class LongestIncreasingSubsequence {
    * https://leetcode.com/problems/longest-increasing-subsequence/discuss/671359/My-Java-DP-Solution-with-Pictorial-Explanation
    */
   public static int lengthOfLISDP(int[] nums) {
-    if (nums.length == 0) return 0;
+    int n = nums.length;
+    if (n == 0 || n == 1) return n;
 
-    int[] dp = new int[nums.length];
+    int[] dp = new int[n];
     dp[0] = 1;
 
     int ans = 1;
 
     // between 0 and i, whichever nums[j] is greater than nums[i], get max of dp[j] for those.
-    for (int i = 1; i < nums.length; i++) {
+    for (int i = 1; i < n; i++) {
       int max = 1;
-      for (int j = i - 1; j >=0; j--) {
-        if (nums[i] > nums[j]) {
-          max = Math.max(max, dp[j] + 1);
+
+      for (int j = 0; j < i; j++) {
+        if (nums[j] < nums[i]) {
+          max = Math.max(max, 1 + dp[j]);
         }
       }
 
       dp[i] = max;
       ans = Math.max(ans, max);
     }
-
 
     return ans;
   }
