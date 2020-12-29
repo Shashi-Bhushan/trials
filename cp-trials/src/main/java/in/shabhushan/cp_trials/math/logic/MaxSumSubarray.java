@@ -6,34 +6,34 @@ package in.shabhushan.cp_trials.math.logic;
  * Explanation: [4,-1,2,1] has the largest sum = 6
  */
 public class MaxSumSubarray {
-    public static int sequence(int[] array) {
-        int maxSoFar = 0;
-        int maxEnding = 0;
+  public static int sequence(int[] array) {
+    int maxSoFar = 0;
+    int maxEnding = 0;
 
-        for (int element : array) {
-            maxEnding += element;
+    for (int element : array) {
+      maxEnding += element;
 
-            if (maxEnding < 0) {
-                maxEnding = 0;
-            }
+      if (maxEnding < 0) {
+        maxEnding = 0;
+      }
 
-            if (maxSoFar < maxEnding) {
-                maxSoFar = maxEnding;
-            }
-        }
-
-        return maxSoFar;
+      if (maxSoFar < maxEnding) {
+        maxSoFar = maxEnding;
+      }
     }
 
-    public static int sequence2(int[] array) {
-        int maxSoFar = 0;
-        int maxEnding = 0;
+    return maxSoFar;
+  }
 
-        for (int element : array) {
-            maxEnding = Math.max(0, maxEnding + element);
-            maxSoFar = Math.max(maxSoFar, maxEnding);
-        }
+  public static int maxsumSubArrayWithPositiveNegative(int[] array) {
+    int maxSoFar = array[0];
+    int maxHere = array[0];
 
-        return maxSoFar;
+    for (int i = 1; i < array.length; i++) {
+      maxHere = Math.max(maxHere + array[i], array[i]);
+      maxSoFar = Math.max(maxSoFar, maxHere);
     }
+
+    return maxSoFar;
+  }
 }
