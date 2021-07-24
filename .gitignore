@@ -31,3 +31,6 @@ input.txt
 output.txt
 *.swp
 *.out
+
+flink-trials/data/*
+flink-trials/src/main/resources/sink/**
