@@ -72,7 +72,7 @@ public class TextEncryptionBenchmarks {
         dp[i] = Math.min(
             Math.min(dp[i - 1], dp[i]),
             prev
-        ) + input[j];
+        ) + input[j][0];
 
         prev = dp[i];
       }
