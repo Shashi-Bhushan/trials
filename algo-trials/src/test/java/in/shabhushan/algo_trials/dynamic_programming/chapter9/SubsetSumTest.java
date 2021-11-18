@@ -21,6 +21,7 @@ public class SubsetSumTest {
     assertTrue(subsetSumDP(new int[]{3, 2, 7, 1}, 6));
     assertFalse(subsetSumDP(new int[]{3, 2, 7, 2, 5, 5}, 6));
     assertTrue(subsetSumDP(new int[]{3, 2, 7, 2, 4, 3, 4, 7, 8}, 10));
+    assertTrue(subsetSumDP(new int[]{2, 3, 5, 8, 11}, 21)); // 2 + 5 + 3 + 11
     assertFalse(subsetSumDP(new int[]{3, 2, 7, 2, 4, 3, 4, 7, 8, 3, 2, 7, 2, 4, 3, 4, 7, 8, 3, 2, 7, 2, 4, 3, 4, 7, 8}, 1000));
   }
 }

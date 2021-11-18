@@ -1,8 +1,6 @@
-package in.shabhushan.algo_trials.dynamic_programming.chapter9;
+package in.shabhushan.algo_trials.dynamic_programming.knapsack;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
+import java.util.Map;
 
 public class Knapsack {
   /**
@@ -29,6 +27,10 @@ public class Knapsack {
     } else {
       return knapsack(weights, values, n - 1, capacity);
     }
+  }
+
+  private boolean isAllZeros(Map<Character, Integer> map) {
+    return map.entrySet().stream().allMatch(val -> val.getValue() == 0);
   }
 
   public static int knapsackDP(int[] value, int[] weight, int capacity) {
