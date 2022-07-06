@@ -31,7 +31,7 @@ public class RotationPoint {
             } else if (isInAlphabeticOrder(words[mid], words[end]) && !isInAlphabeticOrder(words[start], words[mid])) {
                 /*
                  * [mid, end] is in alphabetic order and [start, mid] is not
-                 * Note that, end == mid will never come since mid will always go to start index.
+                 * Note that, end == mid will never come since mid will always go to start index (because of `start + (end - start) / 2` calculation.
                  */
                 end = mid;
             } else {
