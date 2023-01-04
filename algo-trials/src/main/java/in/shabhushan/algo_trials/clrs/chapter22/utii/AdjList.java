@@ -7,7 +7,11 @@ import java.util.Map;
 import java.util.TreeMap;
 
 public class AdjList<T extends Comparable<T>> {
+    // Sorted Map so that the iteration in AdjList should be alphabetic (or based on Comparator in T)
     private final TreeMap<AdjListEntry<T>, List<AdjListEntry<T>>> adjList;
+
+    // Map<T -> Vertex T>
+    // required because the addEdge method takes only T. We need singleton values for each T in Adj List i.e. there should be only one vertex corresponding to T in Adj List
     private final Map<T, AdjListEntry<T>> map;
 
     private final boolean directed;
@@ -37,8 +41,9 @@ public class AdjList<T extends Comparable<T>> {
             adjList.put(vertexV, edges);
         }
 
-        map.put(u, vertexU);
-        map.put(v, vertexV);
+        // Put back the vertex in map. Helpful when vertex is created first time
+        map.putIfAbsent(u, vertexU);
+        map.putIfAbsent(v, vertexV);
     }
 
     public List<AdjListEntry<T>> getEdges(AdjListEntry<T> u) {

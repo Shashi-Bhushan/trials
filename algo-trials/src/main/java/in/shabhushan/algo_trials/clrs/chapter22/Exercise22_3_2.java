@@ -40,8 +40,6 @@ public class Exercise22_3_2 {
         graph.addEdge('r', 'y');
         graph.addEdge('u', 'y');
 
-        // graph.print();
-
         // Initialize All vertex to Color.WHITE
         for (Map.Entry<AdjListEntry<Character>, List<AdjListEntry<Character>>> adjList : graph.getAdjList().entrySet()) {
             AdjListEntry<Character> u = adjList.getKey();
