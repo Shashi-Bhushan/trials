@@ -41,14 +41,14 @@ public class MergeSort {
     right[n2] = Integer.MAX_VALUE;
 
     // merge from start to end in input now
-    int x = 0;
-    int y = 0;
+    int i = 0;
+    int j = 0;
 
-    for (int i = start; i <= end; i++) {
-      if (left[x] < right[y]) {
-        input[i] = left[x++];
+    for (int k = start; k <= end; k++) {
+      if (left[i] < right[j]) {
+        input[k] = left[i++];
       } else {
-        input[i] = right[y++];
+        input[k] = right[j++];
       }
     }
   }
