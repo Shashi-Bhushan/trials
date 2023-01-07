@@ -4,21 +4,12 @@ import in.shabhushan.algo_trials.clrs.chapter22.utii.AdjList;
 import in.shabhushan.algo_trials.clrs.chapter22.utii.AdjListEntry;
 import in.shabhushan.algo_trials.clrs.chapter22.utii.Color;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-
-public class Exercise22_3_2 {
+public class Exercise22_3_12 {
 
     // todo: add logger
 
     private static int time;
-
-    // Map<Source -> Destination> Edge
-    private static List<Map.Entry<Character, Character>> treeEdges = new ArrayList<>();
-    private static List<Map.Entry<Character, Character>> forwardEdges = new ArrayList<>();
-    private static List<Map.Entry<Character, Character>> crossEdges = new ArrayList<>();
-    private static List<Map.Entry<Character, Character>> backEdges = new ArrayList<>();
+    private static int cc;
 
     public static void main(String[] args) {
         log("22.3 Depthfirst search");
@@ -48,22 +39,19 @@ public class Exercise22_3_2 {
         }
 
         time = 0;
-        treeEdges = new ArrayList<>();
-        forwardEdges = new ArrayList<>();
-        crossEdges = new ArrayList<>();
-        backEdges = new ArrayList<>();
+        cc = 1;
 
         for (AdjListEntry<Character> u : graph.getVertices()) {
+            // for each white vertex, a new connected component has been found
             if (u.getColor() == Color.WHITE) {
+                u.setConnectedComponentCount(cc);
+                // Increment connected component count now
+                cc = cc + 1;
                 dfs(graph, u);
             }
         }
 
         graph.print();
-        log("Tree Edges " + treeEdges);
-        log("Back Edges " + backEdges);
-        log("Forward Edges " + forwardEdges);
-        log("Cross Edges " + crossEdges);
     }
 
     private static void dfs(AdjList<Character> graph, AdjListEntry<Character> u) {
@@ -73,24 +61,10 @@ public class Exercise22_3_2 {
 
         for (AdjListEntry<Character> v : graph.getEdges(u)) {
             if (v.getColor() == Color.WHITE) {
-                treeEdges.add(Map.entry(u.getNode(), v.getNode()));
-
                 v.setParent(u);
+                // child's cc count is equal to parent's cc count
+                v.setConnectedComponentCount(u.getConnectedComponentCount());
                 dfs(graph, v);
-            } else if (v.getColor() == Color.GREY) {
-                backEdges.add(Map.entry(u.getNode(), v.getNode()));
-            } else if (v.getColor() == Color.BLACK) {
-                // if u is ancestor of v (i.e. vertexU comes first when traversing from root to vertexV; check Fig 22.6 vertexQ and vertexW), then it's forward edge.
-                // else it's cross edge.
-                // In other words (See Exercise 22.3-5), if u.startTime <  v.endTime
-                //  Then, it's forward edge
-                // Else if v.endTime < u.startTime
-                //  Then, it's cross edge
-                if (u.getStartTime() < v.getEndTime()) {
-                    forwardEdges.add(Map.entry(u.getNode(), v.getNode()));
-                } else if (v.getEndTime() < u.getStartTime()) {
-                    crossEdges.add(Map.entry(u.getNode(), v.getNode()));
-                }
             }
         }
 

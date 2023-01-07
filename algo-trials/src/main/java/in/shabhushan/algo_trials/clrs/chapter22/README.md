@@ -64,6 +64,8 @@
 
 * Total running time = **O(V + E)**.
 
+* [Youtube Reference](https://youtu.be/TZDQHplPrNo?t=774) 
+
 ### Minimum Spanning Tree
 
 * MST algorithms are greedy algorithms and they use the cut property to build the MST.

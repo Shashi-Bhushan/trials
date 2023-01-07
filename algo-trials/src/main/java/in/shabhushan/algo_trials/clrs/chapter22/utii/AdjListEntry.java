@@ -11,6 +11,7 @@ public class AdjListEntry<T extends Comparable<T>> implements Comparable<AdjList
     private AdjListEntry<T> parent;
     private int startTime;
     private int endTime;
+    private int cc;
 
     public AdjListEntry(T node, int weight) {
         this.node = node;
@@ -57,6 +58,14 @@ public class AdjListEntry<T extends Comparable<T>> implements Comparable<AdjList
         this.endTime = endTime;
     }
 
+    public int getConnectedComponentCount() {
+        return cc;
+    }
+
+    public void setConnectedComponentCount(int cc) {
+        this.cc = cc;
+    }
+
     @Override
     public String toString() {
         return node.toString();
@@ -67,12 +76,12 @@ public class AdjListEntry<T extends Comparable<T>> implements Comparable<AdjList
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         AdjListEntry<?> that = (AdjListEntry<?>) o;
-        return weight == that.weight && startTime == that.startTime && endTime == that.endTime && Objects.equals(node, that.node) && color == that.color && Objects.equals(parent, that.parent);
+        return weight == that.weight && startTime == that.startTime && endTime == that.endTime && cc == that.cc && Objects.equals(node, that.node) && color == that.color && Objects.equals(parent, that.parent);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(node, weight, color, parent, startTime, endTime);
+        return Objects.hash(node, weight, color, parent, startTime, endTime, cc);
     }
 
     @Override
